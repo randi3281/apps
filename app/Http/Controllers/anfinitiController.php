@@ -54,6 +54,7 @@ class anfinitiController extends Controller
     }
 
     public function daftarproses(Request $request){
+        session_start();
         // buatlah agar daftarprosess menginput ke database anfiniti_login dengan syarat captcha benar dan password yang kedua terkonfirmasi benar
         $mode = 2;
         if(isset($request->tombolDaftar)){
