@@ -65,18 +65,18 @@ class anfinitiController extends Controller
                 'captcha' => 'required|string',
             ]);
 
-            if($validatedData['password'] == $validatedData['password2']){
-                if($validatedData['captcha'] == $_SESSION['Captcha']){
+            if($validatedData['captcha'] == $_SESSION['Captcha']){
+                if($validatedData['password'] == $validatedData['password2']){
                     $anfinitiLogin = new anfiniti_login;
                     $anfinitiLogin->username = $validatedData['username'];
                     $anfinitiLogin->password = $validatedData['password'];
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
                 }else{
-                    return redirect("/anfiniti/daftar/gagal/2");
+                    return redirect("/anfiniti/daftar/", ["ket" => "Maaf, password tidak sama"]);
                 }
             }else{
-                return redirect("/anfiniti/daftar/gagal/1");
+                return redirect("/anfiniti/daftar/", ["ket" => "Maaf, captcha salah"]);
             }
         }
     }
@@ -86,7 +86,7 @@ class anfinitiController extends Controller
         $errornya = "";
         switch ($ket) {
             case 1:
-                $errornya = "Maaf, Password Anda salah";
+                $errornya = "Maaf, Password Tidak Sama";
                 break;
             case 2:
                 $errornya = "Maaf, Captcha Anda salah";

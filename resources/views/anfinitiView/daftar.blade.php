@@ -2,14 +2,9 @@
     <div class="col-auto d-flex justify-content-center align-items-center" style="height:500px">
         <form action="/anfiniti/daftarproses" style="width: 350px;" method="POST">
             {{ csrf_field() }}
-            @if (session('success'))
-                <p class="alert alert-success">
-                    {{ session('success') }}
-                </p>
-            @endif
             <h2 class="text-center">- Daftar -</h2>
-            @if (isset($errornya))
-                <p class="text-center" style="font-size: 8px">{{ $errornya }}</p>
+            @if (isset($ket))
+                <p class="text-center" style="font-size: 8px">{{ $ket }}</p>
             @endif
             <div class="row justify-content-center mt-4">
                 <div class="col-auto">
