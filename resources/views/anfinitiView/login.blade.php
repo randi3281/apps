@@ -30,8 +30,8 @@
                             placeholder="Masukin captcha di atas kesini">
                     </div>
                     <div class="tombol text-center mt-5">
-                        <button type="submit" name="masuk" class="btn text-light btn-dark btn-block w-75">Masuk</button>
-                        <button type="submit" name="daftar" class="btn btn-outline-dark btn-block">Daftar</button>
+                        <button type="submit" name="tombolMasuk" class="btn text-light btn-dark btn-block w-75">Masuk</button>
+                        <button type="submit" name="tombolDaftar" class="btn btn-outline-dark btn-block">Daftar</button>
                     </div>
                 </div>
             </div>
