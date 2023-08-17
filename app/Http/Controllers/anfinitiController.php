@@ -44,7 +44,7 @@ class anfinitiController extends Controller
 
         if(isset($request->tombolDaftar)){
             return redirect("/anfiniti/daftar");
-        }
+        };
     }
 
     public function daftar(){
