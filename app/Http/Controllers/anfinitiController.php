@@ -65,15 +65,15 @@ class anfinitiController extends Controller
             ]);
 
             if($validatedData['password'] == $validatedData['password2']){
-                // if($validatedData['captcha'] == session('captcha')){
+                if($validatedData['captcha'] == session('captcha')){
                     $anfinitiLogin = new anfiniti_login;
                     $anfinitiLogin->username = $validatedData['username'];
                     $anfinitiLogin->password = $validatedData['password'];
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
-                // }else{
-                //     return redirect("/anfiniti/daftar/gagal/2");
-                // }
+                }else{
+                    return redirect("/anfiniti/daftar/gagal/2");
+                }
             }else{
                 return redirect("/anfiniti/daftar/gagal/1");
             }
