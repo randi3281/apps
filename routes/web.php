@@ -19,7 +19,7 @@ Route::get('/anfiniti', 'anfinitiController@anfiniti');
 Route::get('/anfiniti/login', 'anfinitiController@login');
 Route::post('/anfiniti/loginproses', 'anfinitiController@loginproses');
 Route::get('/anfiniti/loginprosesgagal/{$ket}', 'anfinitiController@loginProsesGagal');
-Route::get('/anfiniti/daftar', 'anfinitiController@daftar');
+Route::get('/anfiniti/daftar', 'anfinitiController@daftar')->name('daftar');
 Route::post('/anfiniti/daftarproses', 'anfinitiController@daftarproses');
 Route::get('/anfiniti/daftar/gagal/{ket}', 'anfinitiController@daftarprosesgagal');
 Route::get('/anfiniti/input', 'anfinitiController@input');

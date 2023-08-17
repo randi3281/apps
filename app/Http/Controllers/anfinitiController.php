@@ -43,7 +43,7 @@ class anfinitiController extends Controller
         };
 
         if(isset($request->tombolDaftar)){
-            return redirect("/anfiniti/daftar");
+            return redirect()->route("daftar");
         };
     }
 
@@ -73,10 +73,10 @@ class anfinitiController extends Controller
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
                 }else{
-                    return redirect("/anfiniti/daftar/", ["ket" => "Maaf, password tidak sama"]);
+                    return view("/anfiniti/daftar/", ["ket" => "Maaf, password tidak sama", "mode" => $mode]);
                 }
             }else{
-                return redirect("/anfiniti/daftar/", ["ket" => "Maaf, captcha salah"]);
+                return view("/anfiniti/daftar/", ["ket" => "Maaf, captcha salah", "mode" => $mode]);
             }
         }
     }
