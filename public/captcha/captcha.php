@@ -16,11 +16,11 @@ $posisi = 32;
 for ($i = 0; $i <= 5; $i++) {
     $angka = rand(0, 9);
     // $angka2 .= $angka;
-    session('Captcha', session('Captcha') . $angka);
-
+    
     $kemiringan = rand(20, 20);
-
+    
     imagettftext($gbr, $ukuran_font, $kemiringan, 8 + 15 * $i, $posisi, $color, $font, $angka);
+    session('Captcha', session('Captcha') . $angka);
 
 
 }
