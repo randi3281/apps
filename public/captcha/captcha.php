@@ -2,7 +2,7 @@
 <?php
 session_start();
 $random = rand(1000, 9999);
-$_SESSION['captcha'] = $random;
+$_SESSION['Captcha'] = $random;
 // buatlah $random menjadi gambar captcha
 $im = imagecreatetruecolor(50, 24);
 $bg = imagecolorallocate($im, 22, 86, 165);
