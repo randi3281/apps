@@ -26,11 +26,11 @@ class anfinitiProsesController extends Controller
                     return redirect()->route("loginAnfiniti");
                 }else{
                     return redirect("/anfiniti/daftar/2");
-                }
+                };
             }else{
                 return redirect("/anfiniti/daftar/1");
-            }
-        }
+            };
+        };
     }
 
     public function loginproses(Request $request){
