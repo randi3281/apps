@@ -25,10 +25,10 @@ class anfinitiProsesController extends Controller
                     $anfinitiLogin->save();
                     return redirect()->route("loginAnfiniti");
                 }else{
-                    return redirect("/anfiniti/daftarket/2");
+                    return redirect("/anfiniti/daftar/2");
                 };
             }else{
-                return redirect("/anfiniti/daftarket/1");
+                return redirect("/anfiniti/daftar/1");
             };
         };
     }
@@ -45,10 +45,10 @@ class anfinitiProsesController extends Controller
                 if($anfinitiLogin->password == $validatedData['password']){
                     return redirect()->route("inputAnfiniti");
                 }else{
-                    return redirect("/anfiniti/loginket/1");
+                    return redirect("/anfiniti/login/1");
                 }
             }else{
-                return redirect("/anfiniti/loginket/1");
+                return redirect("/anfiniti/login/1");
             }
         };
 
