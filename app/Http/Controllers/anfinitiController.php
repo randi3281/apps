@@ -72,10 +72,10 @@ class anfinitiController extends Controller
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
                 }else{
-                    return view("/anfiniti/daftar/", ["ket" => "Maaf, password tidak sama", "mode" => $mode]);
+                    return view("anfinitiView.daftar", ["ket" => "Maaf, password tidak sama", "mode" => $mode]);
                 }
             }else{
-                return view("/anfiniti/daftar/", ["ket" => "Maaf, captcha salah", "mode" => $mode]);
+                return view("anfinitiView.daftar", ["ket" => "Maaf, captcha salah", "mode" => $mode]);
             }
         }
     }
