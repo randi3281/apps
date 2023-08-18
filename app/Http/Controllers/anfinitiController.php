@@ -40,10 +40,8 @@ class anfinitiController extends Controller
             }else{
                 return redirect("/anfiniti/login/gagal/1");
             }
-        };
-
-        if(isset($request->tombolDaftar)){
-            return redirect()->route("daftar");
+        }elseif(isset($request->tombolDaftar)){
+            return redirect("/anfiniti/daftar");
         };
     }
 
