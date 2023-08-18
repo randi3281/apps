@@ -4,7 +4,7 @@
             {{ csrf_field() }}
             <h2 class="text-center">- Login -</h2>
             @if (isset($errornya))
-                <p class="text-center" style="font-size: 8px">{{$errornya}}</p>
+                <p class="text-center" style="font-size: 8px">{{ $errornya }}</p>
             @endif
             <div class="row justify-content-center mt-4">
                 <div class="col-auto">
@@ -30,8 +30,9 @@
                             placeholder="Masukin captcha di atas kesini">
                     </div>
                     <div class="tombol text-center mt-5">
-                        <button type="submit" name="tombolMasuk" class="btn text-light btn-dark btn-block w-75">Masuk</button>
-                        <button type="submit" name="tombolDaftar" class="btn btn-outline-dark btn-block">Daftar</button>
+                        <input type="submit" name="tombolMasuk" class="btn text-light btn-dark btn-block w-75"
+                            value="Masuk">
+                        <input type="submit" name="tombolDaftar" class="btn btn-outline-dark btn-block" value="Daftar">
                     </div>
                 </div>
             </div>
