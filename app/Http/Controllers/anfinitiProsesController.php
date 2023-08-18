@@ -53,7 +53,7 @@ class anfinitiProsesController extends Controller
         };
 
         if(isset($request->tombolDaftar)){
-            return redirect()->route("daftar");
+            return redirect()->route("daftarAnfiniti");
         };
     }
 
