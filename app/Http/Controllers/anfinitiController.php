@@ -24,9 +24,6 @@ class anfinitiController extends Controller
 
     public function loginproses(Request $request){
         $mode = 1;
-        if(isset($request->tombolDaftar)){
-            return redirect("/anfiniti/daftar");
-        };
         if(isset($request->tombolMasuk)){
             $validatedData = $request->validate([
                 'username' => 'required|string|max:255',
@@ -42,15 +39,18 @@ class anfinitiController extends Controller
                 }
             }else{
                 return redirect("/anfiniti/login/gagal/1");
-            };
+            }
         };
+
+        if(isset($request->tombolDaftar)){
+            return redirect("/anfiniti/daftar");
+        }
     }
 
     public function daftar(){
         $mode = 2;
-        
 
-        return view("anfinitiView.start", ["mode" => $mode, "ket" => session('error')]);
+        return view("anfinitiView.start", ["mode" => $mode]);
     }
 
     public function daftarproses(Request $request){
@@ -65,22 +65,20 @@ class anfinitiController extends Controller
                 'captcha' => 'required|string',
             ]);
 
-            if($validatedData['captcha'] == $_SESSION['Captcha']){
-                if($validatedData['password'] == $validatedData['password2']){
+            if($validatedData['password'] == $validatedData['password2']){
+                if($validatedData['captcha'] == $_SESSION['Captcha']){
                     $anfinitiLogin = new anfiniti_login;
                     $anfinitiLogin->username = $validatedData['username'];
                     $anfinitiLogin->password = $validatedData['password'];
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
                 }else{
-                    session('error', 'Maaf, Password Tidak Sama');
-                    return redirect()->route('daftar');
+                    return redirect("/anfiniti/daftar/gagal/2");
                 }
             }else{
-                session('error', 'Maaf, Captcha Anda salah');
-                return redirect()->route('daftar');
-            };
-        };
+                return redirect("/anfiniti/daftar/gagal/1");
+            }
+        }
     }
 
     public function daftarprosesgagal($ket){
