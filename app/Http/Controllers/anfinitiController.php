@@ -71,7 +71,7 @@ class anfinitiController extends Controller
                     $anfinitiLogin->username = $validatedData['username'];
                     $anfinitiLogin->password = bcrypt($validatedData['password']);
                     $anfinitiLogin->save();
-                    return redirect()->route("login");
+                    return redirect()->route("loginAnfiniti");
                 }else{
                     return redirect("/anfiniti/daftar/gagal/2");
                 }

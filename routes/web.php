@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 // Anfiniti
 Route::get('/', 'anfinitiController@index')->name('index');
 Route::get('anfiniti', 'anfinitiController@anfiniti')->name('anfiniti');
-Route::get('anfiniti/login', 'anfinitiController@login')->name('login');
+Route::get('anfiniti/login', 'anfinitiController@login')->name('loginAnfiniti');
 Route::post('anfiniti/loginproses', 'anfinitiController@loginproses');
 Route::get('anfiniti/loginprosesgagal/{$ket}', 'anfinitiController@loginProsesGagal');
 Route::get('anfiniti/daftar', 'anfinitiController@daftar')->name('daftar');
