@@ -23,26 +23,27 @@ class anfinitiController extends Controller
     }
 
     public function loginproses(Request $request){
-        // $mode = 1;
-        // if(isset($request->tombolMasuk)){
-        //     $validatedData = $request->validate([
-        //         'username' => 'required|string|max:255',
-        //         'password' => 'required|string',
-        //     ]);
-
-        //     $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
-        //     if($anfinitiLogin){
-        //         if($anfinitiLogin->password == $validatedData['password']){
-        //             return redirect("/anfiniti/input");
-        //         }else{
-        //             return redirect("/anfiniti/login/gagal/1");
-        //         }
-        //     }else{
-        //         return redirect("/anfiniti/login/gagal/1");
-        //     };
-        // }elseif(isset($request->tombolDaftar)){
+        $mode = 1;
+        if(isset($request->tombolDaftar)){
             return redirect("/anfiniti/daftar");
-        // };
+        };
+        if(isset($request->tombolMasuk)){
+            $validatedData = $request->validate([
+                'username' => 'required|string|max:255',
+                'password' => 'required|string',
+            ]);
+
+            $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
+            if($anfinitiLogin){
+                if($anfinitiLogin->password == $validatedData['password']){
+                    return redirect("/anfiniti/input");
+                }else{
+                    return redirect("/anfiniti/login/gagal/1");
+                }
+            }else{
+                return redirect("/anfiniti/login/gagal/1");
+            };
+        };
     }
 
     public function daftar(){
