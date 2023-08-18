@@ -33,7 +33,7 @@ class anfinitiController extends Controller
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
             if($anfinitiLogin){
                 if($anfinitiLogin->password == $validatedData['password']){
-                    return redirect("/anfiniti/input");
+                    return redirect()->route("input");
                 }else{
                     return redirect("/anfiniti/login/gagal/1");
                 }
@@ -43,7 +43,7 @@ class anfinitiController extends Controller
         };
 
         if(isset($request->tombolDaftar)){
-            return redirect("/anfiniti/daftar");
+            return redirect()->route("daftar");
         }
     }
 
@@ -69,9 +69,9 @@ class anfinitiController extends Controller
                 if($validatedData['captcha'] == $_SESSION['Captcha']){
                     $anfinitiLogin = new anfiniti_login;
                     $anfinitiLogin->username = $validatedData['username'];
-                    $anfinitiLogin->password = $validatedData['password'];
+                    $anfinitiLogin->password = bcrypt($validatedData['password']);
                     $anfinitiLogin->save();
-                    return redirect("/anfiniti/login");
+                    return redirect()->route("login");
                 }else{
                     return redirect("/anfiniti/daftar/gagal/2");
                 }

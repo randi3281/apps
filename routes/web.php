@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 // Anfiniti
-Route::get('/', 'anfinitiController@index');
-Route::get('anfiniti', 'anfinitiController@anfiniti');
-Route::get('anfiniti/login', 'anfinitiController@login');
+Route::get('/', 'anfinitiController@index')->name('index');
+Route::get('anfiniti', 'anfinitiController@anfiniti')->name('anfiniti');
+Route::get('anfiniti/login', 'anfinitiController@login')->name('login');
 Route::post('anfiniti/loginproses', 'anfinitiController@loginproses');
 Route::get('anfiniti/loginprosesgagal/{$ket}', 'anfinitiController@loginProsesGagal');
 Route::get('anfiniti/daftar', 'anfinitiController@daftar')->name('daftar');
 Route::post('anfiniti/daftarproses', 'anfinitiController@daftarproses');
 Route::get('anfiniti/daftar/gagal/{ket}', 'anfinitiController@daftarprosesgagal');
-Route::get('anfiniti/input', 'anfinitiController@input');
-Route::get('anfiniti/edit', 'anfinitiController@edit');
-Route::get('anfiniti/trash', 'anfinitiController@trash');
+Route::get('anfiniti/input', 'anfinitiController@input')->name('input');
+Route::get('anfiniti/edit', 'anfinitiController@edit')->name('edit');
+Route::get('anfiniti/trash', 'anfinitiController@trash')->name('trash');
 // End Anfiniti
 
 
