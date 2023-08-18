@@ -35,7 +35,7 @@ class anfinitiProsesController extends Controller
 
         
         if(isset($request->tombolMasuk)){
-            return redirect()->route("masukAnfiniti");
+            return redirect()->route("loginAnfiniti");
         };
     }
 
