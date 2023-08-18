@@ -48,8 +48,9 @@ class anfinitiController extends Controller
 
     public function daftar(){
         $mode = 2;
+        
 
-        return view("anfinitiView.start", ["mode" => $mode]);
+        return view("anfinitiView.start", ["mode" => $mode, "ket" => session('error')]);
     }
 
     public function daftarproses(Request $request){
@@ -72,12 +73,14 @@ class anfinitiController extends Controller
                     $anfinitiLogin->save();
                     return redirect("/anfiniti/login");
                 }else{
-                    return view("anfinitiView.daftar", ["ket" => "Maaf, password tidak sama", "mode" => $mode]);
+                    session('error', 'Maaf, Password Tidak Sama');
+                    return redirect()->route('daftar');
                 }
             }else{
-                return view("anfinitiView.daftar", ["ket" => "Maaf, captcha salah", "mode" => $mode]);
-            }
-        }
+                session('error', 'Maaf, Captcha Anda salah');
+                return redirect()->route('daftar');
+            };
+        };
     }
 
     public function daftarprosesgagal($ket){

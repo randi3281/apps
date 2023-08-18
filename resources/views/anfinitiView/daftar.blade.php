@@ -3,9 +3,10 @@
         <form action="/anfiniti/daftarproses" style="width: 350px;" method="POST">
             {{ csrf_field() }}
             <h2 class="text-center">- Daftar -</h2>
-            @if (isset($ket))
+            @if (isset($ket)&&$ket!='')
                 <p class="text-center" style="font-size: 8px">{{ $ket }}</p>
             @endif
+            @session('ket', '')
             <div class="row justify-content-center mt-4">
                 <div class="col-auto">
                     <div class="form-group">
