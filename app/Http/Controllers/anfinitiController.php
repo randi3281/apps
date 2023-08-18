@@ -39,7 +39,7 @@ class anfinitiController extends Controller
                 }
             }else{
                 return redirect("/anfiniti/login/gagal/1");
-            }
+            };
         }elseif(isset($request->tombolDaftar)){
             return redirect("/anfiniti/daftar");
         };
