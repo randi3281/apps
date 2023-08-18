@@ -32,6 +32,11 @@ class anfinitiProsesController extends Controller
                 return redirect("/anfiniti/daftar/1");
             };
         };
+
+        
+        if(isset($request->tombolMasuk)){
+            return redirect()->route("masukAnfiniti");
+        };
     }
 
     public function loginproses(Request $request){
