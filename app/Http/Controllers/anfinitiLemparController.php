@@ -6,21 +6,21 @@ use Illuminate\Http\Request;
 
 class anfinitiLemparController extends Controller
 {
-    // public function daftarKet($ket){
-    //     $mode = 2;
-    //     $errornya = "";
-    //     switch ($ket) {
-    //         case 1:
-    //             $errornya = "Maaf, Password Tidak Sama";
-    //             break;
-    //         case 2:
-    //             $errornya = "Maaf, Captcha Anda salah";
-    //             break;
+    public function daftarKet($ket){
+        $mode = 2;
+        $errornya = "";
+        switch ($ket) {
+            case 1:
+                $errornya = "Maaf, Password Tidak Sama";
+                break;
+            case 2:
+                $errornya = "Maaf, Captcha Anda salah";
+                break;
             
-    //     }
+        }
 
-    //     return view("anfinitiView.start", ["mode" => $mode, "errornya" => $errornya]);
-    // }
+        return view("anfinitiView.start", ["mode" => $mode, "errornya" => $errornya]);
+    }
 
     public function loginKet($ket){
         $mode = 1;
