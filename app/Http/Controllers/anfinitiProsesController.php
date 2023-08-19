@@ -90,7 +90,9 @@ class anfinitiProsesController extends Controller
                 }else{
                     return redirect("/anfiniti/login/2");
                 };
-            }
+                return redirect("/anfiniti/login/2");
+            };
+            return redirect("/anfiniti/login/2");
         };
 
         if(isset($request->tombolDaftar)){
