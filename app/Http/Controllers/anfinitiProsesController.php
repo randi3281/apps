@@ -24,16 +24,16 @@ class anfinitiProsesController extends Controller
             if($validatedData['password'] == $validatedData['password2']){
                 if($validatedData['captcha'] == $_SESSION['Captcha']){
 
-                    $normalizedUsername = Str::lower($validatedData['username']);
-                    if (anfiniti_login::where(DB::raw('LOWER(username)'), $normalizedUsername)->exists()) {
-                        return redirect("/anfiniti/daftar/3");
-                    } else {
+                    // $normalizedUsername = Str::lower($validatedData['username']);
+                    // if (anfiniti_login::where(DB::raw('LOWER(username)'), $normalizedUsername)->exists()) {
+                    //     return redirect("/anfiniti/daftar/3");
+                    // } else {
                         $user = new anfiniti_login();
                         $user->username = $validatedData['username'];
                         $user->password = bcrypt($validatedData['password']);
                         $user->save();
                         return redirect()->route("loginAnfiniti");
-                    }
+                    // }
 
                 }else{
                     return redirect("/anfiniti/daftar/2");
