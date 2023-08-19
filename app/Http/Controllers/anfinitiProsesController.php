@@ -113,7 +113,7 @@ class anfinitiProsesController extends Controller
         if(isset($request->tombolInput)){
             $validatedData = $request->validate([
                 'namaWeb' => 'required|string|max:255',
-                'linkWeb' => 'required|string|max:255',
+                'link' => 'required|string|max:255',
                 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
 
