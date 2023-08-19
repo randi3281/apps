@@ -13,6 +13,8 @@ class anfinitiController extends Controller
         
         $dataEncrypted = request()->cookie('anfiniti_sessionnya');
     
+        if ($dataEncrypted) {
+            // Mendekripsi data
             $data = decrypt($dataEncrypted);
     
             $tokennya = $data['tokennya'];
@@ -28,6 +30,9 @@ class anfinitiController extends Controller
             }else{
                 // return view("anfinitiView.index");
             };
+        } else {
+            return view("anfinitiView.index");
+        };        
         
     }
 
