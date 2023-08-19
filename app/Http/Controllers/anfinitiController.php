@@ -19,19 +19,22 @@ class anfinitiController extends Controller
             $data = decrypt($dataEncrypted);
     
             $tokennya = $data['tokennya'];
+            $username = $data['username'];
 
             $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();;
             if($anfinitiSession){
-                $anfinitiLogin = anfiniti_login::where("username", $anfinitiSession->username)->first();
-                if($anfinitiLogin){
+                if(password_verify($username, $anfinitiSession->username)){
                     return redirect()->route("anfiniti");
+                }else{
+                    return view("anfinitiView.index");
                 }
+            }else{
+                return view("anfinitiView.index");
             }
         } else {
-            return "Anda belum menyimpan data.";
+            return view("anfinitiView.index");
         }        
         
-        return view("anfinitiView.index");
     }
 
     public function anfiniti(){

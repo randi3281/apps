@@ -68,11 +68,13 @@ class anfinitiProsesController extends Controller
                     $anfinitiSession = new anfiniti_session;
                     $anfinitiSession->login_id = $anfinitiLogin->id;
                     $anfinitiSession->sesi = $random;
+                    $anfinitiSession->username = bcrypt($validatedData['username']);
                     $anfinitiSession->save();
                     // set cookie selama 360 hari
                     
                     $data = [
-                        'tokennya' => $random
+                        'tokennya' => $random,
+                        'username' => $validatedData['username']
                     ];
                     
                     // Mengenkripsi data sebelum menyimpannya dalam cookie
