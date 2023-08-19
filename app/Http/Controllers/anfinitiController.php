@@ -8,33 +8,61 @@ use App\Models\anfiniti_session;
 
 class anfinitiController extends Controller
 {
-    public function index(){
-        // Mendapatkan data dari cookie
-        
-        $dataEncrypted = request()->cookie('anfiniti_sessionnya');
+    public function index()
+    {
+        try {
+            // Mendapatkan data dari cookie
+            $dataEncrypted = request()->cookie('anfiniti_sessionnya');
     
-        if ($dataEncrypted) {
-            // Mendekripsi data
-            $data = decrypt($dataEncrypted);
+            if ($dataEncrypted) {
+                // Mendekripsi data
+                $data = decrypt($dataEncrypted);
     
-            $tokennya = $data['tokennya'];
-            $username = $data['username'];
-
-            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
-            if($anfinitiSession){
-                if(password_verify($username, $anfinitiSession->username)){
+                $tokennya = $data['tokennya'];
+                $username = $data['username'];
+    
+                $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+    
+                if ($anfinitiSession && password_verify($username, $anfinitiSession->username)) {
                     return redirect()->route("anfiniti");
-                }else{
-                    // return view("anfinitiView.index");
-                };
-            }else{
-                // return view("anfinitiView.index");
-            };
-        } else {
+                }
+            }
+    
             return view("anfinitiView.index");
-        };        
-        
+        } catch (\Exception $e) {
+            // Handle exception, maybe log it
+            return view("errorView");
+        }
     }
+    
+
+    // public function index(){
+    //     // Mendapatkan data dari cookie
+        
+    //     $dataEncrypted = request()->cookie('anfiniti_sessionnya');
+    
+    //     if ($dataEncrypted) {
+    //         // Mendekripsi data
+    //         $data = decrypt($dataEncrypted);
+    
+    //         $tokennya = $data['tokennya'];
+    //         $username = $data['username'];
+
+    //         $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+    //         if($anfinitiSession){
+    //             if(password_verify($username, $anfinitiSession->username)){
+    //                 return redirect()->route("anfiniti");
+    //             }else{
+    //                 // return view("anfinitiView.index");
+    //             };
+    //         }else{
+    //             // return view("anfinitiView.index");
+    //         };
+    //     } else {
+    //         return view("anfinitiView.index");
+    //     };        
+        
+    // }
 
     public function anfiniti(){
         return view("anfinitiView.anfiniti");
