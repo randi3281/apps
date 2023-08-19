@@ -117,16 +117,21 @@ class anfinitiProsesController extends Controller
                 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
-            $nama = $validatedData['namaWeb'];
-            $link = $validatedData['link'];
             $logo = $validatedData['gambar'];
 
             $namaGambar = time().'.'.$logo->extension();
             $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
             
+            $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+            $data = decrypt($dataEncryptednya);
+            
+            $dataUsername = $data['username'];
+            $anfinitiLogin = anfiniti_login::where("username", $dataUsername)->first();
+
             $anfinitiDataweb = new anfiniti_dataweb;
-            $anfinitiDataweb->nama = $nama;
-            $anfinitiDataweb->alamat = $link;
+            $anfinitiDataweb->login_id = $anfinitiLogin->id;
+            $anfinitiDataweb->nama_web = $validatedData['namaWeb'];
+            $anfinitiDataweb->link = $validatedData['link'];
             $anfinitiDataweb->gambar = $namaGambar;
             $anfinitiDataweb->save();
             
