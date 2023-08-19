@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>
-                        <input type="text" class="form-control" style="width: 300px" id="link" name="link"
+                        <input type="text" class="form-control mb-2" style="width: 300px" id="link" name="link"
                             placeholder="Masukin linknya disini">
                     </div>
                     <div class="form-group" style="width: 300px">

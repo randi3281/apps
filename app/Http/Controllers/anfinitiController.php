@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\anfiniti_dataweb;
 use Illuminate\Http\Request;
 use App\Models\anfiniti_login;
 use App\Models\anfiniti_session;
@@ -49,7 +50,9 @@ class anfinitiController extends Controller
             $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
-                    return view("anfinitiView.anfiniti");
+                    // buatlah  fungsi untuk mengambil data dari database anfiniti_dataweb berdasarkan login_id yang didapat dari anfiniti_session dengan urut dari id
+                    $anfinitiDataweb = anfiniti_dataweb::where("login_id", $anfinitiSession->id)->orderBy("id", "asc")->get();
+                    return view("anfinitiView.anfiniti", ["anfinitiDataweb" => $anfinitiDataweb]);
                 }else{
                     return redirect()->route("index");
                 };
