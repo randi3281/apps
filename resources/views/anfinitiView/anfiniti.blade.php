@@ -33,7 +33,7 @@
                         <div class="row justify-content-center" style="margin-top:-10px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
-                                    {{-- buatlah img dari database anfiniti_dataWweb --}}
+                                    
                                     <img src="/anfinitiPublic/{{ $item->gambar }}" class="card-img-top"
                                         style="width: 70px; height: 70px" alt="Image">
                                 </div>
