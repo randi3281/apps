@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class anfiniti_session extends Model
 {
     protected $table = 'anfiniti_session';
+    // buatlah fillable
+    protected $fillable = ['sesi', 'username', 'login_id'];
 
     public function login()
     {
