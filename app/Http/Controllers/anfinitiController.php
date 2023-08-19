@@ -9,8 +9,7 @@ use App\Models\anfiniti_session;
 class anfinitiController extends Controller
 {
     public function index(){
-        // Mendapatkan data dari cookie
-        
+        // Mendapatkan data dari cookie        
         $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
     
         if ($dataEncryptednya) {

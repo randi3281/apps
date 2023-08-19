@@ -18,7 +18,7 @@
                     alt="">
             </div>
             <div class="col-md-6 d-flex justify-content-end align-items-center">
-                <a href="/" style=" margin-right: 120px">
+                <a href="/anfiniti/keluar" style=" margin-right: 120px">
                     <img src="/anfinitiPublic/keluar.png" style="width: 150px;" class="mt-5" alt="">
                 </a>
             </div>

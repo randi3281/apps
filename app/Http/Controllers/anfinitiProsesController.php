@@ -102,4 +102,10 @@ class anfinitiProsesController extends Controller
         };
     }
 
+    public function keluar(){
+        // menghapus cookie dan redirect ke login
+        $cookie = cookie()->forget('anfiniti_sessionnya');
+        return redirect()->route("loginAnfiniti")->cookie($cookie);
+    }
+
 }
