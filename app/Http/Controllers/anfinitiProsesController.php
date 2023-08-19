@@ -79,7 +79,8 @@ class anfinitiProsesController extends Controller
                     
                     // Mengenkripsi data sebelum menyimpannya dalam cookie
                     $dataEncrypted = encrypt($data);
-                    setcookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
+                    $response = new Response('Data disimpan dalam cookie');
+                    $response->cookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
 
                     // Membuat cookie dengan nama 'data_user' dan nilai $dataEncrypted
 
