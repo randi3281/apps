@@ -30,8 +30,8 @@ class anfinitiProsesController extends Controller
                         return redirect("/anfiniti/daftar/3");
                     } else {
                         $anfinitiLogin = new anfiniti_login;
-                        $anfinitiLogin->username = "hyhyhy";
-                        $anfinitiLogin->password = bcrypt("hyhyhyhy");
+                        $anfinitiLogin->username = $validatedData['username'];
+                        $anfinitiLogin->password = bcrypt($validatedData['password']);
                         $anfinitiLogin->save();
                         return redirect()->route("loginAnfiniti");
                     }
