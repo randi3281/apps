@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\anfiniti_login;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+DB::beginTransaction();
 
 class anfinitiProsesController extends Controller
 {
@@ -20,14 +23,21 @@ class anfinitiProsesController extends Controller
 
             if($validatedData['password'] == $validatedData['password2']){
                 if($validatedData['captcha'] == $_SESSION['Captcha']){
-                    $anfinitiLogin = new anfiniti_login;
-                    $anfinitiLogin->username = $validatedData['username'];
-                    $anfinitiLogin->password = bcrypt($validatedData['password']);
-                    $anfinitiLogin->save();
-                    return redirect()->route("loginAnfiniti");
+
+                    $normalizedUsername = Str::lower($validatedData['username']);
+                    if (anfiniti_login::where(DB::raw('LOWER(username)'), $normalizedUsername)->exists()) {
+                        return redirect("/anfiniti/daftar/3");
+                    } else {
+                        $user = new anfiniti_login();
+                        $user->username = $validatedData['username'];
+                        $user->password = bcrypt($validatedData['password']);
+                        $user->save();
+                        return redirect()->route("loginAnfiniti");
+                    }
+
                 }else{
                     return redirect("/anfiniti/daftar/2");
-                };
+                };                
             }else{
                 return redirect("/anfiniti/daftar/1");
             };

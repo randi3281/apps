@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control mb-2" id="username"
-                            placeholder="Masukin username kamu disini" style="width: 300px" name="username">
+                            placeholder="Masukin username kamu disini" style="width: 300px" name="username" autofocus>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
