@@ -52,7 +52,7 @@ class anfinitiController extends Controller
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
                     // buatlah  fungsi untuk mengambil data dari database anfiniti_dataweb berdasarkan login_id yang didapat dari anfiniti_session dengan urut dari id
-                    $anfinitiDataweb = anfiniti_dataweb::where("login_id", 20)->orderBy("id", "asc")->get();
+                    $anfinitiDataweb = anfiniti_dataweb::where("login_id", '20')->orderBy("id", "asc")->get();
                     return view("anfinitiView.anfiniti", ["anfinitiDataweb" => $anfinitiDataweb]);
                 }else{
                     return redirect()->route("index");
