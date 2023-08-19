@@ -60,7 +60,7 @@ class anfinitiProsesController extends Controller
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
             if($anfinitiLogin){                
                 if(password_verify($validatedData['password'], $anfinitiLogin->password)){
-                    return redirect()->route("inputAnfiniti");
+                    return redirect()->route("anfiniti");
                 }else{
                     return redirect("/anfiniti/login/1");
                 }
