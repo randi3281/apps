@@ -28,10 +28,9 @@ class anfinitiProsesController extends Controller
                     if (anfiniti_login::where(DB::raw('LOWER(username)'), $normalizedUsername)->exists()) {
                         return redirect("/anfiniti/daftar/3");
                     } else {
-                        // buatlah kode untuk menginputkan usernam dan password dalam bentuk enkripsi dengan md5
                         $anfinitiLogin = new anfiniti_login;
                         $anfinitiLogin->username = $validatedData['username'];
-                        $anfinitiLogin->password = bcrypt($validatedData['password']);
+                        $anfinitiLogin->password = $validatedData['password'];
                         $anfinitiLogin->save();
                         return redirect()->route("loginAnfiniti");
                     }
