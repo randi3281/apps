@@ -26,13 +26,13 @@ class anfinitiController extends Controller
                 if(password_verify($username, $anfinitiSession->username)){
                     return redirect()->route("anfiniti");
                 }else{
-                    return view("anfinitiView.index");
+                    // return view("anfinitiView.index");
                 }
             }else{
-                return view("anfinitiView.index");
+                // return view("anfinitiView.index");
             }
         } else {
-            return view("anfinitiView.index");
+            // return view("anfinitiView.index");
         }        
         
     }
