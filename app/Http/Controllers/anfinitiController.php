@@ -8,11 +8,12 @@ use App\Models\anfiniti_session;
 
 class anfinitiController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         // buatlah kode untuk mengecek apakah cookie tokennya ada atau tidak dan cek apakah sama dengan yang ada di database anfiniti_session dengan username yang sama
         // jika ada, maka langsung redirect ke halaman anfiniti
 
-        $dataEncrypted = $request->cookie('anfiniti_session');
+        // $dataEncrypted = $request->cookie('anfiniti_session');
+        $dataEncrypted = request()->cookie('anfiniti_session');
     
         if ($dataEncrypted) {
             // Mendekripsi data
