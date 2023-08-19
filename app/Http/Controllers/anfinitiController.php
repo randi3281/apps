@@ -32,7 +32,7 @@ class anfinitiController extends Controller
                 // return view("anfinitiView.index");
             }
         } else {
-            // return view("anfinitiView.index");
+            return view("anfinitiView.index");
         }        
         
     }
