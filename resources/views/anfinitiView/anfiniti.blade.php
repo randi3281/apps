@@ -69,7 +69,7 @@
                         <div class="row justify-content-center" style="margin-top:15px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
-                                    <img src="/anfinitiPublic/tambah.png" class="card-img-top" style="width: 40px;"
+                                    <img src="/anfinitiPublic/tambahan.png" class="card-img-top" style="width: 40px;"
                                         alt="Image">
                                 </div>
                             </div>
