@@ -15,7 +15,7 @@ class anfinitiController extends Controller
         // $dataEncrypted = $request->cookie('anfiniti_session');
         $dataEncrypted = request()->cookie('anfiniti_session');
     
-        if ($dataEncrypted) {
+        if (isset($dataEncrypted)) {
             // Mendekripsi data
             $data = decrypt($dataEncrypted);
     
