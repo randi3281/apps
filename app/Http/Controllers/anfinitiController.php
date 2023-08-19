@@ -51,15 +51,15 @@ class anfinitiController extends Controller
                 if(password_verify($username, $anfinitiSession->username)){
                     return view("anfinitiView.anfiniti");
                 }else{
-                    return view("anfinitiView.index");
+                    return redirect()->route("index");
                 };
             }else{
-                return view("anfinitiView.index");
+                return redirect()->route("index");
             };
         } else {
-            return view("anfinitiView.index");
+            return redirect()->route("index");
         };
-                
+
     }
 
     public function login(){
