@@ -64,10 +64,10 @@ class anfinitiProsesController extends Controller
                 if(password_verify($validatedData['password'], $anfinitiLogin->password)){
                     // saya ingin membuat sebuah variabel yang berisi angka 10 digit tapi acak
                     $random = rand(1000000000, 9999999999);
-                    // enkripsi $random dan masukkan ke database anfiniti_session dan cookie
+                    // enkripsi $random dan masukkan ke database anfiniti_session yang mana ada login_id dan sesi
                     $anfinitiSession = new anfiniti_session;
-                    $anfinitiSession->session = bcrypt($random);
-                    $anfinitiSession->username = $validatedData['username'];
+                    $anfinitiSession->login_id = $anfinitiLogin->id;
+                    $anfinitiSession->sesi = $random;
                     $anfinitiSession->save();
                     // set cookie selama 360 hari
                     
