@@ -23,12 +23,9 @@
                 </a>
             </div>
         </div>
-        @php
-            $y = 6;
-        @endphp
         <div class="row justify-content-center mt-5">
             
-            @foreach ($dataweb as $data)
+            {{-- @foreach ($dataweb as $data) --}}
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
                         <div class="row justify-content-center" style="margin-top:-10px">
@@ -57,13 +54,13 @@
                         </div>
                     </div>
                 </div>
-                @if ($i == $y)
+                {{-- @if ($i == $y)
                     @php
                         $y += 7;
                     @endphp
                     <p></p>
                 @endif
-            @endforeach
+            @endforeach --}}
 
             <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                 <a href="/anfiniti/input" class=" text-decoration-none" style="line-height: 16px">
