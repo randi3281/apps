@@ -27,6 +27,7 @@
             $y = 6;
         @endphp
         <div class="row justify-content-center mt-5">
+            
             @foreach ($anfinitiDataweb as $item)
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
