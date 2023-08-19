@@ -64,31 +64,23 @@
             @endfor
 
             <div class="card custom-card mx-2" style="width: 147px; height: 147px">
-                <div class="card-body text-center">
-                    <div class="row justify-content-center" style="margin-top:-10px">
-                        <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
-                            <div class="col justify-content-center d-flex">
-                                <img src="/anfinitiPublic/chatgpt.png" class="card-img-top"
-                                    style="width: 70px; height: 70px" alt="Image">
+                <a href="/anfiniti/input" class=" text-decoration-none" style="line-height: 16px">
+                    <div class="card-body text-center">
+                        <div class="row justify-content-center" style="margin-top:-1px">
+                            <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
+                                <div class="col justify-content-center d-flex">
+                                    <img src="/anfinitiPublic/tambah.png" class="card-img-top" style="width: 80px;"
+                                        alt="Image">
+                                </div>
                             </div>
                         </div>
-                        <div class="row" style="margin-top: -15px">
+                        <div class="row" style="margin-top: -20px">
                             <div class="col">
-                                <p class="card-title fw-bold">ChatGPT</p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center" style="margin-top: -4px">
-                            <div class="col justify-content-between d-flex align-items-center">
-                                <a href="">
-                                    <img src="/anfinitiPublic/edit.png" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="/anfinitiPublic/delete.png" alt="">
-                                </a>
+                                <p class="card-title fw-bold text-dark" style="font-size: 13px">Klik untuk Tambah</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             {{-- Input --}}
 
