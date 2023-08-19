@@ -28,7 +28,7 @@
         @endphp
         <div class="row justify-content-center mt-5">
             
-            @foreach ($anfinitiDataweb as $data)
+            {{-- @foreach ($anfinitiDataweb as $data) --}}
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
                         <div class="row justify-content-center" style="margin-top:-10px">
@@ -63,7 +63,7 @@
                     @endphp
                     <p></p>
                 @endif
-            @endforeach
+            {{-- @endforeach --}}
 
             <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                 <a href="/anfiniti/input" class=" text-decoration-none" style="line-height: 16px">
