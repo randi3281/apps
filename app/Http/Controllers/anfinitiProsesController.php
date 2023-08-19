@@ -92,6 +92,8 @@ class anfinitiProsesController extends Controller
                 }else{
                     return redirect("/anfiniti/login/2");
                 };
+            }else{
+                return redirect("/anfiniti/login/3");
             };
         };
 

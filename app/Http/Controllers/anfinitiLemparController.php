@@ -35,6 +35,9 @@ class anfinitiLemparController extends Controller
             case 2:
                 $errornya = "Maaf, Captcha Anda salah";
                 break;
+            case 3:
+                $errornya = "Maaf, Username tidak ada";
+                break;
             
         }
 
