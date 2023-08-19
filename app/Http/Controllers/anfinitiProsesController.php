@@ -54,45 +54,43 @@ class anfinitiProsesController extends Controller
 
     public function loginproses(Request $request){
         if(isset($request->tombolMasuk)){
-            $validatedData = $request->validate([
-                'username' => 'required|string|max:255',
-                'password' => 'required|string',
-            ]);
+            // $validatedData = $request->validate([
+            //     'username' => 'required|string|max:255',
+            //     'password' => 'required|string',
+            // ]);
 
-            $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
-            if($anfinitiLogin){
-                if($validatedData['captcha'] == $_SESSION['Captcha']){                
-                    if(password_verify($validatedData['password'], $anfinitiLogin->password)){
-                        // saya ingin membuat sebuah variabel yang berisi angka 100 digit tapi acak
-                        $random = Str::random(100);
-                        // enkripsi $random dan masukkan ke database anfiniti_session yang mana ada login_id dan sesi
-                        $anfinitiSession = new anfiniti_session;
-                        $anfinitiSession->login_id = $anfinitiLogin->id;
-                        $anfinitiSession->sesi = $random;
-                        $anfinitiSession->username = bcrypt($validatedData['username']);
-                        $anfinitiSession->save();
-                        // set cookie selama 360 hari
+            // $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
+            // if($anfinitiLogin){
+            //     if($validatedData['captcha'] == $_SESSION['Captcha']){                
+            //         if(password_verify($validatedData['password'], $anfinitiLogin->password)){
+            //             // saya ingin membuat sebuah variabel yang berisi angka 100 digit tapi acak
+            //             $random = Str::random(100);
+            //             // enkripsi $random dan masukkan ke database anfiniti_session yang mana ada login_id dan sesi
+            //             $anfinitiSession = new anfiniti_session;
+            //             $anfinitiSession->login_id = $anfinitiLogin->id;
+            //             $anfinitiSession->sesi = $random;
+            //             $anfinitiSession->username = bcrypt($validatedData['username']);
+            //             $anfinitiSession->save();
+            //             // set cookie selama 360 hari
                         
-                        $data = [
-                            'tokennya' => $random,
-                            'username' => $validatedData['username']
-                        ];
+            //             $data = [
+            //                 'tokennya' => $random,
+            //                 'username' => $validatedData['username']
+            //             ];
                         
-                        // Mengenkripsi data sebelum menyimpannya dalam cookie
-                        $dataEncrypted = encrypt($data);
-                        $cookie = cookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
+            //             // Mengenkripsi data sebelum menyimpannya dalam cookie
+            //             $dataEncrypted = encrypt($data);
+            //             $cookie = cookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
 
-                        // Mengirimkan cookie ke browser
+            //             // Mengirimkan cookie ke browser
                         return redirect()->route("anfiniti");
-                    }else{
-                        return redirect("/anfiniti/login/1");
-                    };
-                }else{
-                    return redirect("/anfiniti/login/2");
-                };
-                return redirect("/anfiniti/login/2");
-            };
-            return redirect("/anfiniti/login/2");
+            //         }else{
+            //             return redirect("/anfiniti/login/1");
+            //         };
+            //     }else{
+            //         return redirect("/anfiniti/login/2");
+            //     };
+            // };
         };
 
         if(isset($request->tombolDaftar)){
