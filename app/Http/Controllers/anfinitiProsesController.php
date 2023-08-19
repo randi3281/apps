@@ -15,10 +15,10 @@ class anfinitiProsesController extends Controller
         session_start();
         if(isset($request->tombolDaftar)){
             $validatedData = $request->validate([
-                'username' => 'required|string|max:255',
-                'password' => 'required|string',
-                'password2' => 'required|string',
-                'captcha' => 'required|string',
+                'username' => 'required|max:255',
+                'password' => 'required',
+                'password2' => 'required|',
+                'captcha' => 'required'
             ]);
 
             if($validatedData['password'] == $validatedData['password2']){
@@ -30,7 +30,7 @@ class anfinitiProsesController extends Controller
                     } else {
                         $anfinitiLogin = new anfiniti_login;
                         $anfinitiLogin->username = $validatedData['username'];
-                        $anfinitiLogin->password = $validatedData['password'];
+                        $anfinitiLogin->password = bcrypt($validatedData['password']);
                         $anfinitiLogin->save();
                         return redirect()->route("loginAnfiniti");
                     }
