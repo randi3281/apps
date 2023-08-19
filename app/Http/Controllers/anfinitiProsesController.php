@@ -17,7 +17,7 @@ class anfinitiProsesController extends Controller
             $validatedData = $request->validate([
                 'username' => 'required|max:255',
                 'password' => 'required',
-                'password2' => 'required|',
+                'password2' => 'required',
                 'captcha' => 'required'
             ]);
 
