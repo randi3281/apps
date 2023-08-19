@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label for="namaWeb">Nama Web</label>
                         <input type="text" class="form-control mb-2" id="username"
-                            placeholder="Masukin nama web disini" style="width: 300px">
+                            placeholder="Masukin nama web disini" style="width: 300px" autofocus>
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>

@@ -14,6 +14,9 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-4 d-flex justify-content-center align-items-center" style="height: 650px">
+                <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px;" alt="">
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center" style="height: 650px">
                 <div class="card">
                     <div class="card-body text-dark" style="height: 562px">
                         @switch($mode)
@@ -34,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 d-flex justify-content-center align-items-center" style="height: 650px">
+            <div class="col-md-4 d-flex justify-content-center align-items-center" style="height: 650px">
                 <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px;" alt="">
             </div>
         </div>
