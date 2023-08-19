@@ -58,6 +58,7 @@ class anfinitiProsesController extends Controller
             $validatedData = $request->validate([
                 'username' => 'required|string|max:255',
                 'password' => 'required|string',
+                'captcha' => 'required|string'
             ]);
 
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
