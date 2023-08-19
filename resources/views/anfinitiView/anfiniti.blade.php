@@ -28,20 +28,20 @@
         @endphp
         <div class="row justify-content-center mt-5">
             
-            @foreach ($anfinitiDataweb as $item)
+            @foreach ($anfinitiDataweb as $data)
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
                         <div class="row justify-content-center" style="margin-top:-10px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
                                     
-                                    <img src="/anfinitiPublic/{{ $item->gambar }}" class="card-img-top"
+                                    <img src="/anfinitiPublic/{{ $data->gambar }}" class="card-img-top"
                                         style="width: 70px; height: 70px" alt="Image">
                                 </div>
                             </div>
                             <div class="row" style="margin-top: -15px">
                                 <div class="col">
-                                    <p class="card-title fw-bold">{{ $item->nama_web }}</p>
+                                    <p class="card-title fw-bold">{{ $data->nama_web }}</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center" style="margin-top: -4px">
