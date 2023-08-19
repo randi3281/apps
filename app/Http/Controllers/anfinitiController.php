@@ -4,11 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\anfiniti_login;
+use App\Models\anfiniti_session;
+
 class anfinitiController extends Controller
 {
-    public function index(){
-        $mode = 1;
+    public function index(Request $request){
+        // buatlah kode untuk mengecek apakah cookie tokennya ada atau tidak dan cek apakah sama dengan yang ada di database anfiniti_session dengan username yang sama
+        // jika ada, maka langsung redirect ke halaman anfiniti
 
+        $dataEncrypted = $request->cookie('anfiniti_session');
+    
+        if ($dataEncrypted) {
+            // Mendekripsi data
+            $data = decrypt($dataEncrypted);
+    
+            $tokennya = $data['tokennya'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();;
+            if($anfinitiSession){
+                $anfinitiLogin = anfiniti_login::where("username", $anfinitiSession->username)->first();
+                if($anfinitiLogin){
+                    return redirect()->route("anfiniti");
+                }
+            }
+        } else {
+            return "Anda belum menyimpan data.";
+        }        
+        
         return view("anfinitiView.index");
     }
 

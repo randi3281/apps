@@ -62,18 +62,16 @@ class anfinitiProsesController extends Controller
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
             if($anfinitiLogin){                
                 if(password_verify($validatedData['password'], $anfinitiLogin->password)){
-                    // saya ingin membuat sebuah variabel yang berisi angka 10 digit tapi acak
-                    $random = rand(1000000000, 9999999999);
+                    // saya ingin membuat sebuah variabel yang berisi angka 100 digit tapi acak
+                    $random = Str::random(100);
                     // enkripsi $random dan masukkan ke database anfiniti_session yang mana ada login_id dan sesi
                     $anfinitiSession = new anfiniti_session;
                     $anfinitiSession->login_id = $anfinitiLogin->id;
-                    $anfinitiSession->sesi = bcrypt($random);
+                    $anfinitiSession->sesi = $random;
                     $anfinitiSession->save();
                     // set cookie selama 360 hari
                     
                     $data = [
-                        'nama_pengguna' => $request->input('nama_pengguna'),
-                        'email' => $request->input('email'),
                         'tokennya' => $random
                     ];
                     
