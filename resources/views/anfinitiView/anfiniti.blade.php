@@ -14,8 +14,8 @@
     <div class="container-fluid">
         <div class="row justify-content-between">
             <div class="col-md-6">
-                <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px; margin-left: 100px" class="mt-5"
-                    alt="">
+                <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px; margin-left: 100px"
+                    class="mt-5" alt="">
             </div>
             <div class="col-md-6 d-flex justify-content-end align-items-center">
                 <a href="/anfiniti/keluar" style=" margin-right: 120px">
@@ -63,11 +63,37 @@
                 @endif
             @endfor
 
+            <div class="card custom-card mx-2" style="width: 147px; height: 147px">
+                <div class="card-body text-center">
+                    <div class="row justify-content-center" style="margin-top:-10px">
+                        <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
+                            <div class="col justify-content-center d-flex">
+                                <img src="/anfinitiPublic/chatgpt.png" class="card-img-top"
+                                    style="width: 70px; height: 70px" alt="Image">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: -15px">
+                            <div class="col">
+                                <p class="card-title fw-bold">ChatGPT</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center" style="margin-top: -4px">
+                            <div class="col justify-content-between d-flex align-items-center">
+                                <a href="">
+                                    <img src="/anfinitiPublic/edit.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="/anfinitiPublic/delete.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{-- Input --}}
 
             {{-- EndInput --}}
         </div>
-    </div>
 </body>
 
 </html>

@@ -76,20 +76,65 @@ class anfinitiController extends Controller
 
     
     public function input(){
-        $mode = 1;
+        
+        // Mendapatkan data dari cookie        
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+        
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
 
-        return view("anfinitiView.menu", ["mode" => $mode]);
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    $mode = 1;
+                    return view("anfinitiView.menu", ["mode" => $mode]);
+                }else{
+                    return redirect()->route("index");
+                };
+            }else{
+                return redirect()->route("index");
+            };
+        } else {
+            return redirect()->route("index");
+        };
+
     }
 
     public function edit(){
-        $mode = 2;
+        
+        // Mendapatkan data dari cookie        
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+        
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
 
-        return view("anfinitiView.menu", ["mode" => $mode]);
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    $mode = 2;
+                    return view("anfinitiView.menu", ["mode" => $mode]);
+                }else{
+                    return redirect()->route("index");
+                };
+            }else{
+                return redirect()->route("index");
+            };
+        } else {
+            return redirect()->route("index");
+        };
+        
     }
 
     public function trash(){
         $mode = 3;
-
         return view("anfinitiView.menu", ["mode" => $mode]);
     }
 }
