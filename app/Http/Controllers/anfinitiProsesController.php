@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 // DB::beginTransaction();
 
 use App\Models\anfiniti_login;
+use App\Models\anfiniti_session;
 
 class anfinitiProsesController extends Controller
 {
@@ -60,6 +62,28 @@ class anfinitiProsesController extends Controller
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
             if($anfinitiLogin){                
                 if(password_verify($validatedData['password'], $anfinitiLogin->password)){
+                    // saya ingin membuat sebuah variabel yang berisi angka 10 digit tapi acak
+                    $random = rand(1000000000, 9999999999);
+                    // enkripsi $random dan masukkan ke database anfiniti_session dan cookie
+                    $anfinitiSession = new anfiniti_session;
+                    $anfinitiSession->session = bcrypt($random);
+                    $anfinitiSession->username = $validatedData['username'];
+                    $anfinitiSession->save();
+                    // set cookie selama 360 hari
+                    
+                    $data = [
+                        'nama_pengguna' => $request->input('nama_pengguna'),
+                        'email' => $request->input('email'),
+                        'tokennya' => $random
+                    ];
+                    
+                    // Mengenkripsi data sebelum menyimpannya dalam cookie
+                    $dataEncrypted = encrypt($data);
+                    setcookie("anfiniti_session", $dataEncrypted, time() + (86400 * 360), "/");
+
+                    // Membuat cookie dengan nama 'data_user' dan nilai $dataEncrypted
+
+
                     return redirect()->route("anfiniti");
                 }else{
                     return redirect("/anfiniti/login/1");
