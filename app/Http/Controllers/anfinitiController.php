@@ -21,7 +21,7 @@ class anfinitiController extends Controller
             $tokennya = $data['tokennya'];
             $username = $data['username'];
 
-            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();;
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
                     return redirect()->route("anfiniti");
