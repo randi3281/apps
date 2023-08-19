@@ -25,6 +25,8 @@ Route::get('anfiniti/trash', 'anfinitiController@trash')->name('trashAnfiniti');
 Route::get('anfiniti/keluar', 'anfinitiProsesController@keluar')->name('keluarAnfiniti');
 Route::post('anfiniti/daftarproses', 'anfinitiProsesController@daftarproses');
 Route::post('anfiniti/loginproses', 'anfinitiProsesController@loginproses');
+Route::post('anfiniti/inputproses', 'anfinitiProsesController@inputproses');
+Route::post('anfiniti/editproses', 'anfinitiProsesController@editproses');
 
 Route::get('anfiniti/daftar/{ket}', 'anfinitiLemparController@daftarKet');
 Route::get('anfiniti/login/{ket}', 'anfinitiLemparController@loginKet');

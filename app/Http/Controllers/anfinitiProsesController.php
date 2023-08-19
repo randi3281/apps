@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 
 use App\Models\anfiniti_login;
 use App\Models\anfiniti_session;
+use App\Models\anfiniti_dataweb;
 
 class anfinitiProsesController extends Controller
 {
@@ -106,6 +107,35 @@ class anfinitiProsesController extends Controller
         // menghapus cookie dan redirect ke login
         $cookie = cookie()->forget('anfiniti_sessionnya');
         return redirect()->route("loginAnfiniti")->cookie($cookie);
+    }
+
+    public function inputProses(Request $request){
+        if(isset($request->tombolInput)){
+            $validatedData = $request->validate([
+                'namaWeb' => 'required|string|max:255',
+                'linkWeb' => 'required|string|max:255',
+                'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $nama = $validatedData['namaWeb'];
+            $link = $validatedData['link'];
+            $logo = $validatedData['gambar'];
+
+            $namaGambar = time().'.'.$logo->extension();
+            $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
+            
+            $anfinitiDataweb = new anfiniti_dataweb;
+            $anfinitiDataweb->nama = $nama;
+            $anfinitiDataweb->alamat = $link;
+            $anfinitiDataweb->gambar = $namaGambar;
+            $anfinitiDataweb->save();
+            
+            return redirect()->route("anfiniti");
+        };
+
+        if(isset($request->tombolBatal)){
+            return redirect()->route("anfiniti");
+        };
     }
 
 }
