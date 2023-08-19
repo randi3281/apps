@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group mt-3">
                         <input id="captcha" class="form-control" type="text" name="captcha"
-                            placeholder="Masukin captcha di atas kesini">
+                            placeholder="Masukin captcha di atas kesini" maxlength="6">
                     </div>
                     <div class="tombol text-center mt-5">
                         <input type="submit" name="tombolMasuk" class="btn text-light btn-dark btn-block w-75"

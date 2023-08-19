@@ -83,13 +83,13 @@ class anfinitiProsesController extends Controller
                         $cookie = cookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
 
                         // Mengirimkan cookie ke browser
-                        return redirect()->route("anfiniti")->cookie($cookie);
+                        return redirect()->route("anfiniti");
                     }else{
                         return redirect("/anfiniti/login/1");
-                    }
+                    };
                 }else{
                     return redirect("/anfiniti/login/2");
-                }
+                };
             }
         };
 
