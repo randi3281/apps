@@ -78,7 +78,8 @@ class anfinitiProsesController extends Controller
                         
                         $data = [
                             'tokennya' => $random,
-                            'username' => $validatedData['username']
+                            'username' => $validatedData['username'],
+                            'login_id' => $anfinitiLogin->login_id
                         ];
                         
                         // Mengenkripsi data sebelum menyimpannya dalam cookie

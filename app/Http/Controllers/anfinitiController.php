@@ -46,12 +46,13 @@ class anfinitiController extends Controller
     
             $tokennya = $data['tokennya'];
             $username = $data['username'];
+            $login_id = $data['login_id'];
 
             $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
                     // buatlah  fungsi untuk mengambil data dari database anfiniti_dataweb berdasarkan login_id yang didapat dari anfiniti_session dengan urut dari id
-                    $anfinitiDataweb = anfiniti_dataweb::where("login_id", $anfinitiSession->id)->orderBy("id", "asc")->get();
+                    $anfinitiDataweb = anfiniti_dataweb::where("login_id", $login_id)->orderBy("id", "asc")->get();
                     return view("anfinitiView.anfiniti", ["anfinitiDataweb" => $anfinitiDataweb]);
                 }else{
                     return redirect()->route("index");
