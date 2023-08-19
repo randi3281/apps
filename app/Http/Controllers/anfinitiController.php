@@ -9,13 +9,11 @@ use App\Models\anfiniti_session;
 class anfinitiController extends Controller
 {
     public function index(){
-        // buatlah kode untuk mengecek apakah cookie tokennya ada atau tidak dan cek apakah sama dengan yang ada di database anfiniti_session dengan username yang sama
-        // jika ada, maka langsung redirect ke halaman anfiniti
-
-        // $dataEncrypted = $request->cookie('anfiniti_session');
+        // Mendapatkan data dari cookie
+        
         $dataEncrypted = request()->cookie('anfiniti_sessionnya');
     
-        if (isset($dataEncrypted)) {
+        if ($dataEncrypted) {
             // Mendekripsi data
             $data = decrypt($dataEncrypted);
     
@@ -28,13 +26,13 @@ class anfinitiController extends Controller
                     return redirect()->route("anfiniti");
                 }else{
                     // return view("anfinitiView.index");
-                }
+                };
             }else{
                 // return view("anfinitiView.index");
-            }
+            };
         } else {
             return view("anfinitiView.index");
-        }        
+        };        
         
     }
 
