@@ -4,9 +4,9 @@
             {{ csrf_field() }}
             <h2 class="text-center">- Daftar -</h2>
             @if (isset($errornya))
-                <p class="text-center" style="font-size: 8px">{{ $errornya }}</p>
+                <p class="text-center" style="font-size: 11px">{{ $errornya }}</p>
             @endif
-            <div class="row justify-content-center mt-4">
+            <div class="row justify-content-center mt-3">
                 <div class="col-auto">
                     <div class="form-group">
                         <label for="username">Username</label>
