@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\anfiniti_login;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 DB::beginTransaction();
+
+use App\Models\anfiniti_login;
 
 class anfinitiProsesController extends Controller
 {
@@ -29,8 +30,8 @@ class anfinitiProsesController extends Controller
                         return redirect("/anfiniti/daftar/3");
                     } else {
                         $anfinitiLogin = new anfiniti_login;
-                        $anfinitiLogin->username = $validatedData['username'];
-                        $anfinitiLogin->password = bcrypt($validatedData['password']);
+                        $anfinitiLogin->username = "hyhyhy";
+                        $anfinitiLogin->password = bcrypt("hyhyhyhy");
                         $anfinitiLogin->save();
                         return redirect()->route("loginAnfiniti");
                     }
