@@ -32,13 +32,13 @@
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
                                     
-                                    <img src="/anfinitiPublic/{{ $data->gambar }}" class="card-img-top"
+                                    {{-- <img src="/anfinitiPublic/{{ $data->gambar }}" class="card-img-top" --}}
                                         style="width: 70px; height: 70px" alt="Image">
                                 </div>
                             </div>
                             <div class="row" style="margin-top: -15px">
                                 <div class="col">
-                                    <p class="card-title fw-bold">{{ $data->nama_web }}</p>
+                                    {{-- <p class="card-title fw-bold">{{ $data->nama_web }}</p> --}}
                                 </div>
                             </div>
                             <div class="row justify-content-center" style="margin-top: -4px">
