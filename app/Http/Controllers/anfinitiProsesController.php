@@ -119,7 +119,6 @@ class anfinitiProsesController extends Controller
             ]);
 
             $logo = $validatedData['gambar'];
-
             $namaGambar = time().'.'.$logo->extension();
             $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
             
