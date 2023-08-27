@@ -17,9 +17,14 @@
                 <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px; margin-left: 100px"
                     class="mt-5" alt="">
             </div>
-            <div class="col-md-6 d-flex justify-content-end align-items-center">
-                <a href="/anfiniti/keluar" style=" margin-right: 120px">
+            <div class="col-md-3">
+                {{-- <div class="col-md-6"> --}}
+                <a href="/anfiniti/keluar">
                     <img src="/anfinitiPublic/keluar.png" style="width: 150px;" class="mt-5" alt="">
+                </a>
+                <br>
+                <a href="/anfiniti/keluar">
+                    <img src="/anfinitiPublic/webterhapus.png" style="width: 150px;" class="mt-3" alt="">
                 </a>
             </div>
         </div>
@@ -34,9 +39,9 @@
                         <div class="row justify-content-center" style="margin-top:-10px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
-                                    <a href="{{ $data->link }}">
-                                    <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="card-img-top"
-                                        style="width: 70px; height: 70px" alt="Image">
+                                    <a href="https://{{ $data->link }}" target="_blank">
+                                        <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="card-img-top"
+                                            style="width: 70px; height: 70px" alt="Image">
                                     </a>
                                 </div>
                             </div>
@@ -50,7 +55,7 @@
                                     <a href="/anfiniti/edit">
                                         <img src="/anfinitiPublic/edit.png" alt="">
                                     </a>
-                                    <a href="">
+                                    <a href="/anfiniti/hapus/{{ $data->id }}">
                                         <img src="/anfinitiPublic/delete.png" alt="">
                                     </a>
                                 </div>

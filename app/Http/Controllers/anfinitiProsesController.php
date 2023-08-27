@@ -63,6 +63,7 @@ class anfinitiProsesController extends Controller
             ]);
 
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
+            $idnya = $anfinitiLogin->id;
             if($anfinitiLogin){
                 if($validatedData['captcha'] == $_SESSION['Captcha']){                
                     if(password_verify($validatedData['password'], $anfinitiLogin->password)){
@@ -79,7 +80,7 @@ class anfinitiProsesController extends Controller
                         $data = [
                             'tokennya' => $random,
                             'username' => $validatedData['username'],
-                            'login_id' => $anfinitiLogin->login_id
+                            'login_id' => $idnya
                         ];
                         
                         // Mengenkripsi data sebelum menyimpannya dalam cookie
@@ -127,6 +128,9 @@ class anfinitiProsesController extends Controller
             
             $dataUsername = $data['username'];
             $anfinitiLogin = anfiniti_login::where("username", $dataUsername)->first();
+
+            // jika ada kata https:// di depan link maka hapus
+            $validatedData['link'] = str_replace("https://", "", $validatedData['link']);
 
             $anfinitiDataweb = new anfiniti_dataweb;
             $anfinitiDataweb->login_id = $anfinitiLogin->id;
