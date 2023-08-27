@@ -21,15 +21,19 @@ Route::get('anfiniti/daftar', 'anfinitiController@daftar')->name('daftarAnfiniti
 Route::get('anfiniti/input', 'anfinitiController@input')->name('inputAnfiniti');
 Route::get('anfiniti/edit', 'anfinitiController@edit')->name('editAnfiniti');
 Route::get('anfiniti/trash', 'anfinitiController@trash')->name('trashAnfiniti');
+Route::get('anfiniti/lupasandi', 'anfinitiController@lupasandi')->name('lupaSandiAnfiniti');
 
 Route::get('anfiniti/keluar', 'anfinitiProsesController@keluar')->name('keluarAnfiniti');
 Route::post('anfiniti/daftarproses', 'anfinitiProsesController@daftarproses');
 Route::post('anfiniti/loginproses', 'anfinitiProsesController@loginproses');
 Route::post('anfiniti/inputproses', 'anfinitiProsesController@inputproses');
 Route::post('anfiniti/editproses', 'anfinitiProsesController@editproses');
+Route::post('anfiniti/lupasandicekproses', 'anfinitiProsesController@lupasandicekproses');
+Route::post('anfiniti/lupasandiproses', 'anfinitiProsesController@lupasandiproses');
 
 Route::get('anfiniti/daftar/{ket}', 'anfinitiLemparController@daftarKet');
 Route::get('anfiniti/login/{ket}', 'anfinitiLemparController@loginKet');
+Route::get('anfiniti/lupasandi/{ket}', 'anfinitiLemparController@lupaSandiKet');
 // End Anfiniti
 
 // Belajar

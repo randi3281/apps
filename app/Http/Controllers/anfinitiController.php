@@ -52,7 +52,7 @@ class anfinitiController extends Controller
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
                     // buatlah  fungsi untuk mengambil data dari database anfiniti_dataweb berdasarkan login_id yang didapat dari anfiniti_session dengan urut dari id
-                    $dataweb = anfiniti_dataweb::where("login_id", $login_id)->orderBy('id', 'asc')->get();
+                    $dataweb = anfiniti_dataweb::where("login_id", "1")->orderBy('id', 'asc')->get();
                     // $dataweb = anfiniti_dataweb::where("login_id", $login_id)->first();
                     if($dataweb){
                         return view("anfinitiView.anfiniti", ['dataweb' => $dataweb]);
@@ -146,4 +146,19 @@ class anfinitiController extends Controller
         $mode = 3;
         return view("anfinitiView.menu", ["mode" => $mode]);
     }
+
+    public function lupaSandi(){
+        if(session()->has('autentikasi')){
+            if(session()->get('autentikasi') == "terautentikasi"){
+                $mode = 4;
+            }else{
+                $mode = 3;
+            };
+        }else{
+            $mode = 3;
+        };
+    
+        return view("anfinitiView.start", ["mode" => $mode]);
+    }
 }
+

@@ -143,4 +143,58 @@ class anfinitiProsesController extends Controller
         };
     }
 
+    public function lupasandicekproses(Request $request){
+        if(isset($request->tombolMasuk)){
+            $validatedData = $request->validate([
+                'kodeUnik' => 'required|string|max:255',
+                'captcha' => 'required|string'
+            ]);
+
+                session_start();
+                if($validatedData['captcha'] == $_SESSION['Captcha']){
+                    if($validatedData['kodeUnik'] == "Randi_328"){
+                        session(['autentikasi' => 'terautentikasi']);
+                        return redirect()->route("lupaSandiAnfiniti");
+                    }else{
+                        return redirect("/anfiniti/lupasandi/1");
+                    };
+                }else{
+                    return redirect("/anfiniti/lupasandi/2");
+                };
+        };
+
+        if(isset($request->tombolLogin)){
+            return redirect()->route("loginAnfiniti");
+        };
+    }
+
+    public function lupasandiproses(Request $request){
+        if(isset($request->tombolMasuk)){
+            $validatedData = $request->validate([
+                'username' => 'required|string|max:255',
+                'password' => 'required|string',
+                'captcha' => 'required|string'
+            ]);
+            session_start();
+
+            if($validatedData['captcha'] == $_SESSION['Captcha']){
+                $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
+                if($anfinitiLogin){
+                    $anfinitiLogin->password = bcrypt($validatedData['password']);
+                    $anfinitiLogin->save();
+                    session()->forget('autentikasi');
+                    return redirect()->route("loginAnfiniti");
+                }else{
+                    return redirect("/anfiniti/lupasandi/1");
+                };
+            }else{
+                return redirect("/anfiniti/lupasandi/2");
+            };
+        };
+
+        if(isset($request->tombolKembali)){
+            session()->forget('autentikasi');
+            return redirect()->route("loginAnfiniti");
+        };
+    }
 }

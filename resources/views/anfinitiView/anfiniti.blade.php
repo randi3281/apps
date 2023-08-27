@@ -24,16 +24,20 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            
+            @php
+                $i = 0;
+                $y = 7;
+            @endphp
             @foreach ($dataweb as $data)
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
                         <div class="row justify-content-center" style="margin-top:-10px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
-                                    
-                                    <img src="/anfinitiPublic/{{ $data->gambar }}" class="card-img-top"
+                                    <a href="{{ $data->link }}">
+                                    <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="card-img-top"
                                         style="width: 70px; height: 70px" alt="Image">
+                                    </a>
                                 </div>
                             </div>
                             <div class="row" style="margin-top: -15px">

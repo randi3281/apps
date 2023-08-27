@@ -28,6 +28,14 @@
                                 @include('anfinitiView.daftar')
                             @break
 
+                            @case(3)
+                                @include('anfinitiView.lupasandicek')
+                            @break
+
+                            @case(4)
+                                @include('anfinitiView.lupasandi')
+                            @break
+
                             @default
                         @endswitch
                     </div>
