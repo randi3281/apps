@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
-    <img src="/anfinitiPublic/logodark.png" class="mt-4" style="width: 250px;" alt="">
+    <img src="/anfinitiPublic/logodark.png" class="mt-4 mb-3" style="width: 250px;" alt="">
     <div class="col-auto d-flex justify-content-center align-items-center" style="height:350px">
         <form style="width: 350px;" method="POST" action="/anfiniti/inputproses" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <h4 class="text-center">--- Tambahkan Web ---</h4>
+            <h5 class="text-center">Tambahkan Web</h5>
             <div class="row justify-content-center mt-4">
                 <div class="col-auto">
                     <div class="form-group">

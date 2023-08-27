@@ -47,7 +47,7 @@
                             </div>
                             <div class="row justify-content-center" style="margin-top: -4px">
                                 <div class="col justify-content-between d-flex align-items-center">
-                                    <a href="">
+                                    <a href="/anfiniti/edit">
                                         <img src="/anfinitiPublic/edit.png" alt="">
                                     </a>
                                     <a href="">

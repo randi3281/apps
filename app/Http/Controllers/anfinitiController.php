@@ -72,14 +72,58 @@ class anfinitiController extends Controller
     }
 
     public function login(){
-        $mode = 1;
+        // Mendapatkan data dari cookie        
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+    
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+    
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    return redirect()->route("anfiniti");
+                }else{
+                    $mode = 1;
+                };
+            }else{
+                $mode = 1;                
+            };
+        } else {
+            $mode = 1;                            
+        };   
 
         return view("anfinitiView.start", ["mode" => $mode]);
     }
     
     public function daftar(){
-        $mode = 2;
-
+        // Mendapatkan data dari cookie        
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+    
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+    
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+    
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    return redirect()->route("anfiniti");
+                }else{
+                    $mode = 2;
+                };
+            }else{
+                $mode = 2;                
+            };
+        } else {
+            $mode = 2;                            
+        };   
+    
         return view("anfinitiView.start", ["mode" => $mode]);
     }
 
