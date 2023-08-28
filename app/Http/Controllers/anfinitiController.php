@@ -157,7 +157,7 @@ class anfinitiController extends Controller
 
     }
 
-    public function edit(){
+    public function edit($id){
         
         // Mendapatkan data dari cookie        
         $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
@@ -172,8 +172,10 @@ class anfinitiController extends Controller
             $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
+                    // buatlah variabel yang menyimpan nilai dari anfiniti_dataweb berdasarkan id
+                    $dataweb = anfiniti_dataweb::where("id", $id)->first();
                     $mode = 2;
-                    return view("anfinitiView.menu", ["mode" => $mode]);
+                    return view("anfinitiView.menu", ["mode" => $mode, "dataweb" => $dataweb]);
                 }else{
                     return redirect()->route("index");
                 };

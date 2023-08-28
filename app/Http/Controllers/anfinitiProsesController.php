@@ -245,4 +245,44 @@ class anfinitiProsesController extends Controller
             return redirect()->route("anfiniti");
         };
     }
+
+    public function editProses(Request $request){
+        session_start();
+        $sesiedit = $_SESSION['idEdit'];
+        if($sesiedit != null){
+            if(isset($request->tombolEdit)){
+                $validatedData = $request->validate([
+                    'namaWeb' => 'required|string|max:255',
+                    'link' => 'required|string|max:255',
+                    'gambar' => 'max:2048'
+                ]);
+
+                $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+                $data = decrypt($dataEncryptednya);
+                $login_id = $data['login_id'];
+
+                $anfinitiDataweb = anfiniti_dataweb::where("login_id", $login_id)->where("id", $sesiedit)->first();
+                $anfinitiDataweb->nama_web = $validatedData['namaWeb'];
+                $anfinitiDataweb->link = $validatedData['link'];
+                if($request->gambar != null){
+                    $logo = $validatedData['gambar'];
+                    $namaGambar = time().'.'.$logo->extension();
+                    $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
+                    $anfinitiDataweb->gambar = $namaGambar;
+                };
+                // hapus juga file yang diganti
+                $anfinitiDataweb->save();
+                $namaGambar1 = $request->gambarnya;
+                unlink(public_path('anfinitiPublic/images/'.$namaGambar1));
+                return redirect()->route("anfiniti");
+            };
+            
+            if(isset($request->tombolKembali)){
+                return redirect()->route("anfiniti");
+            };
+
+        }else{
+            return redirect()->route("anfiniti"); 
+        }
+    }
 }
