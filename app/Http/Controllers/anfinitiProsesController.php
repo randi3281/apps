@@ -201,4 +201,37 @@ class anfinitiProsesController extends Controller
             return redirect()->route("loginAnfiniti");
         };
     }
+
+    public function trashProses(Request $request){
+        // ambil data dari cookie dan deskripsikan
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+        $data = decrypt($dataEncryptednya);
+        $login_id = $data['login_id'];
+        
+        if(isset($request->tombolKembalikan)){
+            anfiniti_dataweb::where("login_id", $login_id)->where("id", $request->idData)->restore();
+            return redirect()->route("trashAnfiniti");
+        };
+        
+        if(isset($request->tombolKembalikanSemua)){
+            // restore semua yang mempunyai login_id yang sama dengan login_id yang sedang login
+            anfiniti_dataweb::where("login_id", $login_id)->restore();
+            return redirect()->route("trashAnfiniti");
+        };
+        
+        if(isset($request->tombolHapusSelamanya)){
+            // hapus selamanya yang mempunyai login_id yang sama dengan login_id yang sedang login dan idnya dalam onlytrashed
+            anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->forceDelete();
+            return redirect()->route("trashAnfiniti");            
+        };
+        
+        if(isset($request->tombolHapusSemuaSelamanya)){
+            anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->forceDelete();
+            return redirect()->route("trashAnfiniti");            
+        };
+
+        if(isset($request->tombolKembali)){
+            return redirect()->route("anfiniti");
+        };
+    }
 }

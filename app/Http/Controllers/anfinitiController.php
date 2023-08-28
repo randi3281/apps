@@ -187,8 +187,22 @@ class anfinitiController extends Controller
     }
 
     public function trash(){
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+        
+        if ($dataEncryptednya) {
+            $data = decrypt($dataEncryptednya);
+            // ambil data login_id
+            $login_id = $data['login_id'];
+
+            if($login_id){
+                // buatlah $dataweb onlytrashed dengan syarat login_id sama dengan $login_id
+                $dataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->get();
+
+            };
+        }
+        // $dataweb = anfiniti_dataweb::onlyTrashed()->get();
         $mode = 3;
-        return view("anfinitiView.menu", ["mode" => $mode]);
+        return view("anfinitiView.menu", ["mode" => $mode, "dataweb" => $dataweb]);
     }
 
     public function lupaSandi(){
@@ -206,8 +220,20 @@ class anfinitiController extends Controller
     }
 
     public function hapus($id){
-        $anfinitiDataweb = anfiniti_dataweb::find($id);
-        $anfinitiDataweb->delete();
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+        
+        if ($dataEncryptednya) {
+            $data = decrypt($dataEncryptednya);
+            // ambil data login_id
+            $login_id = $data['login_id'];
+
+            if($login_id){
+                $anfinitiDataweb = anfiniti_dataweb::where("login_id", $login_id)->where("id", $id)->first();
+                if($anfinitiDataweb){
+                    $anfinitiDataweb->delete();
+                };
+            };
+        }
         return redirect()->route("anfiniti");
     }
 }
