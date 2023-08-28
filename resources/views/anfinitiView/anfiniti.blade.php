@@ -33,7 +33,7 @@
                 $i = 0;
                 $y = 7;
             @endphp
-                <div class="card custom-card mx-2" style="width: 147px; height: 147px">
+                <div class="card custom-card mx-2 mb-3" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
                         <div class="row justify-content-center" style="margin-top:2px">
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
