@@ -254,7 +254,7 @@ class anfinitiProsesController extends Controller
                 $validatedData = $request->validate([
                     'namaWeb' => 'required|string|max:255',
                     'link' => 'required|string|max:255',
-                    'gambar' => 'max:2045'
+                    'gambar' => 'max:2048'
                 ]);
 
                 $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
