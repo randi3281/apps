@@ -33,6 +33,26 @@
                 $i = 0;
                 $y = 7;
             @endphp
+                <div class="card custom-card mx-2" style="width: 147px; height: 147px">
+                    <div class="card-body text-center">
+                        <div class="row justify-content-center" style="margin-top:2px">
+                            <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
+                                <div class="col justify-content-center d-flex">
+                                    <a href="https://icons8.com/icons/" target="_blank">
+                                        <img src="/anfinitiPublic/icons8.png" class="card-img-top"
+                                            style="width: 70px; height: 70px" alt="Image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: -15px">
+                                <div class="col">
+                                    <p class="card-title fw-bold" style="line-height: 0.8">Cari Icon</p>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
             @foreach ($dataweb as $data)
                 <div class="card custom-card mx-2" style="width: 147px; height: 147px">
                     <div class="card-body text-center">
