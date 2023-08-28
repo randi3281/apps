@@ -254,7 +254,7 @@ class anfinitiProsesController extends Controller
                 $validatedData = $request->validate([
                     'namaWeb' => 'required|string|max:255',
                     'link' => 'required|string|max:255',
-                    'gambar' => ''
+                    'gambar' => 'max:2045'
                 ]);
 
                 $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
@@ -265,6 +265,8 @@ class anfinitiProsesController extends Controller
                 $anfinitiDataweb->nama_web = $validatedData['namaWeb'];
                 $anfinitiDataweb->link = $validatedData['link'];
                 if($request->gambar != null){
+                    $namaGambar1 = $request->gambarnya;
+                    unlink(public_path('anfinitiPublic/images/'.$namaGambar1));
                     $logo = $validatedData['gambar'];
                     $namaGambar = time().'.'.$logo->extension();
                     $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
@@ -272,8 +274,6 @@ class anfinitiProsesController extends Controller
                 };
                 // hapus juga file yang diganti
                 $anfinitiDataweb->save();
-                $namaGambar1 = $request->gambarnya;
-                unlink(public_path('anfinitiPublic/images/'.$namaGambar1));
                 return redirect()->route("anfiniti");
             };
             
