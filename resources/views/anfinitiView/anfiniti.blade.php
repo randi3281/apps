@@ -23,7 +23,7 @@
                     <img src="/anfinitiPublic/keluar.png" style="width: 150px;" class="mt-5" alt="">
                 </a>
                 <br>
-                <a href="/anfiniti/keluar">
+                <a href="/anfiniti/trash">
                     <img src="/anfinitiPublic/webterhapus.png" style="width: 150px;" class="mt-3" alt="">
                 </a>
             </div>
@@ -47,10 +47,10 @@
                             </div>
                             <div class="row" style="margin-top: -15px">
                                 <div class="col">
-                                    <p class="card-title fw-bold">{{ $data->nama_web }}</p>
+                                    <p class="card-title fw-bold" style="line-height: 0.8">{{ $data->nama_web }}</p>
                                 </div>
                             </div>
-                            <div class="row justify-content-center" style="margin-top: -4px">
+                            <div class="row justify-content-center">
                                 <div class="col justify-content-between d-flex align-items-center">
                                     <a href="/anfiniti/edit">
                                         <img src="/anfinitiPublic/edit.png" alt="">
