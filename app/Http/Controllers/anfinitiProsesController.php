@@ -221,7 +221,12 @@ class anfinitiProsesController extends Controller
         
         if(isset($request->tombolHapusSelamanya)){
             // hapus selamanya yang mempunyai login_id yang sama dengan login_id yang sedang login dan idnya dalam onlytrashed
+            $anfinitiDataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->first();
+            $namaGambar = $anfinitiDataweb->gambar;
+            unlink(public_path('anfinitiPublic/images/'.$namaGambar));
             anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->forceDelete();
+            // hapus juga file gambar yang ada di folder public
+
             return redirect()->route("trashAnfiniti");            
         };
         
