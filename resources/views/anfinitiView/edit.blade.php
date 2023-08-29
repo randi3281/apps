@@ -25,8 +25,8 @@
                         <label for="gambar">Gambar</label>
                         <br>
                         <img src="/anfinitiPublic/images/{{ $dataweb->gambar }}" alt="">
-                        <input type="hidden" value="{{ $dataweb->gambar }}" name="gambarnya">
-                        <input type="file" class="form-control-file" style="width: 70px; height: 70px" id="gambar"
+                        <input type="hidden" value="{{ $dataweb->gambar }}" style="width: 70px; height: 70px" name="gambarnya">
+                        <input type="file" class="form-control-file" id="gambar"
                             name="gambar">
                     </div>
                     <div class="tombol text-center mt-4">
