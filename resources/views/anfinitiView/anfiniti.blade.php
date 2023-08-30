@@ -12,19 +12,19 @@
 
 <body class="bg-dark">
     <div class="container-fluid">
-        <div class="row justify-content-between">
-            <div class="col-md-6">
-                <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px; margin-left: 100px"
-                    class="mt-5" alt="">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <img src="/anfinitiPublic/logo.png"
+                    class="mt-5 img-fluid" alt="">
             </div>
-            <div class="col-md-3">
-                {{-- <div class="col-md-6"> --}}
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
                 <a href="/anfiniti/keluar">
-                    <img src="/anfinitiPublic/keluar.png" style="width: 150px;" class="mt-5" alt="">
+                    <img src="/anfinitiPublic/keluar.png" style="width: 150px" class="mt-5 img-fluid" alt="">
                 </a>
                 <br>
                 <a href="/anfiniti/trash">
-                    <img src="/anfinitiPublic/webterhapus.png" style="width: 150px;" class="mt-3" alt="">
+                    <img src="/anfinitiPublic/webterhapus.png" style="width: 150px" class="mt-3 img-fluid" alt="">
                 </a>
             </div>
         </div>
