@@ -65,9 +65,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="row" style="margin-top: -19px">
+                            <div class="row" style="margin-top: -16px">
                                 <div class="col">
-                                    <p class="card-title fw-bold" style="line-height: 1">{{ $data->nama_web }}</p>
+                                    <p class="card-title fw-bold" style="line-height: 1.2">{{ $data->nama_web }}</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
