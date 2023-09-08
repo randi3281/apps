@@ -14,17 +14,20 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <img src="/anfinitiPublic/logo.png"
-                    class="mt-5 img-fluid" alt="">
+                <img src="/anfinitiPublic/logo.png" class="mt-5 img-fluid" alt="">
             </div>
-            <div class="col-md-5"></div>
+            <div class="col-md-5 justify-content-center d-flex align-items-center">
+                <input type="text" placeholder="Mau Cari Apa?" class="form-control w-75 mt-4" id="searchh" value="" autofocus>
+                <a href="" class="btn btn-secondary ms-2 mt-4" id="searchButton">Search</a>
+            </div>
             <div class="col-md-2 text-center">
                 <a href="/anfiniti/keluar">
                     <img src="/anfinitiPublic/keluar.png" style="width: 150px" class="mt-5 img-fluid" alt="">
                 </a>
                 <br>
                 <a href="/anfiniti/trash">
-                    <img src="/anfinitiPublic/webterhapus.png" style="width: 150px" class="mt-3 img-fluid" alt="">
+                    <img src="/anfinitiPublic/webterhapus.png" style="width: 150px" class="mt-3 img-fluid"
+                        alt="">
                 </a>
             </div>
         </div>
@@ -117,4 +120,7 @@
         </div>
 </body>
 
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="anfinitiPublic/script.js"></script>
 </html>

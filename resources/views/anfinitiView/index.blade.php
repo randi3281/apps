@@ -13,7 +13,7 @@
 <body class="bg-dark">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-8 d-flex justify-content-center align-items-center" style="height: 650px">
+            <div class="col-md-4 d-flex justify-content-center align-items-center" style="height: 650px">
                 <img src="/anfinitiPublic/logo.png" style="width: 384px; height: 109px;" alt="">
             </div>
             <div class="col-md-4 justify-content-center align-items-center text-center">
