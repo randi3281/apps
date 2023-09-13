@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/uktPublic/style.css">
 </head>
 
-<body>
+<body class="fr">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 justify-content-center align-items-center d-flex" style="height: 640px">
@@ -20,13 +20,12 @@
                         <div class="d-flex justify-content-center disabled">
                             <img class="img-fluid mt-2 w-25 mb-3 mx-auto" src="/uktPublic/logo.png" alt="">
                         </div>
-                        <p class="text-center fs-5 fw-bold" style="margin-bottom: -15px"> <span
+                        <p class="text-center fs-5 fw-bold" style="margin-bottom: -10px"> <span
                                 style="color: #00b4fa">STEK</span><span style="color: #33cc33">TA</span></p>
                         <hr>
-                        <p class="text-center fs-6 fw-bold" style="margin-bottom: -5px; margin-top: -10px">Sistem
-                            Terintegrasi</p>
-                        <p class="text-center fs-6 fw-bold" style="margin-bottom: 15px">Kewirausahaan Technosantri</p>
-                        <form action="/ukt/sistem/loginproses" method="POST">
+                        <p class="text-center fs-6 fw-bold" style="margin-bottom: -2px; margin-top: -10px">SISTEM TERINTEGRASI</p>
+                        <p class="text-center fs-6 fw-bold" style="margin-bottom: 15px">KEWIRAUSAHAAN TECHNOSANTRI</p>
+                        <form action="/ukt/sistem/loginproses" method="POST" class="fs-14">
                             <div class="row justify-content-center">
                                 <div class="col-md-10">
                                     <div class="mb-1 form-group">
