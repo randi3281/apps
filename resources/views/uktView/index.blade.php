@@ -28,12 +28,12 @@
                         <form action="/ukt/sistem/loginproses" method="POST" class="fs-14">
                             <div class="row justify-content-center">
                                 <div class="col-md-10">
-                                    <div class="mb-1 form-group">
+                                    <div class="mb-2 form-group">
                                         <label for="username" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="username" name="username"
                                             placeholder="Masukkan username kamu disini" required autofocus>
                                     </div>
-                                    <div class="mb-1">
+                                    <div class="mb-2">
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="password" name="password"
                                             placeholder="Masukkan password kamu disini" required>
