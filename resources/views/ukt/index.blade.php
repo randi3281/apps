@@ -26,7 +26,7 @@
                         <p class="text-center fs-6 fw-bold" style="margin-bottom: -5px; margin-top: -10px">Sistem
                             Terintegrasi</p>
                         <p class="text-center fs-6 fw-bold" style="margin-bottom: 15px">Kewirausahaan Technosantri</p>
-                        <form>
+                        <form action="/ukt/sistem/loginproses" method="POST">
                             <div class="row justify-content-center">
                                 <div class="col-md-10">
                                     <div class="mb-1 form-group">
