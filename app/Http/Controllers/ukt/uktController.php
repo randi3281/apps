@@ -9,6 +9,6 @@ class uktController extends Controller
 {
     public function index()
     {
-        return view('ukt.index');
+        return view('uktView.index');
     }
 }

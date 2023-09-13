@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>E-Perpus | SDN 1 Planjan</title>
     <link rel="shortcut icon" href="/pssp/icon.png">
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body class="bg-primary">

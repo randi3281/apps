@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daftar Siswa</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 
 </head>
 

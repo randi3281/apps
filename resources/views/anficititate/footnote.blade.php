@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anficititate</title>
     <link rel="shortcut icon" href="/icon/anficititate/anficititate.png">
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <style>
         tr * {
             font-size: 10pt;

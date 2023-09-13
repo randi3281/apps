@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HMI KHD - Pekalongan</title>
     <link rel="icon" href="hkkhdPublic/logo.ico" type="image/x-icon">
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body>

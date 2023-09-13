@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daftar Pegawai</title>
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body>

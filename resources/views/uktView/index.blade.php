@@ -7,7 +7,7 @@
     <title>STEKTA - Sistem Terintegrasi Kewirausahaan Technosantri</title>
     <link rel="icon" href="/uktPublic/logo.ico" type="image/x-icon">
     <!-- Tambahkan link Bootstrap CSS -->
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/uktPublic/style.css">
 </head>
 

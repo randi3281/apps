@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/anfinitiPublic/aa.png" type="image/x-icon">
     <title>nfiniti - / An . fi . ni . ti /</title>
-    @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body class="bg-dark">
