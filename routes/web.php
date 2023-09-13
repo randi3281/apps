@@ -114,3 +114,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // HMI KOM KHD
 Route::get('hkkhd', 'hkkhd\tampilController@index')->name('index');
 // End HMI KOM KHD
+
+// UKT
+Route::get('ukt/sistem', 'ukt\uktController@index')->name('sistem');
+// End UKT

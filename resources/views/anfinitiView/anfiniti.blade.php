@@ -8,6 +8,14 @@
     <link rel="icon" href="/anfinitiPublic/aa.png" type="image/x-icon">
     <title>nfiniti - / An . fi . ni . ti /</title>
     @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* CSS untuk mengatur ikon di dalam input */
+        .input-group-prepend i {
+            padding: 10px;
+            background: #f5f5f5;
+        }
+    </style>
 </head>
 
 <body class="bg-dark">
