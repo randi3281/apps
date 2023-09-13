@@ -57,7 +57,7 @@
                         </div>
                         <div class="row" style="margin-top: -15px">
                             <div class="col">
-                                <p class="card-title fw-bold" style="line-height: 0.8">Cari Icon</p>
+                                <p class="card-title fw-bold" style="line-height: 0.9; font-size: 14px">Cari Icon</p>
                             </div>
                         </div>
 
@@ -71,14 +71,14 @@
                             <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
                                 <div class="col justify-content-center d-flex">
                                     <a href="https://{{ $data->link }}" target="_blank">
-                                        <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="card-img-top"
-                                            style="width: 70px; height: 70px" alt="Image">
+                                        <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="mt-2 card-img-top"
+                                            style="width: 60px; height: 60px" alt="Image">
                                     </a>
                                 </div>
                             </div>
                             <div class="row" style="margin-top: -20px; margin-bottom: -6px">
                                 <div class="col">
-                                    <p class="card-title fw-bold" style="line-height: 1.2">{{ $data->nama_web }}</p>
+                                    <p class="card-title fw-bold" style="line-height: 1.2; font-size: 11px">{{ $data->nama_web }}</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
