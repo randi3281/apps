@@ -14,7 +14,7 @@
 <body class="fr">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4 justify-content-center align-items-center d-flex" style="height: 660px">
+            <div class="col-md-4 justify-content-center align-items-center d-flex" style="height: 650px">
                 <div class="card w-100 custom-shadow">
                     <div class="card-body">
                         <div class="d-flex justify-content-center disabled">
