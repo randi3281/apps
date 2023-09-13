@@ -1,0 +1,7 @@
+body{
+    background-color: #2D3436;
+}
+
+.custom-shadow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25); /* Warna bayangan putih (RGBA) */
+}
