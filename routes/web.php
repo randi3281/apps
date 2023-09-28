@@ -117,4 +117,8 @@ Route::get('hkkhd', 'hkkhd\tampilController@index')->name('index');
 
 // UKT
 Route::get('ukt/sistem', 'ukt\uktController@index')->name('sistem');
+
+Route::post('ukt/sistem/loginproses', 'ukt\uktProsesController@login')->name('loginProses');
 // End UKT
+
+Route::get('timdev', 'timdevController@index')->name('indexdev');
