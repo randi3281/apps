@@ -141,11 +141,10 @@ class FootnoteController extends Controller
                 }else{
                     $volumeJurnal = ConverToRoman($request->volume);
                 }
-                $kataPertama = pecahKataPertama($request->penulis_1);
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
-                        'kataPertama' => $kataPertama,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -167,7 +166,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
-                        'kataPertama' => $kataPertama,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'judul' => $request->judul,
@@ -188,7 +187,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
-                        'kataPertama' => $kataPertama,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
