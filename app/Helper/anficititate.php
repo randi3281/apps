@@ -1,4 +1,5 @@
 <?php
+
 function pecahKataPertama($kalimat){
     $kali = explode(' ', $kalimat);
     $lika = end($kali);
