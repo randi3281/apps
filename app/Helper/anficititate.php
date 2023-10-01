@@ -6,3 +6,4 @@ function pecahKataPertama($kalimat){
 
     return $kalimat;
 }
+?>
