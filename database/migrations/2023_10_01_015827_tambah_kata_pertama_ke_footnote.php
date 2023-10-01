@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('footnote', function (Blueprint $table) {
-            $table->string('kataPertama')->after('username'); // Sesuaikan dengan tipe data yang Anda butuhkan
+            $table->string('kataPertama')->after('username')->nullable();
         });
     }
 
@@ -24,3 +24,4 @@ return new class extends Migration
         //
     }
 };
+
