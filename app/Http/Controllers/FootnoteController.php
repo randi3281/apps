@@ -219,6 +219,7 @@ class FootnoteController extends Controller
                 }
                 DB::table('footnote')->insert([
                     'id' => $request->nourut,
+                    'kataPertama' => $request->judul_web,
                     'penulis_1' => $request->penulisArtikel,
                     'judul_web' => $request->judul_web,
                     'deskripsi_web' => $request->judulArtikel,
@@ -245,6 +246,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -267,6 +269,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penerjemah' => $request->penerjemah,
@@ -288,6 +291,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penerjemah' => $request->penerjemah,
                         'jenisBuku' => $request->jenisBuku,
@@ -321,6 +325,7 @@ class FootnoteController extends Controller
                 }
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->penulis_1,
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
@@ -349,6 +354,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -370,6 +376,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'judul' => $request->judul,
@@ -390,6 +397,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
@@ -423,6 +431,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 1){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
@@ -441,6 +450,7 @@ class FootnoteController extends Controller
                 } else {
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'judul' => $request->judul,
                         'kota' => $request->kota,
                         'sumber' => $request->sumber,
@@ -472,6 +482,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -491,6 +502,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'judul' => $request->judul,
@@ -509,6 +521,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'sumber' => $request->sumber,
@@ -539,6 +552,7 @@ class FootnoteController extends Controller
                 }
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->penulis_1,
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'jabatan' => $request->jabatan,
@@ -569,6 +583,7 @@ class FootnoteController extends Controller
                 }
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'sumber' => $request->sumber,
@@ -596,6 +611,7 @@ class FootnoteController extends Controller
                 }
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->komentar,
                         'tahun' => $request->tahun,
@@ -621,6 +637,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -642,6 +659,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penerjemah' => $request->penerjemah,
@@ -662,6 +680,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penerjemah' => $request->penerjemah,
                         'judul' => $request->judul,
@@ -695,6 +714,7 @@ class FootnoteController extends Controller
                 if($_SESSION['jumlahpenulis'] == 3){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'penulis_3' => $request->penulis_3,
@@ -714,6 +734,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 2){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'penulis_2' => $request->penulis_2,
                         'asing' => $request->asing,
@@ -732,6 +753,7 @@ class FootnoteController extends Controller
                 } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                     DB::table('footnote')->insert([
                         'id' => $request->nourut,
+                        'kataPertama' => pecahKataPertama($request->penulis_1),
                         'penulis_1' => $request->penulis_1,
                         'asing' => $request->asing,
                         'judul' => $request->judul,
@@ -777,6 +799,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -800,6 +823,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -822,6 +846,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -845,9 +870,10 @@ class FootnoteController extends Controller
                 } elseif($_SESSION['jenis'] == 2){
                     DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->judul_web,
                         'penulis_1' => $request->penulisArtikel,
                         'judul_web' => $request->judul_web,
-                    'deskripsi_web' => $request->judulArtikel,
+                        'deskripsi_web' => $request->judulArtikel,
                         'tanggal' => $request->tanggal_website,
                         'link_web' => $request->link_web,
                         'jenis' => $_SESSION['jenis'],
@@ -862,6 +888,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -884,6 +911,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -905,6 +933,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'jenisBuku' => $request->jenisBuku,
@@ -928,6 +957,7 @@ class FootnoteController extends Controller
                 }elseif($_SESSION['jenis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => $request->penulis_1,
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -947,6 +977,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -968,6 +999,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -988,6 +1020,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1012,6 +1045,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 1){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1030,6 +1064,7 @@ class FootnoteController extends Controller
                     } else {
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'judul' => $request->judul,
                             'kota' => $request->kota,
                             'sumber' => $request->sumber,
@@ -1052,6 +1087,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1071,6 +1107,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -1089,6 +1126,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'sumber' => $request->sumber,
@@ -1110,6 +1148,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => $request->penulis_1,
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'jabatan' => $request->jabatan,
@@ -1131,6 +1170,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'sumber' => $request->sumber,
@@ -1149,6 +1189,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->komentar,
                             'tahun' => $request->tahun,
@@ -1165,6 +1206,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1186,6 +1228,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -1206,6 +1249,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'judul' => $request->judul,
@@ -1230,6 +1274,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1249,6 +1294,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'asing' => $request->asing,
@@ -1267,6 +1313,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'asing' => $request->asing,
                             'judul' => $request->judul,
@@ -1307,6 +1354,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1330,6 +1378,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -1352,6 +1401,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1375,6 +1425,7 @@ class FootnoteController extends Controller
                 } elseif($_SESSION['jenis'] == 2){
                     DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->judul_web,
                         'penulis_1' => $request->penulisArtikel,
                         'judul_web' => $request->judul_web,
                     'deskripsi_web' => $request->judulArtikel,
@@ -1392,6 +1443,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1414,6 +1466,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -1435,6 +1488,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'jenisBuku' => $request->jenisBuku,
@@ -1458,6 +1512,7 @@ class FootnoteController extends Controller
                 }elseif($_SESSION['jenis'] == 4){
                     DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->penulis_1,
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
@@ -1477,6 +1532,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1498,6 +1554,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -1518,6 +1575,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1542,6 +1600,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 1){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1560,6 +1619,7 @@ class FootnoteController extends Controller
                     } else {
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'judul' => $request->judul,
                             'kota' => $request->kota,
                             'sumber' => $request->sumber,
@@ -1582,6 +1642,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1601,6 +1662,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -1619,6 +1681,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'sumber' => $request->sumber,
@@ -1640,6 +1703,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => $request->penulis_1,
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'jabatan' => $request->jabatan,
@@ -1661,6 +1725,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'sumber' => $request->sumber,
@@ -1679,6 +1744,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->komentar,
                             'tahun' => $request->tahun,
@@ -1695,6 +1761,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1716,6 +1783,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -1736,6 +1804,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'judul' => $request->judul,
@@ -1760,6 +1829,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1779,6 +1849,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'asing' => $request->asing,
@@ -1797,6 +1868,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'asing' => $request->asing,
                             'judul' => $request->judul,
@@ -1831,6 +1903,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1854,6 +1927,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -1876,6 +1950,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -1899,6 +1974,7 @@ class FootnoteController extends Controller
                 } elseif($_SESSION['jenis'] == 2){
                     DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->judul_web,
                         'penulis_1' => $request->penulisArtikel,
                         'judul_web' => $request->judul_web,
                     'deskripsi_web' => $request->judulArtikel,
@@ -1916,6 +1992,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -1938,6 +2015,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -1959,6 +2037,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'jenisBuku' => $request->jenisBuku,
@@ -1982,6 +2061,7 @@ class FootnoteController extends Controller
                 }elseif($_SESSION['jenis'] == 4){
                     DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                         'id' => $request->nourut,
+                        'kataPertama' => $request->penulis_1,
                         'penulis_1' => $request->penulis_1,
                         'judul' => $request->judul,
                         'kota' => $request->kota,
@@ -2001,6 +2081,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -2022,6 +2103,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -2042,6 +2124,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -2066,6 +2149,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 1){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'kota' => $request->kota,
@@ -2084,6 +2168,7 @@ class FootnoteController extends Controller
                     } else {
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'judul' => $request->judul,
                             'kota' => $request->kota,
                             'sumber' => $request->sumber,
@@ -2106,6 +2191,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -2125,6 +2211,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'judul' => $request->judul,
@@ -2143,6 +2230,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->judul,
                             'sumber' => $request->sumber,
@@ -2164,6 +2252,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => $request->penulis_1,
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'jabatan' => $request->jabatan,
@@ -2193,6 +2282,7 @@ class FootnoteController extends Controller
                                         'id', $_SESSION['edit_id']
                                         )->update([
                                             'id' => $request->nourut,
+                                            'kataPertama' => pecahKataPertama($request->penulis_1),
                                             'penulis_1' => $request->penulis_1,
                                             'judul' => $request->judul,
                                             'sumber' => $request->sumber,
@@ -2211,6 +2301,7 @@ class FootnoteController extends Controller
 
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'judul' => $request->komentar,
                             'tahun' => $request->tahun,
@@ -2227,6 +2318,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -2248,6 +2340,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penerjemah' => $request->penerjemah,
@@ -2268,6 +2361,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penerjemah' => $request->penerjemah,
                             'judul' => $request->judul,
@@ -2292,6 +2386,7 @@ class FootnoteController extends Controller
                     if($_SESSION['jumlahpenulis'] == 3){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'penulis_3' => $request->penulis_3,
@@ -2311,6 +2406,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 2){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'penulis_2' => $request->penulis_2,
                             'asing' => $request->asing,
@@ -2329,6 +2425,7 @@ class FootnoteController extends Controller
                     } elseif ($_SESSION['jumlahpenulis'] == 1 || $_SESSION['jumlahpenulis'] == 4){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $jumlahfootnoteyangada)->where('username', $_SESSION['username'])->where('repositori', $_SESSION['repo'])->where('id', $_SESSION['edit_id'])->update([
                             'id' => $request->nourut,
+                            'kataPertama' => pecahKataPertama($request->penulis_1),
                             'penulis_1' => $request->penulis_1,
                             'asing' => $request->asing,
                             'judul' => $request->judul,
