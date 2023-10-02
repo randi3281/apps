@@ -2501,9 +2501,9 @@ class FootnoteController extends Controller
             // buatlah update untuk tabel footnote dengan kriteria jika jenis = 1,3,5,6,7,9,10,11,12 maka update kataPertama dengan pecahkatapertama penulis_1
             // jika jenis = 4,8 maka update kataPertama dengan penulis_1
             // jika jenis = 2 maka update kataPertama dengan judul_web
-            $data = DB::table('footnote')->get();
+
+            $data = DB::table('footnote')->orderBy('jumlahfootnoteyangada', 'DESC')->get();
             foreach($data as $d){
-                if($d->kataPertama == null){
                     if($d->jenis == 1 || $d->jenis == 3 || $d->jenis == 5 || $d->jenis == 6 || $d->jenis == 7 || $d->jenis == 9 || $d->jenis == 10 || $d->jenis == 11 || $d->jenis == 12){
                         DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
                             'kataPertama' => pecahKataPertama($d->penulis_1)
@@ -2516,7 +2516,6 @@ class FootnoteController extends Controller
                         DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
                             'kataPertama' => $d->judul_web
                         ]);
-                    }
                 }
             }
                 return redirect('/anficititate/repo_core');
