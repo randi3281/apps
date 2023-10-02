@@ -281,8 +281,6 @@
                     @else
                         <input type="submit" name="input" value="Input" class="w-25 btn btn-primary"
                             style="margin-left:20px">
-                        <input type="submit" name="darurat" value="Darurat" class="w-25 btn btn-primary"
-                                style="margin-left:20px">
                         <input type="submit" name="reset" value="Reset" class="w-25 btn btn-outline-secondary"
                             style="margin-left:20px">
                     @endif
