@@ -2503,21 +2503,23 @@ class FootnoteController extends Controller
             // jika jenis = 2 maka update kataPertama dengan judul_web
             $data = DB::table('footnote')->get();
             foreach($data as $d){
-                if($d->jenis == 1 || $d->jenis == 3 || $d->jenis == 5 || $d->jenis == 6 || $d->jenis == 7 || $d->jenis == 9 || $d->jenis == 10 || $d->jenis == 11 || $d->jenis == 12){
-                    DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
-                        'kataPertama' => pecahKataPertama($d->penulis_1)
-                    ]);
-                }elseif($d->jenis == 4 || $d->jenis == 8){
-                    DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
-                        'kataPertama' => $d->penulis_1
-                    ]);
-                }elseif($d->jenis == 2){
-                    DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
-                        'kataPertama' => $d->judul_web
-                    ]);
+                if($d->kataPertama == null){
+                    if($d->jenis == 1 || $d->jenis == 3 || $d->jenis == 5 || $d->jenis == 6 || $d->jenis == 7 || $d->jenis == 9 || $d->jenis == 10 || $d->jenis == 11 || $d->jenis == 12){
+                        DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
+                            'kataPertama' => pecahKataPertama($d->penulis_1)
+                        ]);
+                    }elseif($d->jenis == 4 || $d->jenis == 8){
+                        DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
+                            'kataPertama' => $d->penulis_1
+                        ]);
+                    }elseif($d->jenis == 2){
+                        DB::table('footnote')->where('jumlahfootnoteyangada', $d->jumlahfootnoteyangada)->update([
+                            'kataPertama' => $d->judul_web
+                        ]);
+                    }
                 }
             }
-            return redirect('/anficititate/repo_core');
+                return redirect('/anficititate/repo_core');
         }
 
     }
