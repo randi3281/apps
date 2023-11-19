@@ -42,6 +42,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('coba')
                 ->name('coba.')
                 ->group(base_path('routes/coba.php'));
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('mengulang')
+                ->name('mengulang.')
+                ->group(base_path('routes/mengulang/admin.php'));
         });
     }
 
