@@ -122,3 +122,7 @@ Route::post('ukt/sistem/loginproses', 'ukt\uktProsesController@login')->name('lo
 // End UKT
 
 Route::get('timdev', 'timdevController@index')->name('indexdev');
+
+Route::get('belajarmiddleware', 'belajar\middlewareController@index')->name('belajarmiddleware');
+Route::get('outbelajarmiddleware', 'belajar\middlewareController@indexout')->name('outbelajarmiddleware');
+Route::post('belajarmiddleware/proseslogin', 'belajar\middlewareController@loginproses');
