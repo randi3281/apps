@@ -55,6 +55,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->name('blogg.')
                 ->group(base_path('routes/mengulang/blog.php'));
 
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('perpustakaan')
+                ->name('perpustakaan.')
+                ->group(base_path('routes/mengulang/perpustakaan.php'));
+
         });
     }
 
