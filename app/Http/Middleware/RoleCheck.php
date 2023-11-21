@@ -16,12 +16,12 @@ class RoleCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // $user = Auth::user();
+        $user = Auth::user();
 
         // if (empty($user->password)){
         //     abort(302, 'Please change your password', ['Location' => route('patient.password')]);
         // }
 
-        // return $next($request);
+        return $next($request);
     }
 }
