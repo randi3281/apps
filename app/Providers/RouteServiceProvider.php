@@ -66,6 +66,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('rpegawai')
                 ->name('rpegawai.')
                 ->group(base_path('routes/mengulang/rpegawai.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('orm')
+                ->name('orm.')
+                ->group(base_path('routes/mengulang/orm.php'));
         });
     }
 
