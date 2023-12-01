@@ -2,7 +2,7 @@
 
 namespace App\Models\orm\onetomany;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\FacWWtories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class tag extends Model
