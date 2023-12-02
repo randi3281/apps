@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::rename('tag', 'tags');
+        Schema::create('tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('judul');
+            $table->integer('article_id');
+            $table->timestamps();
+        });
     }
 
     /**
