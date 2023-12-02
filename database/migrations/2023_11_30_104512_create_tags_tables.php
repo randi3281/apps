@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::rename('tags', 'tag');
+        Schema::dropIfExists('tags');
     }
 };
