@@ -10,7 +10,7 @@ class belajarLoginController extends Controller
 {
     public function index()
     {
-        return view('belajar.belajarlogin');
+        return view('orm.onetone');
     }
 
     // public function redirectToGoogle()
