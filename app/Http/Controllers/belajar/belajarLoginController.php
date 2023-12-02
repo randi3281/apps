@@ -4,7 +4,7 @@ namespace App\Http\Controllers\belajar;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Facades\Socialite;
 
 class belajarLoginController extends Controller
 {
