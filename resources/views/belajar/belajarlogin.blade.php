@@ -24,7 +24,7 @@
     <body>
          <div class="l-form">
              <form action="" class="form bg-dark justify-content-center text-center">
-                 <a href="{{ route('belajarlogin.redirect.google') }}">
+                 <a href="/belajarlogin/auth/google">
                     <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google Icon">
                 </a>
              </form>
