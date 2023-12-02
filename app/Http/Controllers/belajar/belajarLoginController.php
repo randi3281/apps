@@ -13,14 +13,14 @@ class belajarLoginController extends Controller
         return view('belajar.belajarlogin');
     }
 
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+    // public function redirectToGoogle()
+    // {
+    //     return Socialite::driver('google')->redirect();
+    // }
 
-    public function handleGoogleCallback(Request $request)
-    {
-        $user = Socialite::driver('google')->user();
-        dd($user);
-    }
+    // public function handleGoogleCallback(Request $request)
+    // {
+    //     $user = Socialite::driver('google')->user();
+    //     dd($user);
+    // }
 }
