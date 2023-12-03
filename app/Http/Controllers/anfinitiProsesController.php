@@ -267,12 +267,10 @@ class anfinitiProsesController extends Controller
                 $anfinitiDataweb->link = $validatedData['link'];
                 if($request->gambar != null){
                     $namaGambar1 = $request->gambarnya;
+                    if($namaGambar1 == null){
+                        unlink(public_path('../../cdn.anfi.my.id/anfiniti/images/'.$namaGambar1));
+                    }
                     unlink(public_path('../../cdn.anfi.my.id/anfiniti/images/'.$namaGambar1));
-                    $logo = $validatedData['gambar'];
-                    $namaGambar = time().'.'.$logo->extension();
-                    $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
-                    $anfinitiDataweb->gambar = $namaGambar;
-                } else{
                     $logo = $validatedData['gambar'];
                     $namaGambar = time().'.'.$logo->extension();
                     $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
