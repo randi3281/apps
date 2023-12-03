@@ -14,7 +14,7 @@ use App\Models\anfiniti_dataweb;
 
 class anfinitiProsesController extends Controller
 {
-   
+
     public function daftarproses(Request $request){
         session_start();
         if(isset($request->tombolDaftar)){
@@ -41,13 +41,13 @@ class anfinitiProsesController extends Controller
 
                 }else{
                     return redirect("/anfiniti/daftar/2");
-                };                
+                };
             }else{
                 return redirect("/anfiniti/daftar/1");
             };
         };
 
-        
+
         if(isset($request->tombolMasuk)){
             return redirect()->route("loginAnfiniti");
         };
@@ -65,7 +65,7 @@ class anfinitiProsesController extends Controller
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
             $idnya = $anfinitiLogin->id;
             if($anfinitiLogin){
-                if($validatedData['captcha'] == $_SESSION['Captcha']){                
+                if($validatedData['captcha'] == $_SESSION['Captcha']){
                     if(password_verify($validatedData['password'], $anfinitiLogin->password)){
                         // saya ingin membuat sebuah variabel yang berisi angka 100 digit tapi acak
                         $random = Str::random(100);
@@ -76,13 +76,13 @@ class anfinitiProsesController extends Controller
                         $anfinitiSession->username = bcrypt($validatedData['username']);
                         $anfinitiSession->save();
                         // set cookie selama 360 hari
-                        
+
                         $data = [
                             'tokennya' => $random,
                             'username' => $validatedData['username'],
                             'login_id' => $idnya
                         ];
-                        
+
                         // Mengenkripsi data sebelum menyimpannya dalam cookie
                         $dataEncrypted = encrypt($data);
                         $cookie = cookie("anfiniti_sessionnya", $dataEncrypted, time() + (86400 * 360), "/");
@@ -121,11 +121,12 @@ class anfinitiProsesController extends Controller
 
             $logo = $validatedData['gambar'];
             $namaGambar = time().'.'.$logo->extension();
-            $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
-            
+            $logo->move(public_path('../../cdn.anfi.my.id/images'), $namaGambar);
+            // $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
+
             $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
             $data = decrypt($dataEncryptednya);
-            
+
             $dataUsername = $data['username'];
             $anfinitiLogin = anfiniti_login::where("username", $dataUsername)->first();
 
@@ -138,7 +139,7 @@ class anfinitiProsesController extends Controller
             $anfinitiDataweb->link = $validatedData['link'];
             $anfinitiDataweb->gambar = $namaGambar;
             $anfinitiDataweb->save();
-            
+
             return redirect()->route("anfiniti");
         };
 
@@ -207,18 +208,18 @@ class anfinitiProsesController extends Controller
         $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
         $data = decrypt($dataEncryptednya);
         $login_id = $data['login_id'];
-        
+
         if(isset($request->tombolKembalikan)){
             anfiniti_dataweb::where("login_id", $login_id)->where("id", $request->idData)->restore();
             return redirect()->route("trashAnfiniti");
         };
-        
+
         if(isset($request->tombolKembalikanSemua)){
             // restore semua yang mempunyai login_id yang sama dengan login_id yang sedang login
             anfiniti_dataweb::where("login_id", $login_id)->restore();
             return redirect()->route("trashAnfiniti");
         };
-        
+
         if(isset($request->tombolHapusSelamanya)){
             // hapus selamanya yang mempunyai login_id yang sama dengan login_id yang sedang login dan idnya dalam onlytrashed
             $anfinitiDataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->first();
@@ -226,10 +227,10 @@ class anfinitiProsesController extends Controller
             unlink(public_path('anfinitiPublic/images/'.$namaGambar));
             anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->forceDelete();
             // hapus juga file gambar yang ada di folder public
-            
-            return redirect()->route("trashAnfiniti");            
+
+            return redirect()->route("trashAnfiniti");
         };
-        
+
         if(isset($request->tombolHapusSemuaSelamanya)){
             // hapus selamanya yang mempunyai login_id yang sama dengan login_id yang sedang login dan idnya dalam onlytrashed
             $anfinitiDataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->get();
@@ -238,7 +239,7 @@ class anfinitiProsesController extends Controller
                 unlink(public_path('anfinitiPublic/images/'.$namaGambar));
             };
             anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->forceDelete();
-            return redirect()->route("trashAnfiniti");            
+            return redirect()->route("trashAnfiniti");
         };
 
         if(isset($request->tombolKembali)){
@@ -276,13 +277,13 @@ class anfinitiProsesController extends Controller
                 $anfinitiDataweb->save();
                 return redirect()->route("anfiniti");
             };
-            
+
             if(isset($request->tombolKembali)){
                 return redirect()->route("anfiniti");
             };
 
         }else{
-            return redirect()->route("anfiniti"); 
+            return redirect()->route("anfiniti");
         }
     }
 }
