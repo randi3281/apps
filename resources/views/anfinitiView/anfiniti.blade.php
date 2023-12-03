@@ -72,7 +72,7 @@
                                 <div class="col justify-content-center d-flex">
                                     <a href="https://{{ $data->link }}" target="_blank">
                                         {{-- <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="mt-2 card-img-top" --}}
-                                        <img src="https://cdn.anfi.my.id/images/icon.png" class="mt-2 card-img-top"
+                                        <img src="https://cdn.anfi.my.id/images/{{ $data->gambar }}" class="mt-2 card-img-top"
                                             style="width: 60px; height: 60px" alt="Image">
                                     </a>
                                 </div>
