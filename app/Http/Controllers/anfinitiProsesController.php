@@ -121,7 +121,7 @@ class anfinitiProsesController extends Controller
 
             $logo = $validatedData['gambar'];
             $namaGambar = time().'.'.$logo->extension();
-            $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images'), $namaGambar);
+            $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
             // $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
 
             $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
@@ -224,7 +224,7 @@ class anfinitiProsesController extends Controller
             // hapus selamanya yang mempunyai login_id yang sama dengan login_id yang sedang login dan idnya dalam onlytrashed
             $anfinitiDataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->first();
             $namaGambar = $anfinitiDataweb->gambar;
-            unlink(public_path('../../cdn.anfi.my.id/anfiniti/images'.$namaGambar));
+            unlink(public_path('../../cdn.anfi.my.id/anfiniti/images/'.$namaGambar));
             anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->where("id", $request->idData)->forceDelete();
             // hapus juga file gambar yang ada di folder public
 
@@ -236,7 +236,7 @@ class anfinitiProsesController extends Controller
             $anfinitiDataweb = anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->get();
             foreach($anfinitiDataweb as $data){
                 $namaGambar = $data->gambar;
-                unlink(public_path('../../cdn.anfi.my.id/anfiniti/images'.$namaGambar));
+                unlink(public_path('../../cdn.anfi.my.id/anfiniti/images/'.$namaGambar));
             };
             anfiniti_dataweb::onlyTrashed()->where("login_id", $login_id)->forceDelete();
             return redirect()->route("trashAnfiniti");
@@ -267,10 +267,10 @@ class anfinitiProsesController extends Controller
                 $anfinitiDataweb->link = $validatedData['link'];
                 if($request->gambar != null){
                     $namaGambar1 = $request->gambarnya;
-                    unlink(public_path('../../cdn.anfi.my.id/anfiniti/images'.$namaGambar1));
+                    unlink(public_path('../../cdn.anfi.my.id/anfiniti/images/'.$namaGambar1));
                     $logo = $validatedData['gambar'];
                     $namaGambar = time().'.'.$logo->extension();
-                    $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
+                    $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
                     $anfinitiDataweb->gambar = $namaGambar;
                 };
                 // hapus juga file yang diganti
