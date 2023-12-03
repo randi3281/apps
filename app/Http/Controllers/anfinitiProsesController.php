@@ -272,7 +272,12 @@ class anfinitiProsesController extends Controller
                     $namaGambar = time().'.'.$logo->extension();
                     $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
                     $anfinitiDataweb->gambar = $namaGambar;
-                };
+                } else{
+                    $logo = $validatedData['gambar'];
+                    $namaGambar = time().'.'.$logo->extension();
+                    $logo->move(public_path('../../cdn.anfi.my.id/anfiniti/images/'), $namaGambar);
+                    $anfinitiDataweb->gambar = $namaGambar;
+                }
                 // hapus juga file yang diganti
                 $anfinitiDataweb->save();
                 return redirect()->route("anfiniti");
