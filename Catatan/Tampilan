@@ -1,18 +1,23 @@
-login
+login v
 verifikasi lupa password
 lupa password
-daftar
+daftar 
 verifikasi email
-homeadmin
+homeadmin v
+editpesanan
 homeclient
-pesanan selesai
-pesanan terhapus
+pesanan selesai v
+pesanan bukti selesai
+pesanan terhapus v
 
 /
 /homeadmin
 /daftar
 /vp
+/ve
 /lp
 /homeclient
 /pesananselesai
 /pesananterhapus
+/editpesanan 
+/pesananbuktiselesai
