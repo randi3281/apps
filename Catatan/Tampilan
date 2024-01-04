@@ -1,7 +1,7 @@
 login v
 verifikasi lupa password
 lupa password
-daftar 
+daftar v
 verifikasi email
 homeadmin v
 editpesanan
@@ -19,5 +19,5 @@ pesanan terhapus v
 /homeclient
 /pesananselesai
 /pesananterhapus
-/editpesanan 
+/editpesanan
 /pesananbuktiselesai
