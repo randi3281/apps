@@ -1,0 +1,18 @@
+login
+verifikasi lupa password
+lupa password
+daftar
+verifikasi email
+homeadmin
+homeclient
+pesanan selesai
+pesanan terhapus
+
+/
+/homeadmin
+/daftar
+/vp
+/lp
+/homeclient
+/pesananselesai
+/pesananterhapus

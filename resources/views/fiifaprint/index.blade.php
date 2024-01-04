@@ -25,7 +25,7 @@
                                 <h3 class="text-center">Login</h3>
                                 <hr class="mt-3">
                                 <form action="/fiifaprint/login" method="post">
-                                    @csrf
+                                    {{ csrf_field() }}
                                     <div class="form-group mb-2">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" class="form-control"
