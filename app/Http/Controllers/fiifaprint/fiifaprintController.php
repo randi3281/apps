@@ -39,7 +39,7 @@ class fiifaprintController extends Controller
 
     public function homeclient()
     {
-        return view('fiifaprint.homeadmin');
+        return view('fiifaprint.homeclient');
     }
 
     public function pesananselesai()
@@ -62,4 +62,8 @@ class fiifaprintController extends Controller
         return view('fiifaprint.pesananbuktiselesai');
     }
 
+    public function buatpesanan()
+    {
+        return view('fiifaprint.buatpesanan');
+    }
 }
