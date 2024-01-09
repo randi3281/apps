@@ -35,7 +35,8 @@
                                     </div>
                                     <hr>
                                     <h5 class="text-center mt-4">Format Kertas</h5>
-                                    <p style="font-size: 8pt" class="text-center text-danger"><i>Masukkan Format Kertas sesuai file agar bisa dihitung harganya, lalu tekan tombol "Tambah"</i></p>
+                                    <p style="font-size: 8pt" class="text-center text-danger"><i>Masukkan Format Kertas
+                                            sesuai file agar bisa dihitung harganya, lalu tekan tombol "Tambah"</i></p>
                                     <div class="form-group mt-2">
                                         <label for="jeniskertas">Jenis Kertas</label>
                                         <select name="jeniskertas" id="jeniskertas" class="form-control">
@@ -67,7 +68,7 @@
                                     <div class="form-group mt-2">
                                         <label for="jumlahprint">Jumlah Print (lembar)</label>
                                         <input type="number" class="form-control" name="jumlahprint"
-                                        placeholder="Jumlah Print">
+                                            placeholder="Jumlah Print">
                                     </div>
                                     <input type="submit" class="btn btn-primary w-100 mt-3" value="Tambah">
 
@@ -87,15 +88,23 @@
                                             <td>Putih</td>
                                             <td>A4</td>
                                             <td>Hitam Putih</td>
-                                            <td>5</td>
-                                            <td>2500</td>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center">2500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center" colspan="6"><b>Total Harga</b></td>
+                                            <td class="text-center"><b>2500</b></td>
                                         </tr>
                                     </table>
                                     <hr>
-                                    <p style="font-size: 8pt" class="text-center text-danger"><i>Setelah yakin, silahkan tekan tombol Buat Pesanan di bawah</i></p>
-                                    <input type="submit" class="btn btn-success w-100 mt-1" value="Buat Pesanan">
+                                    <p style="font-size: 8pt" class="text-center text-danger"><i>Setelah yakin, silahkan tekan tombol "Buat Pesanan" di bawah</i></p>
+                                    <div class="text-center">
+                                        <input type="submit" class="btn btn-danger w-25 mt-1" value="Kembali">
+                                        <input type="submit" class="btn btn-success w-50 mt-1" value="Buat pesanan">
+                                    </div>
                                     <hr>
-                                    <footer class="text-center mt-3" style="font-size: 8pt"><i><b>2024 - @FiifaPrint </b></i>
+                                    <footer class="text-center mt-3" style="font-size: 8pt"><i><b>2024 - @FiifaPrint
+                                            </b></i>
                                 </form>
                                 </footer>
                             </div>
