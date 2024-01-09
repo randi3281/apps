@@ -14,3 +14,4 @@ Route::get('/pesananterhapus', 'fiifaprint\fiifaprintController@pesananterhapus'
 Route::get('/editpesanan', 'fiifaprint\fiifaprintController@editpesanan');
 Route::get('/pesananbuktiselesai', 'fiifaprint\fiifaprintController@pesananbuktiselesai');
 Route::get('/buatpesanan', 'fiifaprint\fiifaprintController@buatpesanan');
+Route::get('/bayar', 'fiifaprint\fiifaprintController@bayar');

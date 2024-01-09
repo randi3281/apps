@@ -55,20 +55,20 @@
                                         <td class="text-center">1</td>
                                         <td>Skripsi</td>
                                         <td>Rp. 30.000</td>
-                                        <td class="text-center"><a href="">Bayar</a></td>
-                                        <td class="text-center"><a href="">Unduh</a><br><a href="">Ganti</a></td>
+                                        <td class="text-center"><a href="" class="btn btn-success btn-sm">Bayar</a><br><a href="" class="btn btn-danger btn-sm mt-1">Batal</a></td>
+                                        <td class="text-center"><a href="" class="btn btn-primary btn-sm mt-1">Unduh</a></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td>Skripsi</td>
                                         <td>Rp. 30.000</td>
                                         <td class="text-center">Terbayar</td>
-                                        <td class="text-center"><a href="">Unduh</a></td>
+                                        <td class="text-center"><a href="" class="btn btn-primary btn-sm mt-1">Unduh</a></td>
                                     </tr>
                                 </table>
                                 <hr>
                                 <a href="" type="button" class="btn btn-danger w-100">Logout</a>
-                                <footer class="text-center mt-3" style="font-size: 8pt"><i>2024 - @FiifaPrint </i></footer>
+                                <footer class="text-center mt-3" style="font-size: 8pt"><i><b>2024 - @FiifaPrint </b></i></footer>
                             </div>
                         </div>
                     </div>

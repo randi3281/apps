@@ -66,4 +66,9 @@ class fiifaprintController extends Controller
     {
         return view('fiifaprint.buatpesanan');
     }
+
+    public function bayar()
+    {
+        return view('fiifaprint.bayar');
+    }
 }
