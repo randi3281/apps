@@ -17,3 +17,12 @@ harga
 status
 file
 keterangan
+
+fp_kertas
+id
+jenis_kertas
+warna_kertas
+ukuran
+jenis_print
+jumlah
+totalharga

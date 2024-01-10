@@ -31,7 +31,7 @@
                                         <label for="namaPesanan">Nama Pesanan: Skripsi</label>
                                     </div>
                                     <div class="form-group mt-2">
-                                        <label for="jumlahHalaman">File: skripsi.docx <a href="">Unduh</a></label>
+                                        <label for="jumlahHalaman">File: skripsi.docx || <a href="">Unduh</a> ||</label>
                                     </div>
                                     <hr>
                                     <table class="table-bordered table table-striped mt-3" style="font-size: 7pt">
