@@ -22,32 +22,37 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-9 mt-4">
-                                <h3 class="text-center">Daftar</h3>
+                                <h3 class="text-center">Ubah Profil</h3>
                                 <hr class="mt-3">
                                 <form action="/fiifaprint/login" method="post">
                                     {{ csrf_field() }}
                                     <div class="form-group mb-2">
                                         <label for="email">Nama Lengkap</label>
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="Masukkan Nama Lengkap Disini...">
+                                            placeholder="Masukkan Nama Lengkap Disini..." value="Randi Afif">
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="email">No HP</label>
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="Masukkan No HP Disini...">
+                                            placeholder="Masukkan No HP Disini..." value="087856531788">
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="Masukkan Email Disini...">
+                                            placeholder="Masukkan Email Disini..." value="anfi3281@gmail.com">
                                     </div>
                                     <div class="form-group mb-2">
-                                        <label for="password">Password</label>
+                                        <label for="password">Password Lama</label>
                                         <input type="password" name="password" class="form-control"
                                             placeholder="Masukkan Password Disini...">
                                     </div>
                                     <div class="form-group mb-2">
-                                        <label for="password">Konfirmasi Password</label>
+                                        <label for="password">Password Baru</label>
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Masukkan Password Disini...">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label for="password">Konfirmasi Password Baru</label>
                                         <input type="password" name="password" class="form-control"
                                             placeholder="Masukkan Password Disini...">
                                     </div>
@@ -55,7 +60,7 @@
                                     <div class="text-center">
                                         <input type="submit" value="Kembali" name="tombollogin"
                                             class="btn btn-danger mb-3">
-                                        <input type="submit" value="Daftar" name="tombollogin"
+                                        <input type="submit" value="Ubah" name="tombollogin"
                                             class="btn btn-primary w-50 mb-3">
                                         <div class="text-center" style="font-size: 11px">atau kamu mau daftar dengan <a href="" class="text-danger text-decoration-none">Google</a></div>
                                         <p class="text-center" style="font-size: 11px">Sudah punya akun? <a

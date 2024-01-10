@@ -67,6 +67,7 @@
                                     </tr>
                                 </table>
                                 <hr>
+                                <a href="" type="button" class="btn btn-primary mb-2 w-100">Ubah Profil</a>
                                 <a href="" type="button" class="btn btn-danger w-100">Logout</a>
                                 <footer class="text-center mt-3" style="font-size: 8pt"><i><b>2024 - @FiifaPrint </b></i></footer>
                             </div>

@@ -77,4 +77,14 @@ class fiifaprintController extends Controller
     {
         return view('fiifaprint.bayar');
     }
+
+    public function detailpesanan()
+    {
+        return view('fiifaprint.detailpesanan');
+    }
+
+    public function profil()
+    {
+        return view('fiifaprint.profil');
+    }
 }
