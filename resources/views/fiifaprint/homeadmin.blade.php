@@ -31,6 +31,9 @@
                                     <tr class="text-center">
                                         <th style="width: 30px">No</th>
                                         <th style="width: 200px">Nama Pemesan</th>
+                                        <th >Tanggal</th>
+                                        <th >Waktu</th>
+                                        <th >No HP</th>
                                         <th>Nama Pesanan</th>
                                         <th>Harga</th>
                                         <th>Status</th>
@@ -40,9 +43,12 @@
                                     <tr>
                                         <td class="text-center">1</td>
                                         <td style="width: 200px">Randi Afif</td>
+                                        <td>10/01/2023</td>
+                                        <td>11.33</td>
+                                        <td>087856531788</td>
                                         <td>Skripsi</td>
-                                        <td>Rp. 30.000</td>
-                                        <td class="text-center">Belum Terbayar</td>
+                                        <td>30.000</td>
+                                        <td class="text-center">Belum Terbayar <br><a href="">Detail</a></td>
                                         <td class="text-center"><a href="">Unduh</a></td>
                                         <td>
                                             <a href="" type="button" class="btn btn-warning text-light btn-sm">Edit</a>
@@ -53,9 +59,12 @@
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td style="width: 200px">Alya Safitri</td>
+                                        <td>10/01/2023</td>
+                                        <td>11.33</td>
+                                        <td>087856531788</td>
                                         <td>Skripsi</td>
-                                        <td>Rp. 30.000</td>
-                                        <td class="text-center">Terbayar</td>
+                                        <td>30.000</td>
+                                        <td class="text-center">Terbayar <br><a href="">Detail</a></td>
                                         <td class="text-center"><a href="">Unduh</a></td>
                                         <td>
                                             <a href="" type="button" class="btn btn-warning text-light btn-sm">Edit</a>

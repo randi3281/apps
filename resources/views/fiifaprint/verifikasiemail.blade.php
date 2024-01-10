@@ -12,9 +12,9 @@
 
 <body class="bg-primary">
     <div class="container-fluid">
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-4">
             <div class="col-md-4">
-                <div class="card" style="height: 550px">
+                <div class="card" style="height: 600px">
                     <div class="card-body">
                         <div class="text-center">
                             <img src="/fiifaprintpublic/image/icon.png" class="mt-3" style="width: 100px"
@@ -22,28 +22,21 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-9 mt-4">
-                                <h3 class="text-center">Login</h3>
+                                <h3 class="text-center">Daftar</h3>
                                 <hr class="mt-3">
                                 <form action="/fiifaprint/login" method="post">
                                     {{ csrf_field() }}
                                     <div class="form-group mb-2">
-                                        <label for="email">Email</label>
+                                        <label for="email">Masukkan Kode Verifikasi</label>
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="Masukkan Email Disini...">
+                                            placeholder="Masukkan Kode Verifikasi Disini...">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="Masukkan Password Disini...">
-                                    </div>
-                                    <p><a href="" class="text-decoration-none" style="font-size: 8pt">Lupa Password?</a></p>
                                     <hr>
-                                    <p class="text-center" style="font-size: 11px">atau kamu mau login atau daftar dengan <a
-                                            href="" class="text-decoration-none text-danger">Google</a></p>
-                                    <div class="text-center mt-4">
-                                        <input type="submit" value="Masuk" name="tombollogin" class="btn btn-primary">
-                                        <input type="submit" value="Daftar" name="tomboldaftar"
+                                    <div class="text-center mb-3">
+                                        <input type="submit" value="Kembali" name="tombollogin"
                                             class="btn btn-danger">
+                                        <input type="submit" value="Submit" name="tombollogin"
+                                            class="btn btn-primary w-50">
                                     </div>
                                 </form>
                             </div>

@@ -22,19 +22,25 @@ class fiifaprintController extends Controller
         return view('fiifaprint.daftar');
     }
 
-    public function vp()
-    {
-        return view('fiifaprint.vp');
-    }
 
     public function ve()
     {
-        return view('fiifaprint.ve');
+        return view('fiifaprint.verifikasiemail');
     }
 
     public function lp()
     {
-        return view('fiifaprint.lp');
+        return view('fiifaprint.lupapassword');
+    }
+
+    public function lp2()
+    {
+        return view('fiifaprint.lupapassword2');
+    }
+
+    public function lp3()
+    {
+        return view('fiifaprint.lupapassword3');
     }
 
     public function homeclient()

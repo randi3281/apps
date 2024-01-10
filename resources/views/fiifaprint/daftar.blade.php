@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-4">
             <div class="col-md-4">
-                <div class="card" style="height: 600px">
+                <div class="card">
                     <div class="card-body">
                         <div class="text-center">
                             <img src="/fiifaprintpublic/image/icon.png" class="mt-3" style="width: 100px"
@@ -26,6 +26,16 @@
                                 <hr class="mt-3">
                                 <form action="/fiifaprint/login" method="post">
                                     {{ csrf_field() }}
+                                    <div class="form-group mb-2">
+                                        <label for="email">Nama Lengkap</label>
+                                        <input type="text" name="email" class="form-control"
+                                            placeholder="Masukkan Nama Lengkap Disini...">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label for="email">No HP</label>
+                                        <input type="text" name="email" class="form-control"
+                                            placeholder="Masukkan No HP Disini...">
+                                    </div>
                                     <div class="form-group mb-2">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" class="form-control"

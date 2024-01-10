@@ -22,7 +22,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-9 mt-4">
-                                <h3 class="text-center">Login</h3>
+                                <h3 class="text-center">Lupa Password</h3>
                                 <hr class="mt-3">
                                 <form action="/fiifaprint/login" method="post">
                                     {{ csrf_field() }}
@@ -31,19 +31,9 @@
                                         <input type="text" name="email" class="form-control"
                                             placeholder="Masukkan Email Disini...">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="Masukkan Password Disini...">
-                                    </div>
-                                    <p><a href="" class="text-decoration-none" style="font-size: 8pt">Lupa Password?</a></p>
-                                    <hr>
-                                    <p class="text-center" style="font-size: 11px">atau kamu mau login atau daftar dengan <a
-                                            href="" class="text-decoration-none text-danger">Google</a></p>
                                     <div class="text-center mt-4">
-                                        <input type="submit" value="Masuk" name="tombollogin" class="btn btn-primary">
-                                        <input type="submit" value="Daftar" name="tomboldaftar"
-                                            class="btn btn-danger">
+                                        <input type="submit" value="Kembali" name="tomboldaftar" class="btn btn-sm me-2 btn-danger">
+                                        <input type="submit" value="Kirim Kode Verifikasi"name="tombollogin" class="btn btn-primary btn-sm w-50">
                                     </div>
                                 </form>
                             </div>

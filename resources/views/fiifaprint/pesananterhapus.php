@@ -29,6 +29,7 @@
                                     <tr class="text-center">
                                         <th style="width: 30px">No</th>
                                         <th style="width: 200px">Nama Pemesan</th>
+                                        <th>No. HP</th>
                                         <th>Nama Pesanan</th>
                                         <th>Harga</th>
                                         <th style="width: 100px">File</th>
@@ -37,6 +38,7 @@
                                     <tr>
                                         <td class="text-center">1</td>
                                         <td style="width: 200px">Randi Afif</td>
+                                        <td>087856531788</td>
                                         <td>Skripsi</td>
                                         <td>Rp. 30.000</td>
                                         <td class="text-center"><a href="">Unduh</a></td>
@@ -48,6 +50,7 @@
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td style="width: 200px">Alya Safitri</td>
+                                        <td>087856531788</td>
                                         <td>Skripsi</td>
                                         <td>Rp. 30.000</td>
                                         <td class="text-center"><a href="">Unduh</a></td>
