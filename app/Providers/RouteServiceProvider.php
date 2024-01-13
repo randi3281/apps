@@ -78,6 +78,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('belajarlogin')
                 ->name('belajarlogin.')
                 ->group(base_path('routes/belajar/belajarlogin.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('belajar')
+                ->name('belajar.')
+                ->group(base_path('routes/belajar/belajar.php'));
         });
     }
 
