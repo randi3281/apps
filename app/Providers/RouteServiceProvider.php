@@ -78,12 +78,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('belajarlogin')
                 ->name('belajarlogin.')
                 ->group(base_path('routes/belajar/belajarlogin.php'));
-
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->prefix('fiifaprint')
-                ->name('fiifaprint.')
-                ->group(base_path('routes/fiifaprint/fiifaprint.php'));
         });
     }
 
