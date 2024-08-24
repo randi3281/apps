@@ -112,7 +112,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // HMI KOM KHD
-Route::get('hkkhd', 'hkkhd\tampilController@index')->name('index');
+// Route::get('hkkhd', 'hkkhd\tampilController@index')->name('index');
 // End HMI KOM KHD
 
 // UKT
