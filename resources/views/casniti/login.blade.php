@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Casniti | CASN Test Simulator</title>
+    <title>Casniti | CASN Test Simulator by Anfi</title>
     {{-- icon atas --}}
     <link rel="icon" href="/casnitipublic/icon/casniti.ico" type="image/x-icon">
     {{-- css --}}
