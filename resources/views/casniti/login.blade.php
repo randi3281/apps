@@ -24,7 +24,7 @@
                             <div class="text-center w-50 mx-auto mt-3">
                                 <img src="/casnitipublic/icon/casniti.png" class="img-fluid" alt="">
                             </div>
-                            <a href="https://google.com">
+                            <a href="/casniti/upload">
                                 <div class="text-center w-75 mx-auto" style="margin-top:140px">
                                     <img src="/casnitipublic/icon/googlelogin.png" class="img-fluid" alt="">
                                 </div>
