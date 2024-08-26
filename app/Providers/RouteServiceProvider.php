@@ -84,6 +84,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('belajar')
                 ->name('belajar.')
                 ->group(base_path('routes/belajar/belajar.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('casniti')
+                ->name('casniti.')
+                ->group(base_path('routes/casniti.php'));
         });
     }
 
