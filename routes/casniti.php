@@ -13,3 +13,6 @@ Route::get('/upload', [casnitiViewController::class, 'upload']);
 Route::get('/filter', [casnitiViewController::class, 'filter']);
 Route::get('/ujian', [casnitiViewController::class, 'ujian']);
 Route::get('/history', [casnitiViewController::class, 'history']);
+
+// manggil bebas
+Route::get('/dummy', [casnitiViewController::class, 'dummy']);
