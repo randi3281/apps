@@ -35,18 +35,22 @@
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item me-5 mx-4">
-                            <a class="nav-link text-danger" style="font-weight: bold" href="/">Logout</a>
+                            <a class="nav-link text-danger" style="font-weight: bold" href="/casniti">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         {{-- bualtah juga halaman yang rounded --}}
-        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="height: 450px">
-            s
+        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="height: 465px">
+            s 
             @yield('konten')
         </div>
     </div>
+    {{-- buatlah text versi di footer --}}
+    <footer class="text-center mt-2" style="margin-bottom: -9px">
+        <p class="text-white" style="font-size: 10px">Versi 25-08-2024</p>
+    </footer>
 </body>
 
 </html>

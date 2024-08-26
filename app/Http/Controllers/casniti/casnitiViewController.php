@@ -12,15 +12,15 @@ class casnitiViewController extends Controller
         return view('casniti.login');
     }
 
-    // public function upload()
-    // {
-    //     return view('casniti.upload');
-    // }
+    public function upload()
+    {
+        return view('casniti.admin.uploadsoal');
+    }
 
-    // public function filter()
-    // {
-    //     return view('casniti.filter');
-    // }
+    public function filter()
+    {
+        return view('casniti.admin.filter');
+    }
 
     // public function ujian()
     // {
