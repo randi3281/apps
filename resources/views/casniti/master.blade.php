@@ -11,6 +11,7 @@
     {{-- css --}}
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/casnitipublic/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     {{-- Bootstrap JS --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -43,7 +44,6 @@
         </nav>
         {{-- bualtah juga halaman yang rounded --}}
         <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="height: 465px">
-            s 
             @yield('konten')
         </div>
     </div>
