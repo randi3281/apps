@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'userbelajarmiddleware' => [
+            'driver' => 'session',
+            'provider' => 'userbelajarmiddleware',
+        ],
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\BelajarLoginMiddleware::class,
+        ],
+        'userbelajarmiddleware' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\UsersBelajarMiddleware::class,
         ],
 
         // 'users' => [
