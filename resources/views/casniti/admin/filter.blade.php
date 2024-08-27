@@ -17,7 +17,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 text-center my-1">
                     Jenis Ujian:
-                    <select name="ju" id="" class="dropdown rounded-5" style="width: 150px">
+                    <select name="ju" id="" class="dropdown rounded-5" style="width: 100px">
                         <option value="skd">SKD</option>
                         <option value="skb">SKB</option>
                     </select>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-4 text-center my-1">
                     Kategori Soal:
-                    <select name="ju" id="" class="dropdown  rounded-5" style="width: 150px">
+                    <select name="ju" id="" class="dropdown  rounded-5" style="width: 100px">
                         <option value="semua">Semua</option>
                         <option value="tkp">TKP</option>
                         <option value="twk">TWK</option>
@@ -34,7 +34,7 @@
                     <input type="submit" value="Submit" class="btn btn-primary btn-sm ms-2 rounded-5">
                 </div>
                 <div class="col-md-4 text-center my-1">
-                    <input type="input" placeholder="Cari..." class="rounded-5">
+                    <input type="input" placeholder="Cari..." class="rounded-5" style="width: 100px">
                     <input type="submit" value="Submit" class="btn btn-primary btn-sm ms-2 rounded-5">
                 </div>
             </div>
