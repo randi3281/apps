@@ -12,29 +12,67 @@
 @endsection
 
 @section('konten')
-    {{-- buatlah Selamat Datang Randi Afif, silahkan Upload Soal di tengah --}}
-    <div class="text-center custom-font mt-4" style="font-size: 18px">
-        <p class="">Selamat Datang Randi Afif, silahkan pilih Jenis Ujian yang Diinginkan</p>
+    <div class="text-center custom-font mt-1" style="font-size: 18px">
+        <h4>History Ujian</h4>
     </div>
-    {{-- buatlah form upload soal --}}
     <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-3">
-
-                <form action="/casniti/upload" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="pb-5 mt-5 text-center">
-                        <select name="ju" id="" class="dropdown rounded-5 mt-5" style="width: 200px">
-                            <option value="skd">SKD</option>
-                            <option value="skb">SKB</option>
-                        </select>
-                    </div>
-                    <div class="text-center mt-5">
-                        <button type="submit" class="btn w-50 btn-primary rounded-5">Upload</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th scope="col" style="width: 2.5%;">No</th>
+                    <th scope="col" style="width: 20%;">Tanggal</th>
+                    <th scope="col" style="width: 12.5%;">Paket</th>
+                    <th scope="col" style="width: 7.5%;">Jenis 1</th>
+                    <th scope="col" style="width: 5%;">Nilai</th>
+                    <th scope="col" style="width: 7.5%;">Jenis 2</th>
+                    <th scope="col" style="width: 5%;">Nilai</th>
+                    <th scope="col" style="width: 7.5%;">Jenis 3</th>
+                    <th scope="col" style="width: 5%;">Nilai</th>
+                    <th scope="col" style="width: 7.5%;">Jenis 4</th>
+                    <th scope="col" style="width: 5%;">Nilai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>25 Agustus 2024</td>
+                    <td>Paket 1</td>
+                    <td>TWK</td>
+                    <td class="text-center">75</td>
+                    <td>TIU</td>
+                    <td class="text-center">80</td>
+                    <td>TKP</td>
+                    <td class="text-center">85</td>
+                    <td>TBS</td>
+                    <td class="text-center">78</td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>20 Agustus 2024</td>
+                    <td>Paket 2</td>
+                    <td>TWK</td>
+                    <td class="text-center">68</td>
+                    <td>TIU</td>
+                    <td class="text-center">75</td>
+                    <td>TKP</td>
+                    <td class="text-center">82</td>
+                    <td>TBS</td>
+                    <td class="text-center">76</td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td>15 Agustus 2024</td>
+                    <td>Paket 3</td>
+                    <td>TWK</td>
+                    <td class="text-center">70</td>
+                    <td>TIU</td>
+                    <td class="text-center">77</td>
+                    <td>TKP</td>
+                    <td class="text-center">88</td>
+                    <td>TBS</td>
+                    <td class="text-center">80</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
 @endsection
