@@ -20,17 +20,17 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark text-center">
                     <tr>
-                        < <th scope="col" style="width: 2.5%; white-space: nowrap;">No</th>
-                            <th scope="col" style="width: 20%; white-space: nowrap;">Tanggal</th>
-                            <th scope="col" style="width: 12.5%; white-space: nowrap;">Paket</th>
-                            <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 1</th>
-                            <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
-                            <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 2</th>
-                            <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
-                            <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 3</th>
-                            <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
-                            <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 4</th>
-                            <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
+                        <th scope="col" style="width: 2.5%; white-space: nowrap;">No</th>
+                        <th scope="col" style="width: 20%; white-space: nowrap;">Tanggal</th>
+                        <th scope="col" style="width: 12.5%; white-space: nowrap;">Paket</th>
+                        <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 1</th>
+                        <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
+                        <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 2</th>
+                        <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
+                        <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 3</th>
+                        <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
+                        <th scope="col" style="width: 7.5%; white-space: nowrap;">Jenis 4</th>
+                        <th scope="col" style="width: 5%; white-space: nowrap;">Nilai</th>
                     </tr>
                 </thead>
                 <tbody>
