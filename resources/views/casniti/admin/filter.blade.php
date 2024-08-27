@@ -34,7 +34,7 @@
                     <input type="submit" value="Submit" class="btn btn-primary btn-sm ms-2 rounded-5">
                 </div>
                 <div class="col-md-4 text-center my-1">
-                    <input type="input" placeholder="Cari..." class="rounded-5" style="width: 190px">
+                    <input type="input" placeholder="Cari..." class="rounded-5" style="width: 185px">
                     <input type="submit" value="Submit" class="btn btn-primary btn-sm ms-2 rounded-5">
                 </div>
             </div>
