@@ -22,18 +22,18 @@ class casnitiViewController extends Controller
         return view('casniti.admin.filter');
     }
 
-    // public function ujian()
-    // {
-    //     return view('casniti.ujian');
-    // }
+    public function ujian()
+    {
+        return view('casniti.nonadmin.ujian1');
+    }
 
-    // public function history()
-    // {
-    //     return view('casniti.history');
-    // }
+    public function history()
+    {
+        return view('casniti.nonadmin.history');
+    }
 
     public function dummy()
     {
-        return view('casniti.admin.uploadsoal');
+        return view('casniti.nonadmin.ujian1');
     }
 }
