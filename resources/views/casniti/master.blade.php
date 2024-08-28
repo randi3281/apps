@@ -20,7 +20,7 @@
 
 <body style="background-color: #0073E6">
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-5 rounded-5">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-4 rounded-5">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="/casnitipublic/icon/casniti.png" alt="" width="100">
@@ -43,7 +43,7 @@
             </div>
         </nav>
         {{-- bualtah juga halaman yang rounded --}}
-        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="min-height: 465px">
+        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="min-height: 490px">
             @yield('konten')
         </div>
     </div>
