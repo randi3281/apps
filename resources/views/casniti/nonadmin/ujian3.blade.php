@@ -73,9 +73,9 @@
             <div class="col-md-6">
                 <div class="row text-center">
                     @for ($i = 1; $i <= 110; $i++)
-                        <div class="mb-2 col-sm-1">
-                            <a href="{{ url('/review/' . $i) }}"
-                                class="btn btn-outline-primary p-1" style="width:40px">{{ $i }}</a>
+                        <div class="mb-2 col-3 col-sm-2 col-md-1">
+                            <a href="{{ url('/review/' . $i) }}" class="btn btn-outline-primary p-1"
+                                style="width:40px">{{ $i }}</a>
                         </div>
                     @endfor
                 </div>
