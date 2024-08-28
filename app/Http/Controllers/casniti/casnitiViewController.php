@@ -27,6 +27,16 @@ class casnitiViewController extends Controller
         return view('casniti.nonadmin.ujian1');
     }
 
+    public function ujian2()
+    {
+        return view('casniti.nonadmin.ujian2');
+    }
+
+    public function ujian3()
+    {
+        return view('casniti.nonadmin.ujian3');
+    }
+
     public function history()
     {
         return view('casniti.nonadmin.history');

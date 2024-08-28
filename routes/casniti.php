@@ -12,6 +12,8 @@ Route::get('/', [casnitiViewController::class, 'index']);
 Route::get('/upload', [casnitiViewController::class, 'upload']);
 Route::get('/filter', [casnitiViewController::class, 'filter']);
 Route::get('/ujian', [casnitiViewController::class, 'ujian']);
+Route::get('/ujian2', [casnitiViewController::class, 'ujian2']);
+Route::get('/ujian3', [casnitiViewController::class, 'ujian3']);
 Route::get('/history', [casnitiViewController::class, 'history']);
 
 // manggil bebas
