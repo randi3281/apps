@@ -21,9 +21,9 @@
                         <div class="col">
                             <div class="card-body">
                                 <div class="" style="min-height: 260px">
-                                    <p class="mt-3" style="font-size: 17px; font-weight: lighter">Indonesia memiliki
+                                    <p class="mt-3" style="font-size: 14px; font-weight: lighter">Indonesia memiliki
                                         semboyan "Bhinneka Tunggal Ika." Apa arti dari semboyan tersebut? </p>
-                                    <form action="" style="font-size: 17px; font-weight: lighter">
+                                    <form action="" style="font-size: 14px; font-weight: lighter">
                                         @csrf
                                         <div class="form-check mb-3">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"
