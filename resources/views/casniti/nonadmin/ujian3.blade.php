@@ -73,7 +73,7 @@
             <div class="col-md-6">
                 <div class="row text-center">
                     @for ($i = 1; $i <= 110; $i++)
-                        <div class="mb-2 col-1">
+                        <div class="mb-2 col-sm-1">
                             <a href="{{ url('/review/' . $i) }}"
                                 class="btn btn-outline-primary p-1" style="width:40px">{{ $i }}</a>
                         </div>
