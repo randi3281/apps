@@ -21,7 +21,6 @@
                         <div class="col">
                             <div class="card-body">
                                 <div class="" style="min-height: 260px">
-
                                     <p class="mt-3" style="font-size: 17px; font-weight: lighter">Indonesia memiliki
                                         semboyan "Bhinneka Tunggal Ika." Apa arti dari semboyan tersebut? </p>
                                     <form action="" style="font-size: 17px; font-weight: lighter">
@@ -56,30 +55,34 @@
                                         </div>
                                 </div>
                                 <div class="row text-center">
-                                    <div class="col">
-                                        <input type="submit" class="btn btn-primary mt-3 me-4 w-25 btn-success"
+                                    <div class="col-md-4">
+                                        <input type="submit" class="btn btn-primary mt-3 me-4 w-100 btn-success"
                                             value="< Previous">
-                                        <input type="submit" class="btn btn-primary mt-3 me-4 w-25 btn-danger"
-                                            value="Menyerah">
-                                        <input type="submit" class="btn btn-primary mt-3 w-25 btn-success" value="Next >">
                                     </div>
-                                </div>
-                                </form>
+                                    <div class="col-md-4">
+                                        <input type="submit" class="btn btn-primary mt-3 me-4 w-100 btn-danger"
+                                            value="Menyerah">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="submit" class="btn btn-primary mt-3 w-100 btn-success" value="Next >">
+                                    </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="row text-center">
-                    @for ($i = 1; $i <= 110; $i++)
-                        <div class="mb-2 col-3 col-sm-2 col-md-1">
-                            <a href="{{ url('/review/' . $i) }}" class="btn btn-outline-primary p-1"
-                                style="width:40px">{{ $i }}</a>
-                        </div>
-                    @endfor
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row text-center">
+                @for ($i = 1; $i <= 110; $i++)
+                    <div class="mb-2 col-3 col-sm-2 col-md-1">
+                        <a href="{{ url('/review/' . $i) }}" class="btn btn-outline-primary p-1"
+                            style="width:40px">{{ $i }}</a>
+                    </div>
+                @endfor
             </div>
         </div>
+    </div>
     </div>
 @endsection
