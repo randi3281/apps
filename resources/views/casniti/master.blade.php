@@ -43,7 +43,7 @@
             </div>
         </nav>
         {{-- bualtah juga halaman yang rounded --}}
-        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="height: 465px">
+        <div class="bg-body-tertiary rounded-5 mt-4 p-4" style="min-height: 465px">
             @yield('konten')
         </div>
     </div>
