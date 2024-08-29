@@ -1,15 +1,15 @@
 @extends('lebakbarangview.master')
 @section('title', 'Pengaduan')
 @section('content')
-<div class="container">
+<div class="container mb-5">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-8 col-sm-8">
             <div class="widget widget-contact mb-5 mb-lg-0">
-                <h4 class="text-capitalize mb-3">Formulir Kontak</h4>
+                <h4 class="text-capitalize mb-3 mt-5">Formulir Kontak</h4>
                 <div class="divider mb-4"></div>
 
                 <!-- Form Pengaduan -->
-                <form action="kirim_email.php" method="POST">
+                <form action="{{ route('lebakbarang.kirim-pengaduan') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama:</label>
@@ -26,7 +26,7 @@
                         <textarea class="form-control" id="pengaduan" name="pengaduan" rows="4" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <input type="submit" class="btn btn-primary" value="send" name="send">
                 </form>
                 <!-- end form pengaduan -->
             </div>

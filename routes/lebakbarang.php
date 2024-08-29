@@ -20,3 +20,5 @@ Route::get('/lembaga-kemasyarakatan', [lebakbarangController::class, 'lembagaKem
 Route::get('/pembagian-wilayah', [lebakbarangController::class, 'pembagianWilayah'])->name('pembagian-wilayah');
 Route::get('/struktur-organisasi', [lebakbarangController::class, 'strukturOrganisasi'])->name('struktur-organisasi');
 Route::get('/pengaduan', [lebakbarangController::class, 'pengaduan'])->name('pengaduan');
+
+Route::post('/pengaduan', [lebakbarangController::class, 'kirimPengaduan'])->name('kirim-pengaduan');

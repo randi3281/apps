@@ -56,9 +56,9 @@ Route::prefix('tesmiddleware')->middleware('tesmiddleware')->group(function () {
 
 
 // Mail
-Route::get('/dummymail', function () {
-    return view('belajar.dummymail');
-});
+// Route::get('/dummymail', function () {
+//     return view('belajar.dummymail');
+// });
 
 Route::get('/dummymail/send-email',function(){
     $data = [

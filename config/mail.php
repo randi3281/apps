@@ -56,6 +56,22 @@ return [
             'local_domain' => env('MAIL2_EHLO_DOMAIN'),
         ],
 
+        'smtp3' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL3_HOST', 'smtp.gmail.com'),
+            'port' => env('MAIL3_PORT', 587),
+            'encryption' => env('MAIL3_ENCRYPTION', 'tls'),
+            'username' => env('MAIL3_USERNAME'),
+            'password' => env('MAIL3_PASSWORD'),
+            'timeout' => null,
+            'local_domain' => env('MAIL3_EHLO_DOMAIN'),
+            // ganti mail formnya
+            'from' => [
+                'address' => env('MAIL3_FROM_ADDRESS'),
+                'name' => env('MAIL3_FROM_NAME'),
+            ]
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
@@ -95,6 +111,8 @@ return [
                 'log',
             ],
         ],
+
+
     ],
 
     /*

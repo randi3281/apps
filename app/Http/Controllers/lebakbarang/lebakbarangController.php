@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\lebakbarang;
 
 use App\Http\Controllers\Controller;
+use App\Mail\sendMailLebakbarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class lebakbarangController extends Controller
 {
@@ -61,5 +64,16 @@ class lebakbarangController extends Controller
     {
         return view('lebakbarangview.isi.pengaduan');
     }
-    
+
+    public function kirimPengaduan(Request $request)
+    {
+        $data = [
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'pengaduan' => $request->pengaduan
+        ];
+
+        Mail::mailer('smtp3')->to('lebakbarangpemdes01@gmail.com')->send(new sendMailLebakbarang($data));
+        return redirect()->back()->with('success', 'Pengaduan berhasil dikirim');
+    }
 }
