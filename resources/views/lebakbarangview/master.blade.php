@@ -21,21 +21,21 @@
 </head>
 
 <body id="top">
-    <header>
+        <header>
         <div class="header-top-bar">
             <div class="container">
                 <span class="font-weight-bold mx-auto d-block text-center">DESA LEBAKBARANG - KECAMATAN LEBAKBARANG -
                     KABUPATEN PEKALONGAN</span>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <div class="container">
-                <a class='navbar-brand' href='index.php'>
-                    <img src="/lebakbarangPublic/images/logo.png" alt="" class="img-fluid">
+                <a class='navbar-brand' href='{{ route('lebakbarang.beranda') }}'>
+                    <img src="{{ asset('lebakbarangPublic/images/logo.png') }}" alt="" class="img-fluid">
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain"
                     aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icofont-navigation-menu"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
@@ -43,45 +43,38 @@
                             <a class='nav-link' href="{{ route('lebakbarang.beranda') }}">Beranda</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Profil<i class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                <li><a class='dropdown-item' href="{{ route('lebakbarang.sejarah-desa') }}">Sejarah
-                                        Desa</a></li>
-                                <li><a class='dropdown-item' href="{{ route('lebakbarang.visi-misi') }}">Visi Misi</a>
-                                </li>
-                            </ul>
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil<i
+                                    class="icofont-thin-down"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.sejarah-desa') }}">Sejarah Desa</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.visi-misi') }}">Visi Misi</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Kondisi Desa<i
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kondisi Desa<i
                                     class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class='dropdown-item' href="{{ route('lebakbarang.demografi') }}">Demografi</a>
-                                </li>
-                                <li><a class='dropdown-item' href="{{ route('lebakbarang.keadaan-sosial') }}">Keadaan
-                                        Sosial</a></li>
-                                <li><a class='dropdown-item' href="{{ route('lebakbarang.keadaan-ekonomi') }}">Keadaan
-                                        Ekonomi</a></li>
-                            </ul>
+                            <div class="dropdown-menu" aria-labelledby="dropdown02">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.demografi') }}">Demografi</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-sosial') }}">Keadaan Sosial</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-ekonomi') }}">Keadaan Ekonomi</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Pemerintahan<i
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pemerintahan<i
                                     class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class='dropdown-item'
-                                        href="{{ route('lebakbarang.lembaga-pemerintahan') }}">Lembaga Pemerintahan</a>
-                                </li>
-                                <li><a class='dropdown-item'
-                                        href="{{ route('lebakbarang.lembaga-kemasyarakatan') }}">Lembaga
-                                        Kemasyarakatan</a></li>
-                                <li><a class='dropdown-item'
-                                        href="{{ route('lebakbarang.pembagian-wilayah') }}">Pembagian Wilayah</a></li>
-                                <li><a class='dropdown-item'
-                                        href="{{ route('lebakbarang.struktur-organisasi') }}">Struktur Organisasi</a>
-                                </li>
-                            </ul>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.lembaga-pemerintahan') }}">Lembaga
+                                    Pemerintahan</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.lembaga-kemasyarakatan') }}">Lembaga
+                                    Kemasyarakatan</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.pembagian-wilayah') }}">Pembagian
+                                    Wilayah</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.struktur-organisasi') }}">Struktur
+                                    Organisasi</a>
+                            </div>
                         </li>
                         <li class="nav-item active">
                             <a class='nav-link' href="{{ route('lebakbarang.pengaduan') }}">Pengaduan</a>
