@@ -30,8 +30,8 @@
             </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
                 <div class="container">
-                    <a class='navbar-brand' href='{{ route('lebakbarang.beranda') }}'>
-                        <img src="{{ asset('lebakbarangPublic/images/logo.png') }}" alt="" class="img-fluid w-75">
+                    <a class='navbar-brand' href='{{ route('lebakbarang.beranda') }}' style="width: 250px">
+                        <img src="{{ asset('lebakbarangPublic/images/logo.png') }}" alt="" class="img-fluid">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain"
                         aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
