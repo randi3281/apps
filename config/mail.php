@@ -45,6 +45,17 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
+        'smtp2' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL2_HOST', 'smtp.gmail.com'),
+            'port' => env('MAIL2_PORT', 587),
+            'encryption' => env('MAIL2_ENCRYPTION', 'tls'),
+            'username' => env('MAIL2_USERNAME'),
+            'password' => env('MAIL2_PASSWORD'),
+            'timeout' => null,
+            'local_domain' => env('MAIL2_EHLO_DOMAIN'),
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],

@@ -3,7 +3,10 @@
 use App\Http\Controllers\belajar\belajarController;
 use App\Http\Controllers\belajar\belajarMiddlewareController;
 use App\Http\Controllers\belajar\TesMiddlewareController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmailDummy;
 use Illuminate\Support\Facades\Route;
+
 
 // Ntahlah
 Route::get('/', 'belajar\belajarController@index');
@@ -51,3 +54,20 @@ Route::prefix('tesmiddleware')->middleware('tesmiddleware')->group(function () {
 // --- End Belajar Middleware ---
 
 
+
+// Mail
+Route::get('/dummymail', function () {
+    return view('belajar.dummymail');
+});
+
+Route::get('/dummymail/send-email',function(){
+    $data = [
+        'name' => 'Syahrizal As',
+        'body' => 'Testing Kirim Email di Santri Koding'
+    ];
+
+    Mail::mailer('smtp2')->to('randiafif2312@gmail.com')->send(new SendEmailDummy($data));
+
+    dd("Email Berhasil dikirim.");
+});
+// End Mail
