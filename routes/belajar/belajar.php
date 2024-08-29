@@ -68,6 +68,6 @@ Route::get('/dummymail/send-email',function(){
 
     Mail::mailer('smtp2')->to('randiafif2312@gmail.com')->send(new SendEmailDummy($data));
 
-    dd("Email Berhasil dikirim.");
+    dd("Email Berhasil dikirim..");
 });
 // End Mail
