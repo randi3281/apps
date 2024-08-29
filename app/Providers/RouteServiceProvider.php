@@ -90,6 +90,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('casniti')
                 ->name('casniti.')
                 ->group(base_path('routes/casniti.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('lebakbarang')
+                ->name('lebakbarang.')
+                ->group(base_path('routes/lebakbarang.php'));
         });
     }
 
