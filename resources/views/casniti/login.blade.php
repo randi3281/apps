@@ -9,7 +9,7 @@
     <link rel="icon" href="https://cdn.anfi.my.id/casniti/icon/casniti.ico" type="image/x-icon">
     {{-- css --}}
     <link rel="stylesheet" href="https://cdn.anfi.my.id/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.anfi.my.id/casniti/style.css">
+    <link rel="stylesheet" href="https://cdn.anfi.my.id/casniti/css/style.css">
 </head>
 
 <body style="background-color: #0073E6">
