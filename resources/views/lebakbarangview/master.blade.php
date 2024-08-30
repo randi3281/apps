@@ -102,7 +102,8 @@
                             <li class="list-inline-item"><a
                                     href="https://www.facebook.com/profile.php?id=61564661145865&mibextid=ZbWKwL"><i
                                         class="icofont-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="pengaduan.php"><i class="icofont-email"></i></a>
+                            <li class="list-inline-item"><a href="{{ route('lebakbarang.pengaduan') }}"><i
+                                        class="icofont-email"></i></a></li>
                             </li>
                         </ul>
 
@@ -113,11 +114,11 @@
                         <h4 class="text-capitalize mb-3">Menu</h4>
                         <div class="divider mb-4"></div>
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href='sejarah-desa.php'>Sejarah </a></li>
-                            <li><a href='visi-misi.php'>Visi & Misi</a></li>
-                            <li><a href='demografi.php'>Demografi</a></li>
-                            <li><a href='struktur-organisasi.php'>Struktur Organisasi</a></li>
-                            <li><a href='pengaduan.php'>Pengaduan</li>
+                            <li><a href="{{ route('lebakbarang.sejarah-desa') }}">Sejarah</a></li>
+                            <li><a href="{{ route('lebakbarang.visi-misi') }}">Visi & Misi</a></li>
+                            <li><a href="{{ route('lebakbarang.demografi') }}">Demografi</a></li>
+                            <li><a href="{{ route('lebakbarang.struktur-organisasi') }}">Struktur Organisasi</a></li>
+                            <li><a href="{{ route('lebakbarang.pengaduan') }}">Pengaduan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,7 +134,8 @@
 
                                 <span class="h6 mb-0">Hubungi Kami Melalui</span>
                             </div>
-                            <h4 class="mt-2"><a href='pengaduan.php'>Hubungi Kami Melalui</a></h4>
+                            <h4 class="mt-2"><a href="{{ route('lebakbarang.pengaduan') }}">Hubungi Kami
+                                    Melalui</a></h4>
                         </div>
                         <!-- NO HP -->
                         <!-- <div class="footer-contact-block">
