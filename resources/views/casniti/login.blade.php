@@ -6,10 +6,10 @@
 <head>
     <title>Casniti | CASN Test Simulator by Anfi</title>
     {{-- icon atas --}}
-    <link rel="icon" href="/casnitipublic/icon/casniti.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.anfi.my.id/casniti/icon/casniti.ico" type="image/x-icon">
     {{-- css --}}
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/casnitipublic/style.css">
+    <link rel="stylesheet" href="https://cdn.anfi.my.id/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.anfi.my.id/casniti/style.css">
 </head>
 
 <body style="background-color: #0073E6">
@@ -22,11 +22,11 @@
                         <form method="POST" action="">
                             @csrf
                             <div class="text-center w-50 mx-auto mt-3">
-                                <img src="/casnitipublic/icon/casniti.png" class="img-fluid" alt="">
+                                <img src="https://cdn.anfi.my.id/casniti/icon/casniti.png" class="img-fluid" alt="">
                             </div>
                             <a href="/casniti/upload">
                                 <div class="text-center w-75 mx-auto" style="margin-top:140px">
-                                    <img src="/casnitipublic/icon/googlelogin.png" class="img-fluid" alt="">
+                                    <img src="https://cdn.anfi.my.id/casniti/icon/googlelogin.png" class="img-fluid" alt="">
                                 </div>
                             </a>
                             <div class="text-center" style="margin-top: 170px; font-size: 10px">

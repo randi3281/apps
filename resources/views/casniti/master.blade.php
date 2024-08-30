@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Casniti | @yield('judul_halaman')</title>
     {{-- icon atas --}}
-    <link rel="icon" href="/casnitipublic/icon/casniti.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.anfi.my.id/casniti/icon/casniti.ico" type="image/x-icon">
     {{-- css --}}
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/casnitipublic/style.css">
@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary mt-4 rounded-5">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="/casnitipublic/icon/casniti.png" alt="" width="100">
+                    <img src="https://cdn.anfi.my.id/casniti/icon/casniti.png" alt="" width="100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
