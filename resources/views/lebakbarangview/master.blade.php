@@ -21,62 +21,71 @@
 </head>
 
 <body id="top">
-            <header>
-            <div class="header-top-bar">
-                <div class="container">
-                    <span class="font-weight-bold mx-auto d-block text-center">DESA LEBAKBARANG - KECAMATAN LEBAKBARANG -
-                        KABUPATEN PEKALONGAN</span>
+    <header>
+        <div class="header-top-bar">
+            <div class="container">
+                <span class="font-weight-bold mx-auto d-block text-center">DESA LEBAKBARANG - KECAMATAN LEBAKBARANG -
+                    KABUPATEN PEKALONGAN</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+            <div class="container">
+                <a class='navbar-brand' href='{{ route('lebakbarang.beranda') }}' style="width: 250px">
+                    <img src="{{ asset('lebakbarangPublic/images/logo.png') }}" alt="" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain"
+                    aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarmain">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class='nav-link' href="{{ route('lebakbarang.beranda') }}">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil<i
+                                    class="icofont-thin-down"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.sejarah-desa') }}">Sejarah Desa</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.visi-misi') }}">Visi Misi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kondisi Desa<i
+                                    class="icofont-thin-down"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown02">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.demografi') }}">Demografi</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-sosial') }}">Keadaan
+                                    Sosial</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-ekonomi') }}">Keadaan
+                                    Ekonomi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pemerintahan<i
+                                    class="icofont-thin-down"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class='dropdown-item' href="{{ route('lebakbarang.lembaga-pemerintahan') }}">Lembaga
+                                    Pemerintahan</a>
+                                <a class='dropdown-item'
+                                    href="{{ route('lebakbarang.lembaga-kemasyarakatan') }}">Lembaga Kemasyarakatan</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.pembagian-wilayah') }}">Pembagian
+                                    Wilayah</a>
+                                <a class='dropdown-item' href="{{ route('lebakbarang.struktur-organisasi') }}">Struktur
+                                    Organisasi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class='nav-link' href="{{ route('lebakbarang.pengaduan') }}">Pengaduan</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-                <div class="container">
-                    <a class='navbar-brand' href='{{ route('lebakbarang.beranda') }}' style="width: 250px">
-                        <img src="{{ asset('lebakbarangPublic/images/logo.png') }}" alt="" class="img-fluid">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain"
-                        aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarmain">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class='nav-link' href="{{ route('lebakbarang.beranda') }}">Beranda</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Profil<i class="icofont-thin-down"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.sejarah-desa') }}">Sejarah Desa</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.visi-misi') }}">Visi Misi</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Kondisi Desa<i class="icofont-thin-down"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.demografi') }}">Demografi</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-sosial') }}">Keadaan Sosial</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.keadaan-ekonomi') }}">Keadaan Ekonomi</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown03" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Pemerintahan<i class="icofont-thin-down"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.lembaga-pemerintahan') }}">Lembaga Pemerintahan</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.lembaga-kemasyarakatan') }}">Lembaga Kemasyarakatan</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.pembagian-wilayah') }}">Pembagian Wilayah</a>
-                                    <a class='dropdown-item' href="{{ route('lebakbarang.struktur-organisasi') }}">Struktur Organisasi</a>
-                                </div>
-                            </li>
-                            <li class="nav-item active">
-                                <a class='nav-link' href="{{ route('lebakbarang.pengaduan') }}">Pengaduan</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        </nav>
+    </header>
     @yield('content')
 
     <footer class="footer section gray-bg">
@@ -90,7 +99,8 @@
                         <p>Desa Lebak Barang <br> Kecamatan Pekalongan <br> Kabupaten Pekalongan <br> Provinsi Jawa
                             Tengah</p>
                         <ul class="list-inline footer-socials mt-4">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/"><i
+                            <li class="list-inline-item"><a
+                                    href="https://www.facebook.com/profile.php?id=61564661145865&mibextid=ZbWKwL"><i
                                         class="icofont-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="pengaduan.php"><i class="icofont-email"></i></a>
                             </li>

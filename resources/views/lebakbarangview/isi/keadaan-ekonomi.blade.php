@@ -1,7 +1,6 @@
 @extends('lebakbarangview.master')
 @section('title', 'Keadaan Ekonomi')
 @section('content')
-    <!-- START -->
     <section class="page-title bg-1">
         <div class="overlay"></div>
         <div class="container">
@@ -28,11 +27,13 @@
                         </p>
                         <p class="lead">
                             <span class="strong-text">Perkebunan : </span> <br> Kopi <br> Durian <br> Kakao <br> kapulaga
+                            <br> Cengkeh
 
                         </p>
                         <h3 class="text-md">Perternakan</h3>
                         <div class="divider my-4"></div>
                         <p class="lead">
+                            <span class="strong-text">Peternakan : </span> <br> Peternakan Sapi <br> Peternakan Ayam petelur
 
                         </p>
                         <h3 class="text-md">Perikanan</h3>
@@ -44,5 +45,4 @@
             </div>
         </div>
     </section>
-    <!-- END -->
 @endsection
