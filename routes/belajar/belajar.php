@@ -6,6 +6,7 @@ use App\Http\Controllers\belajar\TesMiddlewareController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmailDummy;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\belajar\database\onetoone\indexController;
 
 
 // Ntahlah
@@ -71,3 +72,8 @@ Route::get('/dummymail/send-email',function(){
     dd("Email Berhasil dikirim..");
 });
 // End Mail
+
+// --- Belajar Database One to One ---
+Route::get('/onetooneprofile', [indexController::class, 'indexpakaiprofile'])->name('onetoone.indexpakaiprofile');
+Route::get('/onetooneuser', [indexController::class, 'indexpakaiuser'])->name('onetoone.indexpakaiuser');
+// --- End Belajar Database One to One ---
