@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmailDummy;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\belajar\database\onetoone\indexController;
+use App\Http\Controllers\belajar\database\onetomany\indexController as indexonetomany;
 
 
 // Ntahlah
@@ -77,3 +78,10 @@ Route::get('/dummymail/send-email',function(){
 Route::get('/onetooneprofile', [indexController::class, 'indexpakaiprofile'])->name('onetoone.indexpakaiprofile');
 Route::get('/onetooneuser', [indexController::class, 'indexpakaiuser'])->name('onetoone.indexpakaiuser');
 // --- End Belajar Database One to One ---
+
+// --- Belajar Database One to Many ---
+Route::get('/onetomanypost', [indexonetomany::class, 'indexpakaipost'])->name('onetomany.indexpakaipost');
+Route::get('/onetomanycomment', [indexonetomany::class, 'indexpakaicomment'])->name('onetomany.indexpakaicomment ');
+// --- End Belajar Database One to Many ---
+
+
