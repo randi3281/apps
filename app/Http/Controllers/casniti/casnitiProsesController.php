@@ -23,7 +23,7 @@ class casnitiProsesController extends Controller
         $akun->nama = $user->name;
         $akun->email = $user->email;
         $akun->save();
-        
-        return view('casniti.nonadmin.ujian1');
+
+        return redirect('casniti');
     }
 }
