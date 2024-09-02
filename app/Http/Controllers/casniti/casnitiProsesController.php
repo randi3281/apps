@@ -17,12 +17,16 @@ class casnitiProsesController extends Controller
         return Socialite::driver('google')->redirect();
     }
     public function proseslogin(){
+        session_start();
         $user = Socialite::driver('google')->user();
         // masukkan data ke casniti akun nama dan emailnya tanpa mengecek
         $akun = new akun;
         $akun->nama = $user->name;
         $akun->email = $user->email;
         $akun->save();
+
+        // masukkan data ke casniti session
+        session(['email' => $user->email]);
 
         return redirect('casniti');
     }
