@@ -8,6 +8,7 @@ use App\Mail\SendEmailDummy;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\belajar\database\onetoone\indexController;
 use App\Http\Controllers\belajar\database\onetomany\indexController as indexonetomany;
+use App\Http\Controllers\belajar\database\manytomany\indexController as indexmanytomany;
 
 
 // Ntahlah
@@ -84,4 +85,8 @@ Route::get('/onetomanypost', [indexonetomany::class, 'indexpakaipost'])->name('o
 Route::get('/onetomanycomment', [indexonetomany::class, 'indexpakaicomment'])->name('onetomany.indexpakaicomment ');
 // --- End Belajar Database One to Many ---
 
-
+// --- Belajar Database Many to Many
+Route::get('/manytomanypost', [indexmanytomany::class, 'indexpakaipost'])->name('manytomany.indexpakaiposttag');
+Route::get('/manytomanytag', [indexmanytomany::class, 'indexpakaitag'])->name('manytomany.indexpakaitag');
+Route::get('/manytomanyposttag', [indexmanytomany::class, 'indexpakaiposttag'])->name('manytomany.indexpakaiposttag');
+// --- End Belajar Database Many to Many
