@@ -42,6 +42,8 @@
         <div class="row">
             <div class="col-md-12 mt-3">
                 <div class="table-responsive">
+
+
                     <table class="table table-bordered nowrap">
                         <thead>
                             <tr class="text-center">
@@ -53,28 +55,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                                <td style="width: 5%; white-space: nowrap">1</td>
-                                <td style="width: 20%; white-space: nowrap">SKD</td>
-                                <td style="width: 15%; white-space: nowrap">Semua</td>
-                                <td style="width: 35%; white-space: nowrap">Halo apa kabar?</td>
-                                <td style="width: 25%; white-space: nowrap">
-                                    <a href="" class="btn btn-primary btn-sm fixed-size" name="edit">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm fixed-size" name="hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td style="width: 5%; white-space: nowrap">2</td>
-                                <td style="width: 20%; white-space: nowrap">SKD</td>
-                                <td style="width: 15%; white-space: nowrap">Semua</td>
-                                <td style="width: 35%; white-space: nowrap">Halo apa kabar?</td>
-                                <td style="width: 25%; white-space: nowrap">
-                                    <a href="" class="btn btn-primary btn-sm fixed-size" name="edit">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm fixed-size" name="hapus">Hapus</a>
-                                </td>
-                            </tr>
+                            @php
+                                $nomor = 1;
+                            @endphp
+                            @foreach ($kategorisoal as $ks => $kategori)
+                                @foreach ($kategori->subkategorisoal as $subkategori)
+                                    @foreach ($subkategori->soal as $soall => $soal)
+                                        <tr class="text-center">
+                                            <td style="width: 5%; white-space: nowrap">{{ $nomor }}</td>
+                                            <td style="width: 20%; white-space: nowrap">{{ $soal->soal }}</td>
+                                            <td style="width: 15%; white-space: nowrap">Semua</td>
+                                            <td style="width: 35%; white-space: nowrap">Halo apa kabar?</td>
+                                            <td style="width: 25%; white-space: nowrap">
+                                                <a href="" class="btn btn-primary btn-sm fixed-size"
+                                                    name="edit">Edit</a>
+                                                <a href="" class="btn btn-danger btn-sm fixed-size"
+                                                    name="hapus">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        @php
+                                            $nomor++;
+                                        @endphp
+                                    @endforeach
+                                @endforeach
+                            @endforeach
                         </tbody>
                     </table>
+
+
                 </div>
             </div>
         </div>

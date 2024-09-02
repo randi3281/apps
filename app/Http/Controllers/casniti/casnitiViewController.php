@@ -4,6 +4,9 @@ namespace App\Http\Controllers\casniti;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\casniti\casnitisoal as soal;
+use App\Models\casniti\casnitisubkategorisoal as subkategorisoal;
+use App\Models\casniti\casnitikategorisoal as kategorisoal;
 
 class casnitiViewController extends Controller
 {
@@ -19,7 +22,8 @@ class casnitiViewController extends Controller
 
     public function filter()
     {
-        return view('casniti.admin.filter');
+        $kategorisoal = kategorisoal::all();
+        return view('casniti.admin.filter', compact('kategorisoal'));
     }
 
     public function ujian()
