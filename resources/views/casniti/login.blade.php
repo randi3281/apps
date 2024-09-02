@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 <head>
@@ -22,11 +22,13 @@
                         <form method="POST" action="">
                             @csrf
                             <div class="text-center w-50 mx-auto mt-3">
-                                <img src="https://cdn.anfi.my.id/casniti/icon/casniti.png" class="img-fluid" alt="">
+                                <img src="https://cdn.anfi.my.id/casniti/icon/casniti.png" class="img-fluid"
+                                    alt="">
                             </div>
-                            <a href="/casniti/upload">
+                            <a href="{{ route('casniti.proseslogingoogle') }}">
                                 <div class="text-center w-75 mx-auto" style="margin-top:140px">
-                                    <img src="https://cdn.anfi.my.id/casniti/icon/googlelogin.png" class="img-fluid" alt="">
+                                    <img src="https://cdn.anfi.my.id/casniti/icon/googlelogin.png" class="img-fluid"
+                                        alt="">
                                 </div>
                             </a>
                             <div class="text-center" style="margin-top: 170px; font-size: 10px">

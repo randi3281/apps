@@ -17,7 +17,7 @@ Route::get('/ujian', [casnitiViewController::class, 'ujian']);
 Route::get('/ujian2', [casnitiViewController::class, 'ujian2']);
 Route::get('/ujian3', [casnitiViewController::class, 'ujian3']);
 Route::get('/history', [casnitiViewController::class, 'history']);
-Route::get('/proseslogingoogle', [casnitiProsesController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/proseslogingoogle', [casnitiProsesController::class, 'redirectToGoogle'])->name('proseslogingoogle');
 Route::get('/proseslogin', [casnitiProsesController::class, 'proseslogin'])->name('proseslogin');
 
 // manggil bebas
