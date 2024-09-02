@@ -10,7 +10,7 @@ class postmanytomany extends Model
     use HasFactory;
     public function tagmanytomany()
     {
-        return $this->belongsToMany(tagmanytomany::class, 'postmanytomany_tagmanytomany')
-                ->using(posttagmanytomany::class);
+        return $this->belongsToMany(tagmanytomany::class, 'postmanytomany_tagmanytomany', 'postmanytomany_id', 'tagmanytomany_id')
+                ->using(postmanytomany_tagmanytomany::class);
     }
 }

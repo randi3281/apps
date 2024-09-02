@@ -22,8 +22,11 @@
             @foreach ($posttagmanytomany as $key => $post)
                 <tr>
                     <td>{{ $key + 1 }}</td>
-                    <td>{{ $post->postmanytomany_id }}</td>
-                    <td>{{ $post->tagmanytomany_id }}</td>
+                    <td>{{ $post->title }}</td>
+                    <td>
+                        @foreach ($post->tagmanytomany as $tag)
+                            <span>{{ $tag->name }}</span>
+                        @endforeach
                 </tr>
             @endforeach
         </tbody>
