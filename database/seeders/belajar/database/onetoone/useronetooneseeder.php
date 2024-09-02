@@ -15,8 +15,8 @@ class useronetooneseeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Randi Afif',
-            'email' => 'randi.afif23@example.com',
+            'name' => 'Randi Afif2',
+            'email' => 'randi.afif23ss@example.com',
             'password' => Hash::make('password123'),
         ]);
 

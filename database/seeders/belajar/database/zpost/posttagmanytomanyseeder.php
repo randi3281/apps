@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\belajar\database\manytomany;
+namespace Database\Seeders\belajar\database\zpost;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
