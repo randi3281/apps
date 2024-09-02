@@ -15,6 +15,7 @@ Route::get('/ujian', [casnitiViewController::class, 'ujian']);
 Route::get('/ujian2', [casnitiViewController::class, 'ujian2']);
 Route::get('/ujian3', [casnitiViewController::class, 'ujian3']);
 Route::get('/history', [casnitiViewController::class, 'history']);
+Route::get('/proseslogin', [casnitiViewController::class, 'proseslogin'])->name('proseslogin');
 
 // manggil bebas
 Route::get('/dummy', [casnitiViewController::class, 'dummy']);
