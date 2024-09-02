@@ -2,6 +2,8 @@
 
 // Controller
 use App\Http\Controllers\casniti\casnitiViewController;
+use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\casniti\casnitiProsesController;
 // End Controller
 
 // Facades
@@ -15,7 +17,8 @@ Route::get('/ujian', [casnitiViewController::class, 'ujian']);
 Route::get('/ujian2', [casnitiViewController::class, 'ujian2']);
 Route::get('/ujian3', [casnitiViewController::class, 'ujian3']);
 Route::get('/history', [casnitiViewController::class, 'history']);
-Route::get('/proseslogin', [casnitiViewController::class, 'proseslogin'])->name('proseslogin');
+Route::get('/proseslogingoogle', [casnitiProsesController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/proseslogin', [casnitiProsesController::class, 'proseslogin'])->name('proseslogin');
 
 // manggil bebas
 Route::get('/dummy', [casnitiViewController::class, 'dummy']);
