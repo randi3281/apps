@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\casniti\casnitisoal as soal;
 use App\Models\casniti\casnitisubkategorisoal as subkategorisoal;
 use App\Models\casniti\casnitikategorisoal as kategorisoal;
+use App\Models\casniti\casnitiakun as akun;
+use App\Models\casniti\casnitihistory as history;
 
 class casnitiViewController extends Controller
 {
@@ -43,7 +45,8 @@ class casnitiViewController extends Controller
 
     public function history()
     {
-        return view('casniti.nonadmin.history');
+        $akun = akun::all();
+        return view('casniti.nonadmin.history', compact('akun'));
     }
 
     public function dummy()

@@ -34,45 +34,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style="white-space: nowrap;" class="text-center">1</td>
-                        <td style="white-space: nowrap;">25 Agustus 2024</td>
-                        <td style="white-space: nowrap;">Paket 1</td>
-                        <td style="white-space: nowrap;">TWK</td>
-                        <td style="white-space: nowrap;" class="text-center">75</td>
-                        <td style="white-space: nowrap;">TIU</td>
-                        <td style="white-space: nowrap;" class="text-center">80</td>
-                        <td style="white-space: nowrap;">TKP</td>
-                        <td style="white-space: nowrap;" class="text-center">85</td>
-                        <td style="white-space: nowrap;">TBS</td>
-                        <td style="white-space: nowrap;" class="text-center">78</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td>20 Agustus 2024</td>
-                        <td>Paket 2</td>
-                        <td>TWK</td>
-                        <td class="text-center">68</td>
-                        <td>TIU</td>
-                        <td class="text-center">75</td>
-                        <td>TKP</td>
-                        <td class="text-center">82</td>
-                        <td>TBS</td>
-                        <td class="text-center">76</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">3</td>
-                        <td>15 Agustus 2024</td>
-                        <td>Paket 3</td>
-                        <td>TWK</td>
-                        <td class="text-center">70</td>
-                        <td>TIU</td>
-                        <td class="text-center">77</td>
-                        <td>TKP</td>
-                        <td class="text-center">88</td>
-                        <td>TBS</td>
-                        <td class="text-center">80</td>
-                    </tr>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($akun as $data)
+                        @foreach ($data->history as $isi)
+                            <tr>
+                                <td style="white-space: nowrap;" class="text-center">{{ $no }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->tanggal }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->paket }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->jenis1 }}</td>
+                                <td style="white-space: nowrap;" class="text-center">{{ $isi->nilai1 }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->jenis2 }}</td>
+                                <td style="white-space: nowrap;" class="text-center">{{ $isi->nilai2 }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->jenis3 }}</td>
+                                <td style="white-space: nowrap;" class="text-center">{{ $isi->nilai3 }}</td>
+                                <td style="white-space: nowrap;">{{ $isi->jenis4 }}</td>
+                                <td style="white-space: nowrap;" class="text-center">{{ $isi->nilai4 }}</td>
+                            </tr>
+                            @php
+                                $no++;
+                            @endphp
+                        @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>
