@@ -17,16 +17,17 @@ class casnitilogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // $email = $request->session()->get('email');
-        // $akun = akun::where('email', $email)->first();
+        session_start();
+        $email = $request->session()->get('email');
+        $akun = akun::where('email', $email)->first();
         // if($akun == null){
         //     return redirect()->route('casniti.login');
         // }
         // jika akun tidak sama dengan null
-        // if($akun != null){
-        //     return redirect()->route('casniti.ujian');
-        // }
-        dd('Middleware berhasil dijalankan');
-        // return $next($request);
+        if($akun != null){
+            return redirect()->route('casniti.ujian');
+        }
+        // dd('Middleware berhasil dijalankan');
+        return $next($request);
     }
 }

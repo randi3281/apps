@@ -14,7 +14,6 @@ class casnitiViewController extends Controller
 {
     public function index()
     {
-        session_start();
         return view('casniti.login');
     }
 
