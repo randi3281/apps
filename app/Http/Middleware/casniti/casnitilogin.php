@@ -23,7 +23,7 @@ class casnitilogin
         // }
         // jika akun tidak sama dengan null
         if($akun != null){
-            return redirect()->route('casniti.login');
+            return redirect()->route('casniti.ujian');
         }
         return $next($request);
     }
