@@ -13,13 +13,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [casnitiViewController::class, 'index'])->name('login')->middleware('casnitilogin');
 // berikan cara lain untuk memanggil middleware selain itu
-Route::get('/upload', [casnitiViewController::class, 'upload']);
-Route::get('/filter', [casnitiViewController::class, 'filter']);
-Route::get('/ujian', [casnitiViewController::class, 'ujian'])->name('ujian')->middleware('casnitinonlogin');
-Route::get('/ujian2', [casnitiViewController::class, 'ujian2']);
-Route::get('/ujian3', [casnitiViewController::class, 'ujian3']);
-Route::get('/history', [casnitiViewController::class, 'history']);
+Route::middleware('casnitinonlogin')->group(function () {
+    Route::get('/upload', [casnitiViewController::class, 'upload'])->name('upload');
+    Route::get('/filter', [casnitiViewController::class, 'filter'])->name('filter');
+    Route::get('/ujian', [casnitiViewController::class, 'ujian'])->name('ujian');
+    Route::get('/ujian2', [casnitiViewController::class, 'ujian2'])->name('ujian2');
+    Route::get('/ujian3', [casnitiViewController::class, 'ujian3'])->name('ujian3');
+    Route::get('/history', [casnitiViewController::class, 'history'])->name('history');
+});
+
+// login ke google
 Route::get('/proseslogingoogle', [casnitiProsesController::class, 'redirectToGoogle'])->name('proseslogingoogle');
+
+// setelah login ke google, maka masuk ke sini
 Route::get('/proseslogin', [casnitiProsesController::class, 'proseslogin'])->name('proseslogin');
 
 // manggil bebas
