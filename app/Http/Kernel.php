@@ -66,6 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'tesmiddleware' => \App\Http\Middleware\TesMiddleware::class,
-        'casnitilogin' => \App\Http\Middleware\casniti\casnitiLogin::class,
+        'casnitilogin' => \App\Http\Middleware\casniti\casnitilogin::class,
     ];
 }
