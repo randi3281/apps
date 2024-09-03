@@ -30,7 +30,7 @@
                         </select>
                     </div>
                     <div class="text-center mt-5">
-                        <button type="submit" class="btn w-50 btn-primary rounded-5">Upload</button>
+                        <button type="submit" class="btn w-50 btn-primary rounded-5">Submit</button>
                     </div>
                 </form>
             </div>
