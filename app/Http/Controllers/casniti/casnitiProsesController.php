@@ -19,7 +19,6 @@ class casnitiProsesController extends Controller
         ->redirect();
     }
     public function proseslogin(){
-        session_start();
         $user = Socialite::driver('google')->user();
         // masukkan data ke casniti akun nama dan emailnya tanpa mengecek
         $akun = new akun;
