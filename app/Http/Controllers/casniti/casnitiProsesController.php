@@ -29,6 +29,6 @@ class casnitiProsesController extends Controller
         // masukkan data ke casniti session
         session(['email' => $user->email]);
 
-        return redirect('casniti.ujian');
+        return redirect()->route('casniti.ujian');
     }
 }
