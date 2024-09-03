@@ -30,6 +30,6 @@ class casnitiProsesController extends Controller
         // masukkan data ke casniti session
         session(['email' => $user->email]);
 
-        return redirect('casniti');
+        return redirect('casniti.ujian');
     }
 }
