@@ -4,7 +4,7 @@
 use App\Http\Controllers\casniti\casnitiViewController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\casniti\casnitiProsesController;
-use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Session\Middleware\casniti\casnitilogin;
 // End Controller
 
 // Facades
