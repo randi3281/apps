@@ -19,7 +19,7 @@ class casnitilogin
         $email = $request->session()->get('email');
         $akun = akun::where('email', $email)->first();
         if($akun == null){
-            return redirect('casniti/login');
+            return redirect()->route('casniti.login');
         }
         return $next($request);
     }
