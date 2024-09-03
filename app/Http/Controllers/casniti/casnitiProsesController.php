@@ -21,14 +21,20 @@ class casnitiProsesController extends Controller
     public function proseslogin(){
         $user = Socialite::driver('google')->user();
         // masukkan data ke casniti akun nama dan emailnya tanpa mengecek
-        $akun = new akun;
-        $akun->nama = $user->name;
-        $akun->email = $user->email;
-        $akun->save();
-
-        // masukkan data ke casniti session
-        session(['email' => $user->email]);
-
-        return redirect()->route('casniti.ujian');
+        // cek dulu apakah email sudah ada di database
+        if(akun::where('email', $user->email)->count() > 0){
+            // jika sudah ada, maka langsung masuk ke ujian
+            session(['email' => $user->email]);
+            return redirect()->route('casniti.ujian');
+        }else{
+            // jika belum ada, maka masukkan data ke database
+            $akun = new akun;
+            $akun->nama = $user->name;
+            $akun->email = $user->email;
+            $akun->save();
+            // masukkan data ke casniti session
+            session(['email' => $user->email]);
+            return redirect()->route('casniti.ujian');
+        }
     }
 }
