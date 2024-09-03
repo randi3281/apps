@@ -24,4 +24,6 @@ Route::get('/proseslogin', [casnitiProsesController::class, 'proseslogin'])->nam
 
 // manggil bebas
 Route::get('/dummy', [casnitiViewController::class, 'dummy']);
+
+//block
 Route::get('/{any}', [casnitiViewController::class, 'blockany'])->where('any', '.*');
