@@ -11,9 +11,8 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
 // End Facades
 
-Route::get('/', [casnitiViewController::class, 'index'])->name('casniti.login')->middleware('casnitilogin');
+Route::get('/', [casnitiViewController::class, 'index'])->name('casniti.login')->middleware('auth');
 // berikan cara lain untuk memanggil middleware selain itu
-Route::get('/', [casnitiViewController::class, 'index'])->name('casniti.login')->middleware('casnitilogin:casniti');
 Route::get('/upload', [casnitiViewController::class, 'upload']);
 Route::get('/filter', [casnitiViewController::class, 'filter']);
 Route::get('/ujian', [casnitiViewController::class, 'ujian']);
