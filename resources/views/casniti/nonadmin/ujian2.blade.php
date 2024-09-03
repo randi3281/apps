@@ -40,7 +40,7 @@
                         </select>
                     </div>
                     <div class="form-group text-center mt-5">
-                        <button type="submit" class="btn btn-danger fixed-size rounded-5 me-2 w-50">Kembali</button>
+                        <button type="submit" class="btn btn-danger fixed-size rounded-5 me-2 mt-2">Kembali</button>
                         <button type="submit" class="btn btn-primary fixed-size rounded-5 w-50 mt-2">Submit</button>
                     </div>
                 </form>
