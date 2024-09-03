@@ -10,7 +10,7 @@ use App\Http\Controllers\casniti\casnitiProsesController;
 use Illuminate\Support\Facades\Route;
 // End Facades
 
-Route::get('/', [casnitiViewController::class, 'index'])->name('casniti.login')->middleware('casniti.login');
+Route::get('/', [casnitiViewController::class, 'index'])->name('casniti.login')->middleware('casnitilogin');
 Route::get('/upload', [casnitiViewController::class, 'upload']);
 Route::get('/filter', [casnitiViewController::class, 'filter']);
 Route::get('/ujian', [casnitiViewController::class, 'ujian']);
