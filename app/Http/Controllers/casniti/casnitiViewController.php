@@ -53,4 +53,9 @@ class casnitiViewController extends Controller
     {
         return view('casniti.nonadmin.ujian1');
     }
+
+    public function blockany()
+    {
+        return redirect()->route('casniti.login');
+    }
 }
