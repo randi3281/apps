@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\casniti\casnitiakun as akun;
 
-class casnitilogin
+class casnitinonlogin
 {
     /**
      * Handle an incoming request.
@@ -16,17 +16,15 @@ class casnitilogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        session_start();
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
         $email = $request->session()->get('email');
         $akun = akun::where('email', $email)->first();
-        // if($akun == null){
-        //     return redirect()->route('casniti.login');
-        // }
-        // jika akun tidak sama dengan null
-        if($akun != null){
-            return redirect()->route('casniti.ujian');
+        // buatlah perintah jika session tidak ada maka akan diarahkan ke halaman login
+        if($akun == null){
+            return redirect()->route('casniti.login');
         }
-        // dd('Middleware berhasil dijalankan');
         return $next($request);
     }
 }

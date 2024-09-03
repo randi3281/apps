@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'tesmiddleware' => \App\Http\Middleware\TesMiddleware::class,
         'casnitilogin' => \App\Http\Middleware\casniti\casnitilogin::class,
+        'casnitinonlogin' => \App\Http\Middleware\casniti\casnitinonlogin::class,
     ];
 }
