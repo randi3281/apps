@@ -96,6 +96,22 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('lebakbarang')
                 ->name('lebakbarang.')
                 ->group(base_path('routes/lebakbarang.php'));
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('aait')
+                ->name('aait.')
+                ->group(base_path('routes/aait/aait.php'));
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('aait/proses')
+                ->name('aait.proses.')
+                ->group(base_path('routes/aait/proses.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->prefix('aait/salah')
+                ->name('aait.salah.')
+                ->group(base_path('routes/aait/salah.php'));
         });
     }
 

@@ -9,6 +9,7 @@ use App\Models\casniti\casnitisubkategorisoal as subkategorisoal;
 use App\Models\casniti\casnitikategorisoal as kategorisoal;
 use App\Models\casniti\casnitiakun as akun;
 use App\Models\casniti\casnitihistory as history;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class casnitiViewController extends Controller
 {
