@@ -177,16 +177,15 @@ class prosesController extends Controller
     public function export_data_barang(Request $request)
     {
         session_start();
-        // if($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all'){
-        //     return Excel::download(new DataBarangNowExport, 'Data Barang Sekarang.xlsx');
-        // } else {
-        //     if($_COOKIE['posisi'] == 'pengguna'){
-        //         $areanya = $_COOKIE['area'];
-        //         return Excel::download(new DataBarangExport($request->bulan, $request->tahun, $areanya), 'Data Barang ' . $areanya . " ". $request->bulan . " " . $request->tahun .'.xlsx');
-        //     }
-        //     return Excel::download(new DataBarangExport($request->bulan, $request->tahun, $request->area), 'Data Barang ' . $request->area . " ". $request->bulan . " " . $request->tahun .'.xlsx');
-        // }
-        return view('aait.hy');
+        if($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all'){
+            return Excel::download(new DataBarangNowExport, 'Data Barang Sekarang.xlsx');
+        } else {
+            if($_COOKIE['posisi'] == 'pengguna'){
+                $areanya = $_COOKIE['area'];
+                return Excel::download(new DataBarangExport($request->bulan, $request->tahun, $areanya), 'Data Barang ' . $areanya . " ". $request->bulan . " " . $request->tahun .'.xlsx');
+            }
+            return Excel::download(new DataBarangExport($request->bulan, $request->tahun, $request->area), 'Data Barang ' . $request->area . " ". $request->bulan . " " . $request->tahun .'.xlsx');
+        }
     }
 
     public function export_mutasi(Request $request)
