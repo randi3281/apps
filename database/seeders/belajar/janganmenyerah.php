@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\Belajar;
+namespace Database\Seeders\belajar;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
