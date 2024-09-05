@@ -176,55 +176,23 @@ class prosesController extends Controller
     // Start Export to Excel Admin
     public function export_data_barang(Request $request)
     {
-         // Memulai session
-         session_start();
+        session_start();
+        if ($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all') {
+            return Excel::download(new DataBarangNowExport, 'Data Barang Sekarang.xlsx');
+        } else {
+            if ($_COOKIE['posisi'] == 'pengguna') {
+                $areanya = $_COOKIE['area'];
+                return Excel::download(
+                    new DataBarangExport($request->bulan, $request->tahun, $areanya),
+                    "Data Barang {$areanya} {$request->bulan} {$request->tahun}.xlsx"
+                );
+            }
+            return Excel::download(
+                new DataBarangExport($request->bulan, $request->tahun, $request->area),
+                "Data Barang {$request->area} {$request->bulan} {$request->tahun}.xlsx"
+            );
+        }
 
-         // Cek jika semua area, bulan, dan tahun dipilih "all"
-         if ($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all') {
-             // Generate data untuk export
-             $data = $this->getDataForNow(); // Ambil data sekarang
-
-             // Nama file
-             $filename = 'Data_Barang_Sekarang.xlsx';
-
-             // Membuat dan men-download file Excel
-             Excel::create($filename, function($excel) use ($data) {
-                 $excel->sheet('Sheet1', function($sheet) use ($data) {
-                     $sheet->fromArray($data);
-                 });
-             })->download('xlsx');
-         } else {
-             // Cek posisi pengguna berdasarkan cookie
-             if (isset($_COOKIE['posisi']) && $_COOKIE['posisi'] == 'pengguna') {
-                 $areanya = $_COOKIE['area'];
-
-                 // Generate data untuk export
-                 $data = $this->getDataForExport($request->bulan, $request->tahun, $areanya);
-
-                 // Nama file
-                 $filename = "Data_Barang_{$areanya}_{$request->bulan}_{$request->tahun}.xlsx";
-
-                 // Membuat dan men-download file Excel
-                 Excel::create($filename, function($excel) use ($data) {
-                     $excel->sheet('Sheet1', function($sheet) use ($data) {
-                         $sheet->fromArray($data);
-                     });
-                 })->download('xlsx');
-             } else {
-                 // Generate data untuk export berdasarkan request area
-                 $data = $this->getDataForExport($request->bulan, $request->tahun, $request->area);
-
-                 // Nama file
-                 $filename = "Data_Barang_{$request->area}_{$request->bulan}_{$request->tahun}.xlsx";
-
-                 // Membuat dan men-download file Excel
-                 Excel::create($filename, function($excel) use ($data) {
-                     $excel->sheet('Sheet1', function($sheet) use ($data) {
-                         $sheet->fromArray($data);
-                     });
-                 })->download('xlsx');
-             }
-         }
     }
 
     public function export_mutasi(Request $request)
