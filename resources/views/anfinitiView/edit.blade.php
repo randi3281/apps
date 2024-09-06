@@ -24,10 +24,10 @@
                     <div class="form-group" style="width: 300px">
                         <label for="gambar">Gambar</label>
                         <br>
-                        <img src="http://cdn.anfiniti.my.id/anfiniti/images/{{ $dataweb->gambar }}"  style="width: 70px; height: 70px" alt="">
+                        <img src="https://cdn.anfiniti.my.id/anfiniti/images/{{ $dataweb->gambar }}"
+                            style="width: 70px; height: 70px" alt="">
                         <input type="hidden" value="{{ $dataweb->gambar }}" name="gambarnya">
-                        <input type="file" class="form-control-file mt-2" id="gambar"
-                            name="gambar">
+                        <input type="file" class="form-control-file mt-2" id="gambar" name="gambar">
                     </div>
                     <div class="tombol text-center mt-4">
                         <input type="submit" class="btn text-light btn-dark btn-block w-75" style="font-size: 9pt"

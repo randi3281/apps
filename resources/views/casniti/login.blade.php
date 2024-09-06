@@ -6,10 +6,10 @@
 <head>
     <title>Casniti | CASN Test Simulator by Anfi</title>
     {{-- icon atas --}}
-    <link rel="icon" href="http://cdn.anfiniti.my.id/casniti/icon/casniti.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.anfiniti.my.id/casniti/icon/casniti.ico" type="image/x-icon">
     {{-- css --}}
-    <link rel="stylesheet" href="http://cdn.anfiniti.my.id/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="http://cdn.anfiniti.my.id/casniti/css/style.css">
+    <link rel="stylesheet" href="https://cdn.anfiniti.my.id/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.anfiniti.my.id/casniti/css/style.css">
 </head>
 
 <body style="background-color: #0073E6">
@@ -22,12 +22,12 @@
                         <form method="POST" action="">
                             @csrf
                             <div class="text-center w-50 mx-auto mt-3">
-                                <img src="http://cdn.anfiniti.my.id/casniti/icon/casniti.png" class="img-fluid"
+                                <img src="https://cdn.anfiniti.my.id/casniti/icon/casniti.png" class="img-fluid"
                                     alt="">
                             </div>
                             <a href="{{ route('casniti.proseslogingoogle') }}">
                                 <div class="text-center w-75 mx-auto" style="margin-top:140px">
-                                    <img src="http://cdn.anfiniti.my.id/casniti/icon/googlelogin.png" class="img-fluid"
+                                    <img src="https://cdn.anfiniti.my.id/casniti/icon/googlelogin.png" class="img-fluid"
                                         alt="">
                                 </div>
                             </a>

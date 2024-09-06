@@ -25,7 +25,8 @@
                 <img src="/anfinitiPublic/logo.png" class="mt-5 img-fluid" alt="">
             </div>
             <div class="col-md-5 justify-content-center d-flex align-items-center">
-                <input type="text" placeholder="Mau Cari Apa?" class="form-control w-75 mt-4" id="searchh" value="" autofocus>
+                <input type="text" placeholder="Mau Cari Apa?" class="form-control w-75 mt-4" id="searchh"
+                    value="" autofocus>
                 <a href="" class="btn btn-secondary ms-2 mt-4" id="searchButton">Search</a>
             </div>
             <div class="col-md-2 text-center">
@@ -72,14 +73,15 @@
                                 <div class="col justify-content-center d-flex">
                                     <a href="https://{{ $data->link }}" target="_blank">
                                         {{-- <img src="/anfinitiPublic/images/{{ $data->gambar }}" class="mt-2 card-img-top" --}}
-                                        <img src="http://cdn.anfiniti.my.id/anfiniti/images/{{ $data->gambar }}" class="mt-2 card-img-top"
-                                            style="width: 60px; height: 60px" alt="Image">
+                                        <img src="https://cdn.anfiniti.my.id/anfiniti/images/{{ $data->gambar }}"
+                                            class="mt-2 card-img-top" style="width: 60px; height: 60px" alt="Image">
                                     </a>
                                 </div>
                             </div>
                             <div class="row" style="margin-top: -20px; margin-bottom: -6px">
                                 <div class="col">
-                                    <p class="card-title fw-bold" style="line-height: 1.2; font-size: 11px">{{ $data->nama_web }}</p>
+                                    <p class="card-title fw-bold" style="line-height: 1.2; font-size: 11px">
+                                        {{ $data->nama_web }}</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
@@ -130,6 +132,8 @@
 </body>
 
 
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 <script src="anfinitiPublic/script.js"></script>
+
 </html>
