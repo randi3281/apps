@@ -7,7 +7,6 @@ class jurnalhelper
 {
     public static function cekkukis($kukis)
     {
-        return view('aait.hy');
         $usernya = user_manajemen::where('kukis', $kukis)->first();
         if ($usernya) {
             return true;
