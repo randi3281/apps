@@ -107,11 +107,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->name('aait.proses.')
                 ->group(base_path('routes/aait/proses.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->prefix('aait/salah')
-                ->name('aait.salah.')
-                ->group(base_path('routes/aait/salah.php'));
         });
     }
 
