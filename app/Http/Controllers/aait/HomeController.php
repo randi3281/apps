@@ -312,10 +312,7 @@ class HomeController extends Controller
 
                     }
                 }
-            }else{
-                // return redirect()->route('aait.dashboard', ['menu' => 'dashboard']);
             }
-        return redirect()->route('aait.index');
         }
     }
     public function logout()
