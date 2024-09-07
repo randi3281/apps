@@ -1,4 +1,4 @@
-<table class="table table-borderless mt-5" style="width: 400px">
+<table class="table table-borderless mt-5">
     <thead>
         <tr class="text-center align-text-center" style="height: 80px">
             <th>
@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <form action="{{ route('aait.proses.pengguna.penghapusan.update', ['id' => session('useredit')->id]) }}"
+        <form action="{{ route('aait.proses.pengguna.mutasi.update', ['id' => session('useredit')->id]) }}"
             method="POST">
             @csrf
 
@@ -165,13 +165,17 @@
                     <div class="form-group mx-3">
                         <label for="shopos" class="me-2">Sophos</label>
                         <select name="sophos" id="shopos" class="form-control-sm w-25 me-3">
-                            <option value="Iya" {{ session('useredit')->sophos == 'Iya' ? 'selected' : '' }}>Iya</option>
-                            <option value="Tidak" {{ session('useredit')->sophos == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                            <option value="Iya" {{ session('useredit')->sophos == 'Iya' ? 'selected' : '' }}>Iya
+                            </option>
+                            <option value="Tidak" {{ session('useredit')->sophos == 'Tidak' ? 'selected' : '' }}>
+                                Tidak</option>
                         </select>
                         <label for="landesk" class="me-2">Landesk</label>
                         <select name="landesk" id="landesk" class="form-control-sm w-25">
-                            <option value="Iya" {{ session('useredit')->landesk == 'Iya' ? 'selected' : '' }}>Iya</option>
-                            <option value="Tidak" {{ session('useredit')->landesk == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                            <option value="Iya" {{ session('useredit')->landesk == 'Iya' ? 'selected' : '' }}>Iya
+                            </option>
+                            <option value="Tidak" {{ session('useredit')->landesk == 'Tidak' ? 'selected' : '' }}>
+                                Tidak</option>
                         </select>
                     </div>
                 </td>
@@ -188,7 +192,8 @@
                 <td>
                     <div class="form-group mx-3">
                         <label for="mutasi_tujuan">Mutasi Tujuan</label>
-                        <input type="text" name="mutasi_tujuan" id="mutasi_tujuan" class="form-control" autofocus>
+                        <input type="text" name="mutasi_tujuan" id="mutasi_tujuan" class="form-control"
+                            autofocus>
                     </div>
                 </td>
             </tr>
@@ -196,7 +201,8 @@
                 <td>
                     <div class="form-group mx-3">
                         <label for="keterangan_mutasi">Keterangan Mutasi</label>
-                        <input type="text" name="keterangan_mutasi" id="keterangan_mutasi" class="form-control" autofocus>
+                        <input type="text" name="keterangan_mutasi" id="keterangan_mutasi" class="form-control"
+                            autofocus>
                     </div>
                 </td>
             </tr>

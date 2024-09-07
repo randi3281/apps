@@ -1,4 +1,4 @@
-<table class="table table-borderless mt-5" style="width: 400px">
+<table class="table table-borderless mt-5">
     <thead>
         <tr class="text-center align-text-center" style="height: 80px">
             <th>

@@ -55,6 +55,6 @@
         @endif
     </a>
 </li>
-<li class="nav-item">
-    <a href="{{ route('aait.logout') }}" class="nav-link text-danger">Logout</a>
+<li class="nav-item ">
+    <a href="{{ route('aait.logout') }}" class="nav-link text-danger " style="font-weight: 900">LOGOUT</a>
 </li>

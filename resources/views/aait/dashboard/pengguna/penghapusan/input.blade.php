@@ -1,4 +1,4 @@
-<table class="table table-borderless mt-5" style="width: 400px">
+<table class="table table-borderless mt-5">
     <thead>
         <tr class="text-center align-text-center" style="height: 80px">
             <th>
@@ -33,7 +33,8 @@
                 <td>
                     <div class="form-group mx-3">
                         <label for="nama_barang_asset">Asset</label>
-                        <input type="text" name="nama_barang_asset" id="nama_barang_asset" class="form-control" autofocus>
+                        <input type="text" name="nama_barang_asset" id="nama_barang_asset" class="form-control"
+                            autofocus>
                     </div>
                 </td>
             </tr>
@@ -57,7 +58,8 @@
                 <td>
                     <div class="form-group mx-3">
                         <label for="outlet_pencatatan">Outlet Pencatatan</label>
-                        <input type="text" name="outlet_pencatatan" id="outlet_pencatatan" class="form-control" autofocus>
+                        <input type="text" name="outlet_pencatatan" id="outlet_pencatatan" class="form-control"
+                            autofocus>
                     </div>
                 </td>
             </tr>

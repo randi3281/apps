@@ -409,7 +409,7 @@ class prosesController extends Controller
 
     public function pengguna_mutasi_update(Request $request, $id)
     {
-
+if(isset($request->submittombol)){
         $mutasi_now = mutasi_now::findOrFail($id);
         $mutasi_now->tanggal_perolehan = $request->tanggal_perolehan;
         $mutasi_now->asset = $request->nama_barang_asset;
@@ -432,8 +432,8 @@ class prosesController extends Controller
 
         $mutasi_now->save();
 
+    }
         jurnalhelper::resetedit();
-
         return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
     }
 
