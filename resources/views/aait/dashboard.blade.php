@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adira IT Assets Management</title>
     <link rel="stylesheet" href="{{ asset('bt/css/bootstrap.css') }}">
+    {{-- tambahkan javascript bootstrap --}}
+    <script src="{{ asset('bt/js/bootstrap.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 @if ($menu == 'dashboard' || $menu == 'user_manajemen' || $menu == 'export_to_excel')
@@ -24,25 +30,22 @@
 @endif
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 bg-dark position-fixed" style="height: 700px">
-            <ul class="nav flex-column">
-                <li class="nav-item text-center">
-                    <img src="{{ asset('images/logo.png') }}" alt="" class="w-75 mt-5 mb-5">
-                </li>
-                @include('aait.dashboard.navbar')
-            </ul>
-        </div>
-        @if ($menu == 'dashboard' || $menu == 'user_manajemen' || $menu == 'export_to_excel')
-            <div class="col-md-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-1">
+            <img src="{{ asset('images/logo.png') }}" alt="" class="navbar-brand"
+                style="width: 100px; margin-left:20px; margin-right:20px">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    @include('aait.dashboard.navbar')
+                </ul>
             </div>
-            <div class="col-md-10">
-            @elseif ($menu == 'data_barang')
-                <div class="col-md-12" style="margin-left: 230px">
-                @elseif ($menu == 'mutasi')
-                    <div class="col-md-12" style="margin-left: 230px">
-                    @elseif ($menu == 'penghapusan')
-                        <div class="col-md-12" style="margin-left: 230px">
-        @endif
+        </nav>
+    </div>
+    <div class="row">
 
         @if ($posisi == 'admin')
             @if ($menu == 'dashboard')

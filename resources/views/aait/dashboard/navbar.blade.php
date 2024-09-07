@@ -56,5 +56,5 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('aait.logout') }}" class="nav-link text-white">Logout</a>
+    <a href="{{ route('aait.logout') }}" class="nav-link text-danger">Logout</a>
 </li>

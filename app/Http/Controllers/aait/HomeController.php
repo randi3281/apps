@@ -313,6 +313,7 @@ class HomeController extends Controller
                     }
                 }
             }
+        return redirect()->route('aait.index');
         }
     }
     public function logout()
