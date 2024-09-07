@@ -12,6 +12,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .text-wrapped {
+            word-wrap: break-word;
+            white-space: normal;
+        }
+    </style>
 
 </head>
 
@@ -20,7 +26,7 @@
     <body class="bg-warning">
     @elseif ($menu == 'data_barang')
 
-        <body class="bg-warning" style="width: 3500px">
+        <body class="bg-warning">
         @elseif ($menu == 'mutasi')
 
             <body class="bg-warning" style="width: 3500px">
@@ -46,7 +52,6 @@
         </nav>
     </div>
     <div class="row">
-
         @if ($posisi == 'admin')
             @if ($menu == 'dashboard')
                 @include('aait.dashboard.admin.dashboard')
