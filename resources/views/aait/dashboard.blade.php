@@ -40,7 +40,7 @@
                 </div>
             </nav>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             @if ($posisi == 'admin')
                 @if ($menu == 'dashboard')
                     @include('aait.dashboard.admin.dashboard')
