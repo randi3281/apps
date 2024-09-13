@@ -33,7 +33,7 @@
             </div>
             <div class="form-group mt-3 mb-3">
                 <label for="area">Area: </label>
-                <select name="area" class="form-control-sm" id="subarea">
+                <select name="area" class="form-control-sm w-25" id="subarea">
                     @if (session('katapertama') == 'Cabang')
                         <option value="Cabang">Cabang</option>
                         <option value="Satelit">Satelit</option>

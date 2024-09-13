@@ -1,11 +1,11 @@
 <div class="row mt-5 justify-content-end">
     <div class="col-md-12">
-        <h1 class="mb-4"><b>Data Barang</b></h1>
+        <h1 class="mb-5 text-center"><b>Data Barang</b></h1>
         <form class="mb-3" action="{{ route('aait.proses.data_barang.pilihan') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="area"><b>Pilih Area : </b></label>
-                <select class="form-control-sm" id="area" name="area">
+                <select class="form-control-sm mt-2" id="area" name="area" style="width: 180px">
                     <option value="{{ $_SESSION['data_barang_area'] }}" name="{{ $_SESSION['data_barang_area'] }}">
                         @php
                             $cek_area = [];
@@ -28,7 +28,7 @@
                     @endforeach
                 </select>
                 <label for="bulan" class="ms-2"><b>Bulan : </b></label>
-                <select class="form-control-sm" id="bulan" name="bulan">
+                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 180px">
                     <option value="{{ $_SESSION['data_barang_bulan'] }}" name="{{ $_SESSION['data_barang_bulan'] }}">
                         @php
                             $cek_bulan = [];
@@ -51,7 +51,7 @@
                     @endforeach
                 </select>
                 <label for="tahun" class="ms-2"><b>Tahun : </b></label>
-                <select class="form-control-sm" id="tahun" name="tahun">
+                <select class="form-control-sm mt-2 mb-2" id="tahun" name="tahun" style="width: 180px">
                     <option value="{{ $_SESSION['data_barang_tahun'] }}" name="{{ $_SESSION['data_barang_tahun'] }}">
                         @php
                             $cek_tahun = [];
@@ -73,65 +73,133 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary btn ms-3"><b>Submit</b></button>
+                <button type="submit" class="btn btn-primary btn-sm btn ms-3 "style="width: 250px"><b>Submit</b></button>
             </div>
         </form>
-        <p style="font-size: 14px" class="mb-4"> <b>Keterangan : <i></b>Area : {{ $_SESSION['data_barang_area'] }},
-            Bulan :
-            {{ $_SESSION['data_barang_bulan'] }}, Tahun
-            :
-            {{ $_SESSION['data_barang_tahun'] }}</i></p>
 
-        <table class="table table-bordered table-striped text-center">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Tanggal Perolehan</th>
-                    <th>Asset</th>
-                    <th>Kode Fa Fams</th>
-                    <th>Nama Barang</th>
-                    <th>Outlet Pencatatan</th>
-                    <th>Outlet Actual</th>
-                    <th>Type Barang</th>
-                    <th>Location</th>
-                    <th>Jabatan</th>
-                    <th>Nama User</th>
-                    <th>NIK</th>
-                    <th>Komputer Nama</th>
-                    <th>IP Address</th>
-                    <th>Kondisi</th>
-                    <th>Keterangan</th>
-                    <th>Serial Number</th>
-                    <th>Sophos</th>
-                    <th>Landesk</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($datanya as $data)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $data->tanggal_perolehan }}</td>
-                        <td>{{ $data->asset }}</td>
-                        <td>{{ $data->kode_fa_fams }}</td>
-                        <td>{{ $data->nama_barang }}</td>
-                        <td>{{ $data->outlet_pencatatan }}</td>
-                        <td>{{ $data->outlet_actual }}</td>
-                        <td>{{ $data->type_barang }}</td>
-                        <td>{{ $data->location }}</td>
-                        <td>{{ $data->jabatan }}</td>
-                        <td>{{ $data->nama_user }}</td>
-                        <td>{{ $data->nik }}</td>
-                        <td>{{ $data->komputer_nama }}</td>
-                        <td>{{ $data->ip_address }}</td>
-                        <td>{{ $data->kondisi }}</td>
-                        <td>{{ $data->keterangan }}</td>
-                        <td>{{ $data->serial_number }}</td>
-                        <td>{{ $data->sophos }}</td>
-                        <td>{{ $data->landesk }}</td>
+        <div class="table-responsive">
+            <table class="table" id="table-1"  style="min-width: 900px">
+                <thead>
+                    <tr class="text-center">
+                        <th>No</th>
+                        <th>Asset</th>
+                        <th>Kode Fa Fams</th>
+                        <th>Nama Barang</th>
+                        <th>Aksi</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($datanya as $data)
+                        <tr class="align-middle">
+                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td>{{ $data->asset }}</td>
+                            <td>{{ $data->kode_fa_fams }}</td>
+                            <td>{{ $data->nama_barang }}</td>
+                            <td>
+                                <button class="btn btn-primary toggle-details">+</button>
+                                <a href="{{ route('aait.proses.pengguna.data_barang.edit', ['id' => $data->id]) }}"
+                                    class="btn btn-warning">Edit</a>
+                                <form
+                                    action="{{ route('aait.proses.pengguna.data_barang.delete', ['id' => $data->id]) }}"
+                                    method="post" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr class="details-row d-none">
+                            <td colspan="20">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Tanggal Perolehan</th>
+                                        <td>{{ $data->tanggal_perolehan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Acquis Val</th>
+                                        <td>{{ $data->acquis_val }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Accum Dep</th>
+                                        <td>{{ $data->accum_dep }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Book Val</th>
+                                        <td>{{ $data->book_val }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Outlet Pencatatan</th>
+                                        <td>{{ $data->outlet_pencatatan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Outlet Actual</th>
+                                        <td>{{ $data->outlet_actual }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Type Barang</th>
+                                        <td>{{ $data->type_barang }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Location</th>
+                                        <td>{{ $data->location }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jabatan</th>
+                                        <td>{{ $data->jabatan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama User</th>
+                                        <td>{{ $data->nama_user }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>NIK</th>
+                                        <td>{{ $data->nik }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Komputer Nama</th>
+                                        <td>{{ $data->komputer_nama }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IP Address</th>
+                                        <td>{{ $data->ip_address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Kondisi</th>
+                                        <td>{{ $data->kondisi }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Keterangan</th>
+                                        <td>{{ $data->keterangan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Serial Number</th>
+                                        <td>{{ $data->serial_number }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sophos</th>
+                                        <td>{{ $data->sophos }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Landesk</th>
+                                        <td>{{ $data->landesk }}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         {{ $datanya->links('pagination::bootstrap-4') }}
+
+        <script>
+            document.querySelectorAll('.toggle-details').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var detailsRow = this.closest('tr').nextElementSibling;
+                    detailsRow.classList.toggle('d-none');
+                    this.textContent = detailsRow.classList.contains('d-none') ? '+' : '-';
+                });
+            });
+        </script>
     </div>
 </div>
