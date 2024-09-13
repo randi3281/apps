@@ -10,10 +10,10 @@
         @endif
     </div>
     <div class="col-md-8 mt-5">
-        <form class="mb-3" action="{{ route('aait.proses.penghapusan_pilihan') }}" method="POST">
+        <form class="mb-3" action="{{ route('aait.proses.penghapusan_pilihan') }}" method="POST" style="font-size: 8pt">
             @csrf
             <div class="form-group">
-                <label for="bulan" class="ms-2"><b>Bulan : </b></label>
+                <label for="bulan" ><b>Bulan : </b></label>
                 <select class="form-control-sm" id="bulan" name="bulan">
                     <option value="{{ $_SESSION['penghapusan_bulan'] }}" name="{{ $_SESSION['penghapusan_bulan'] }}">
                         @php
@@ -36,7 +36,7 @@
                     @endif
                     @endforeach
                 </select>
-                <label for="tahun" class="ms-2"><b>Tahun : </b></label>
+                <label for="tahun" ><b>Tahun : </b></label>
                 <select class="form-control-sm" id="tahun" name="tahun">
                     <option value="{{ $_SESSION['penghapusan_tahun'] }}" name="{{ $_SESSION['penghapusan_tahun'] }}">
                         @php
@@ -59,10 +59,13 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary btn ms-3"><b>Submit</b></button>
+                <button type="submit" class="btn btn-primary ms-3" style="font-size: 8pt;margin-top: -5px"><b>Submit</b></button>
             </div>
         </form>
-        <table class="table table-bordered table-striped text-center">
+
+
+        <div class="table-responsive">
+            <table class="table" id="table-1"  style="min-width: 900px">
             <thead class="custom-thead">
                 <tr>
                     <th class="text-center text-wrapped">No</th>
@@ -168,6 +171,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
         {{ $datanya->links('pagination::bootstrap-4') }}
 
         <script>

@@ -10,10 +10,10 @@
         @endif
     </div>
     <div class="col-md-8 mt-5">
-        <form class="mb-3" action="{{ route('aait.proses.mutasi_pilihan') }}" method="POST">
+        <form class="mb-3" action="{{ route('aait.proses.mutasi_pilihan') }}" method="POST" style="font-size: 8pt">
             @csrf
             <div class="form-group">
-                <label for="bulan" class="ms-2"><b>Bulan : </b></label>
+                <label for="bulan"><b>Bulan : </b></label>
                 <select class="form-control-sm" id="bulan" name="bulan">
                     <option value="{{ $_SESSION['mutasi_bulan'] }}" name="{{ $_SESSION['mutasi_bulan'] }}">
                         @php
@@ -36,7 +36,7 @@
                     @endif
                     @endforeach
                 </select>
-                <label for="tahun" class="ms-2"><b>Tahun : </b></label>
+                <label for="tahun"><b>Tahun : </b></label>
                 <select class="form-control-sm" id="tahun" name="tahun">
                     <option value="{{ $_SESSION['mutasi_tahun'] }}" name="{{ $_SESSION['mutasi_tahun'] }}">
                         @php
@@ -59,16 +59,19 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary btn ms-3"><b>Submit</b></button>
+                <button type="submit" class="btn btn-primary ms-3" style="font-size: 8pt;margin-top: -5px"><b>Submit</b></button>
             </div>
         </form>
 
-        <table class="table table-bordered table-striped text-center">
+
+        <div class="table-responsive">
+            <table class="table" id="table-1"  style="min-width: 900px">
             <thead class="custom-thead">
                 <tr>
                     <th class="text-center text-wrapped">No</th>
                     <th class="text-center text-wrapped">Asset</th>
                     <th class="text-center text-wrapped">Kode FA</th>
+                    <th class="text-center text-wrapped">Nama Unit</th>
                     <th class="text-center text-wrapped">Aksi</th>
                 </tr>
             </thead>
@@ -78,6 +81,7 @@
                         <td class="text-center text-wrapped">{{ $loop->iteration }}</td>
                         <td class="text-wrapped">{{ $data->asset }}</td>
                         <td class="text-wrapped">{{ $data->kode_fa_fams }}</td>
+                        <td class="text-wrapped">{{ $data->nama_barang }}</td>
                         <td class="text-wrapped">
                             <button class="btn btn-primary toggle-details">+</button>
                             <a href="{{ route('aait.proses.pengguna.mutasi.edit', ['id' => $data->id]) }}"
@@ -87,12 +91,8 @@
                         </td>
                     </tr>
                     <tr class="details-row d-none">
-                        <td colspan="4">
+                        <td colspan="5">
                             <table class="table table-bordered">
-                                <tr>
-                                    <th class="text-wrapped">Nama Barang</th>
-                                    <td class="text-wrapped">{{ $data->nama_barang }}</td>
-                                </tr>
                                 <tr>
                                     <th class="text-wrapped">Outlet Actual</th>
                                     <td class="text-wrapped">{{ $data->outlet_actual }}</td>
@@ -163,6 +163,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         <script>
             document.querySelectorAll('.toggle-details').forEach(function(button) {
