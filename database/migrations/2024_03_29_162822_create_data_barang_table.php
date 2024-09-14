@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_barang_now', function (Blueprint $table) {
+        Schema::create('data_barang', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal_perolehan')->nullable();
             $table->string('asset')->nullable();
@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('sophos')->nullable();
             $table->string('landesk')->nullable();
             $table->string('capex_or_selisih')->nullable();
+            $table->string('bulan')->nullable();
+            $table->string('tahun')->nullable();
             $table->timestamps();
         });
     }
@@ -41,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_barang_now');
+        Schema::dropIfExists('data_barang');
     }
 };

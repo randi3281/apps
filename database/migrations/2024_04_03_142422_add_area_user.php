@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('mutasi_now', function (Blueprint $table) {
-            $table->string('bulan')->nullable();
-            $table->string('tahun')->nullable();
+        Schema::table('mutasi', function (Blueprint $table) {
+            $table->string('area_user')->nullable();
         });
     }
 
@@ -22,9 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('mutasi_now', function (Blueprint $table) {
-            $table->dropColumn('bulan');
-            $table->dropColumn('tahun');
+        Schema::table('mutasi', function (Blueprint $table) {
+            $table->dropColumn('area_user');
         });
     }
 };
