@@ -28,7 +28,7 @@
                     @endforeach
                 </select>
                 <label for="bulan" class="ms-2"><b>Bulan : </b></label>
-                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 200px">
+                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 230px">
                     <option value="{{ $_SESSION['data_barang_bulan'] }}" name="{{ $_SESSION['data_barang_bulan'] }}">
                         @php
                             $cek_bulan = [];
