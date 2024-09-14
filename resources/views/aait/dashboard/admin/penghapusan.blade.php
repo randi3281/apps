@@ -106,7 +106,7 @@
                             <td colspan="5">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <th>Tanggal Perolehan</th>
+                                        <th style="width: 250px">Tanggal Perolehan</th>
                                         <td>{{ $data->tanggal_perolehan }}</td>
                                     </tr>
                                     <tr>
