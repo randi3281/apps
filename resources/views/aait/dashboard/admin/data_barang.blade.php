@@ -96,16 +96,8 @@
                             <td>{{ $data->asset }}</td>
                             <td>{{ $data->kode_fa_fams }}</td>
                             <td>{{ $data->nama_barang }}</td>
-                            <td>
+                            <td class="text-center">
                                 <button class="btn btn-primary toggle-details">+</button>
-                                <a href="{{ route('aait.proses.pengguna.data_barang.edit', ['id' => $data->id]) }}"
-                                    class="btn btn-warning">Edit</a>
-                                <form
-                                    action="{{ route('aait.proses.pengguna.data_barang.delete', ['id' => $data->id]) }}"
-                                    method="post" class="d-inline">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>
