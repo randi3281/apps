@@ -5,7 +5,7 @@
             @csrf
             <div class="form-group">
                 <label for="area"><b>Pilih Area : </b></label>
-                <select class="form-control-sm mt-2" id="area" name="area" style="width: 180px">
+                <select class="form-control-sm mt-2" id="area" name="area" style="width: 200px">
                     <option value="{{ $_SESSION['data_barang_area'] }}" name="{{ $_SESSION['data_barang_area'] }}">
                         @php
                             $cek_area = [];
@@ -28,7 +28,7 @@
                     @endforeach
                 </select>
                 <label for="bulan" class="ms-2"><b>Bulan : </b></label>
-                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 180px">
+                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 200px">
                     <option value="{{ $_SESSION['data_barang_bulan'] }}" name="{{ $_SESSION['data_barang_bulan'] }}">
                         @php
                             $cek_bulan = [];
@@ -51,7 +51,7 @@
                     @endforeach
                 </select>
                 <label for="tahun" class="ms-2"><b>Tahun : </b></label>
-                <select class="form-control-sm mt-2 mb-2" id="tahun" name="tahun" style="width: 180px">
+                <select class="form-control-sm mt-2 mb-2" id="tahun" name="tahun" style="width: 200px">
                     <option value="{{ $_SESSION['data_barang_tahun'] }}" name="{{ $_SESSION['data_barang_tahun'] }}">
                         @php
                             $cek_tahun = [];
