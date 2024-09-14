@@ -28,7 +28,7 @@
                     @endforeach
                 </select>
                 <label for="bulan" class="ms-2"><b>Bulan : </b></label>
-                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 230px">
+                <select class="form-control-sm mt-2" id="bulan" name="bulan" style="width: 200px">
                     <option value="{{ $_SESSION['data_barang_bulan'] }}" name="{{ $_SESSION['data_barang_bulan'] }}">
                         @php
                             $cek_bulan = [];
@@ -73,12 +73,13 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary btn-sm btn ms-3 "style="width: 250px"><b>Submit</b></button>
+                <button type="submit"
+                    class="btn btn-primary btn-sm btn ms-3 "style="width: 250px"><b>Submit</b></button>
             </div>
         </form>
 
         <div class="table-responsive">
-            <table class="table" id="table-1"  style="min-width: 900px">
+            <table class="table" id="table-1" style="min-width: 900px">
                 <thead>
                     <tr class="text-center">
                         <th>No</th>
