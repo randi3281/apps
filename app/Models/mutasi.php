@@ -11,6 +11,7 @@ class mutasi extends Model
     protected $table = 'mutasi';
 
     protected $fillable = [
+        'tanggal_perolehan',
         'asset',
         'kode_fa',
         'nama_barang',

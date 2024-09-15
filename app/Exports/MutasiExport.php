@@ -40,6 +40,7 @@ class MutasiExport implements FromCollection, WithHeadings
 
         $data = $query->get([
                 'id',
+                'tanggal_perolehan',
                 'asset',
                 'kode_fa',
                 'nama_barang',
@@ -79,6 +80,7 @@ class MutasiExport implements FromCollection, WithHeadings
     {
         return [
             'No',
+            'Tanggal Perolehan',
             'Asset',
             'Kode Fa Fams',
             'Nama Barang',
