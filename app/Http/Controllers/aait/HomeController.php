@@ -206,6 +206,8 @@ class HomeController extends Controller
                             }
                             $data_user = user_manajemen::all();
                             $data_barang_old = data_barang::all();
+                            // tampilkan sesuai cari
+                            
                             return view('aait.dashboard', ['posisi' => $_COOKIE['posisi'], 'nama' => $_COOKIE['nama'], 'nik' => $_COOKIE['nik'], 'area' => $_COOKIE['area'], 'waktu' => $_COOKIE['current_time_formatted'], 'tanggal' => $_COOKIE['tanggal'], 'menu' => $menu, 'datanya' => $datanya], compact('data_barang_old', 'data_user'));
                         }
 

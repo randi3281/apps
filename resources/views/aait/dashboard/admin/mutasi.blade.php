@@ -73,8 +73,13 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary btn-sm btn ms-3 "
-                    style="width: 250px"><b>Submit</b></button>
+                <input type="submit" class="btn btn-primary btn-sm ms-3" style="width: 250px" value="Submit" name="tombolsubmit">
+                {{-- buatkan kolom cari dan tombolnya --}}
+                <br>
+                <label for="cari" class="ms-2"><b>Cari : </b></label>
+                <input type="text" class="form-control-sm my-2" id="cari" name="cari" style="width: 200px"
+                    placeholder="Cari">
+                <input type="submit" class="btn btn-primary btn-sm ms-3" style="width: 250px" value="Cari" name="tombolcari">
             </div>
         </form>
 

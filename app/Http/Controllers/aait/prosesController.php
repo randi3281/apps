@@ -222,11 +222,23 @@ class prosesController extends Controller
     public function data_barang_pilihan(Request $request)
     {
         session_start();
-        $_SESSION['data_barang_time'] = 'old';
-        $_SESSION['data_barang_area']= $request->area;
-        $_SESSION['data_barang_bulan']= $request->bulan;
-        $_SESSION['data_barang_tahun']= $request->tahun;
-        return redirect()->route('aait.dashboard', ['menu' => 'data_barang']);
+        if(isset($request->tombolsubmit)){
+            $_SESSION['data_barang_time'] = 'new';
+            $_SESSION['data_barang_area']= $request->area;
+            $_SESSION['data_barang_bulan']= $request->bulan;
+            $_SESSION['data_barang_tahun']= $request->tahun;
+            return redirect()->route('aait.dashboard', ['menu' => 'data_barang']);
+        }
+
+        if(isset($request->tombolcari)){
+            // tampilkan sesuai kolom cari
+            $_SESSION['data_barang_time'] = 'old';
+            $_SESSION['data_barang_area']= $request->area;
+            $_SESSION['data_barang_bulan']= $request->bulan;
+            $_SESSION['data_barang_tahun']= $request->tahun;
+            $_SESSION['data_barang_cari']= $request->cari;
+            return redirect()->route('aait.dashboard', ['menu' => 'data_barang']);
+        }
     }
     public function mutasi_pilihan(Request $request)
     {
