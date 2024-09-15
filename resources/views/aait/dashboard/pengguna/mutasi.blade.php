@@ -94,6 +94,10 @@
                         <td colspan="5">
                             <table class="table table-bordered">
                                 <tr>
+                                    <th class="text-wrapped">Tanggal Perolehan</th>
+                                    <td class="text-wrapped">{{ $data->tanggal_perolehan }}</td>
+                                </tr>
+                                <tr>
                                     <th class="text-wrapped">Outlet Actual</th>
                                     <td class="text-wrapped">{{ $data->outlet_actual }}</td>
                                 </tr>
