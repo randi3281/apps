@@ -80,6 +80,37 @@ class HomeController extends Controller
                             }
                             $data_user = user_manajemen::all();
                             $data_barang_old = data_barang::all();
+
+
+                            if(isset($_SESSION['data_barang_cari'])){
+                                $search = $_SESSION['data_barang_cari'];
+                                $datanya = data_barang::where(function($query) use ($search) {
+                                    $query->where('nama_barang', 'like', "%{$search}%")
+                                        ->orWhere('kode_fa_fams', 'like', "%{$search}%")
+                                        ->orWhere('asset', 'like', "%{$search}%")
+                                        ->orWhere('tanggal_perolehan', 'like', "%{$search}%")
+                                        ->orWhere('outlet_pencatatan', 'like', "%{$search}%")
+                                        ->orWhere('outlet_actual', 'like', "%{$search}%")
+                                        ->orWhere('type_barang', 'like', "%{$search}%")
+                                        ->orWhere('location', 'like', "%{$search}%")
+                                        ->orWhere('jabatan', 'like', "%{$search}%")
+                                        ->orWhere('nama_user', 'like', "%{$search}%")
+                                        ->orWhere('nik', 'like', "%{$search}%")
+                                        ->orWhere('komputer_nama', 'like', "%{$search}%")
+                                        ->orWhere('ip_address', 'like', "%{$search}%")
+                                        ->orWhere('kondisi', 'like', "%{$search}%")
+                                        ->orWhere('keterangan', 'like', "%{$search}%")
+                                        ->orWhere('serial_number', 'like', "%{$search}%")
+                                        ->orWhere('sophos', 'like', "%{$search}%")
+                                        ->orWhere('landesk', 'like', "%{$search}%")
+                                        ->orWhere('capex_or_selisih', 'like', "%{$search}%")
+                                        ->orWhere('bulan', 'like', "%{$search}%")
+                                        ->orWhere('tahun', 'like', "%{$search}%")
+                                        ->orWhere('area_user', 'like', "%{$search}%");
+                                })->paginate(10);
+
+                            }
+
                             return view('aait.dashboard', ['posisi' => $_COOKIE['posisi'], 'nama' => $_COOKIE['nama'], 'nik' => $_COOKIE['nik'], 'area' => $_COOKIE['area'], 'waktu' => $_COOKIE['current_time_formatted'], 'tanggal' => $_COOKIE['tanggal'], 'menu' => $menu, 'datanya' => $datanya], compact('data_barang_old', 'data_user'));
                         }
 
@@ -108,6 +139,39 @@ class HomeController extends Controller
                             }
                             $data_user = user_manajemen::all();
                             $mutasi_old = mutasi::all();
+
+
+                            if(isset($_SESSION['mutasi_cari'])){
+                                $search = $_SESSION['mutasi_cari'];
+                                $datanya = mutasi::where(function($query) use ($search) {
+                                    $query->where('nama_barang', 'like', "%{$search}%")
+                                        ->orWhere('kode_fa', 'like', "%{$search}%")
+                                        ->orWhere('asset', 'like', "%{$search}%")
+                                        ->orWhere('tanggal_perolehan', 'like', "%{$search}%")
+                                        ->orWhere('outlet_actual', 'like', "%{$search}%")
+                                        ->orWhere('type_barang', 'like', "%{$search}%")
+                                        ->orWhere('location', 'like', "%{$search}%")
+                                        ->orWhere('jabatan', 'like', "%{$search}%")
+                                        ->orWhere('user_domain', 'like', "%{$search}%")
+                                        ->orWhere('nik', 'like', "%{$search}%")
+                                        ->orWhere('komputer_nama', 'like', "%{$search}%")
+                                        ->orWhere('ip_address', 'like', "%{$search}%")
+                                        ->orWhere('kondisi', 'like', "%{$search}%")
+                                        ->orWhere('keterangan', 'like', "%{$search}%")
+                                        ->orWhere('serial_number', 'like', "%{$search}%")
+                                        ->orWhere('sophos', 'like', "%{$search}%")
+                                        ->orWhere('landesk', 'like', "%{$search}%")
+                                        ->orWhere('mutasi_asal', 'like', "%{$search}%")
+                                        ->orWhere('mutasi_tujuan', 'like', "%{$search}%")
+                                        ->orWhere('keterangan_mutasi', 'like', "%{$search}%")
+                                        ->orWhere('bulan', 'like', "%{$search}%")
+                                        ->orWhere('tahun', 'like', "%{$search}%")
+                                        ->orWhere('area_user', 'like', "%{$search}%");
+                                })->paginate(10);
+
+                            }
+
+
                             return view('aait.dashboard', ['posisi' => $_COOKIE['posisi'], 'nama' => $_COOKIE['nama'], 'nik' => $_COOKIE['nik'], 'area' => $_COOKIE['area'], 'waktu' => $_COOKIE['current_time_formatted'], 'tanggal' => $_COOKIE['tanggal'], 'menu' => $menu, 'datanya' => $datanya], compact('mutasi_old', 'data_user'));
                         }
 
@@ -137,6 +201,33 @@ class HomeController extends Controller
                             }
                             $data_user = user_manajemen::all();
                             $penghapusan_old = penghapusan::all();
+
+                            if(isset($_SESSION['penghapusan_cari'])){
+                                $search = $_SESSION['penghapusan_cari'];
+                                $datanya = penghapusan::where(function($query) use ($search) {
+                                    $query->where('nama_barang', 'like', "%{$search}%")
+                                        ->orWhere('kode_fa_fams', 'like', "%{$search}%")
+                                        ->orWhere('asset', 'like', "%{$search}%")
+                                        ->orWhere('tanggal_perolehan', 'like', "%{$search}%")
+                                        ->orWhere('outlet_pencatatan', 'like', "%{$search}%")
+                                        ->orWhere('outlet_actual', 'like', "%{$search}%")
+                                        ->orWhere('type_barang', 'like', "%{$search}%")
+                                        ->orWhere('location', 'like', "%{$search}%")
+                                        ->orWhere('jabatan', 'like', "%{$search}%")
+                                        ->orWhere('nama_user', 'like', "%{$search}%")
+                                        ->orWhere('nik', 'like', "%{$search}%")
+                                        ->orWhere('komputer_nama', 'like', "%{$search}%")
+                                        ->orWhere('ip_address', 'like', "%{$search}%")
+                                        ->orWhere('kondisi', 'like', "%{$search}%")
+                                        ->orWhere('keterangan', 'like', "%{$search}%")
+                                        ->orWhere('serial_number', 'like', "%{$search}%")
+                                        ->orWhere('sophos', 'like', "%{$search}%")
+                                        ->orWhere('landesk', 'like', "%{$search}%")
+                                        ->orWhere('bulan', 'like', "%{$search}%")
+                                        ->orWhere('tahun', 'like', "%{$search}%")
+                                        ->orWhere('area_user', 'like', "%{$search}%");
+                                })->paginate(10);
+                            }
                             return view('aait.dashboard', ['posisi' => $_COOKIE['posisi'], 'nama' => $_COOKIE['nama'], 'nik' => $_COOKIE['nik'], 'area' => $_COOKIE['area'], 'waktu' => $_COOKIE['current_time_formatted'], 'tanggal' => $_COOKIE ['tanggal'], 'menu' => $menu, 'datanya' => $datanya], compact('penghapusan_old', 'data_user'));
                         }
 

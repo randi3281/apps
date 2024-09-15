@@ -59,7 +59,11 @@
                     @endif
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-primary ms-3" style="font-size: 8pt;margin-top: -5px"><b>Submit</b></button>
+                <input type="submit" class="btn btn-primary ms-1" style="font-size: 8pt;margin-top: -5px" value="Submit" name="tombolsubmit">
+                <label for="cari" class="ms-2"><b>Cari : </b></label>
+                <input type="text" class="form-control-sm my-2" id="cari" name="cari" style="width: 150px"
+                    placeholder="Cari">
+                <input type="submit" class="btn btn-primary btn ms-1"  value="Cari" style="font-size: 8pt;margin-top: -5px" name="tombolcari">
             </div>
         </form>
 
