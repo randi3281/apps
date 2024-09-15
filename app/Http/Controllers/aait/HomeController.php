@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\user_manajemen;
 use App\Helper\jurnalhelper;
-use App\Models\data_barang_now;
 use App\Models\data_barang;
-use App\Models\mutasi_now;
 use App\Models\mutasi;
-use App\Models\penghapusan_now;
 use App\Models\penghapusan;
 
 class HomeController extends Controller
@@ -62,10 +59,10 @@ class HomeController extends Controller
                                 return redirect()->route('aait.dashboard', ['menu' => 'dashboard']);
                             }
                             if($_SESSION['data_barang_time'] == 'now'){
-                                $datanya = data_barang_now::paginate(10);
+                                $datanya = data_barang::paginate(10);
                             } else {
                                 if($_SESSION['data_barang_area'] == 'all' && $_SESSION['data_barang_bulan'] == 'all' && $_SESSION['data_barang_tahun'] == 'all'){
-                                    $datanya = data_barang_now::paginate(10);
+                                    $datanya = data_barang::paginate(10);
                                 } else{
                                     if($_SESSION['data_barang_bulan'] == 'all'){
                                         if($_SESSION['data_barang_tahun'] == 'all'){
@@ -90,10 +87,10 @@ class HomeController extends Controller
                             jurnalhelper::resetsessiondatabarang();
                             jurnalhelper::resetsessionpenghapusan();
                             if($_SESSION['mutasi_time'] == 'now'){
-                                $datanya = mutasi_now::paginate(10);
+                                $datanya = mutasi::paginate(10);
                             } else {
                                 if($_SESSION['mutasi_area'] == 'all' && $_SESSION['mutasi_bulan'] == 'all' && $_SESSION['mutasi_tahun'] == 'all'){
-                                    $datanya = mutasi_now::paginate(10);
+                                    $datanya = mutasi::paginate(10);
                                 } else{
                                     if($_SESSION['mutasi_bulan'] == 'all'){
                                         if($_SESSION['mutasi_tahun'] == 'all'){
@@ -118,11 +115,11 @@ class HomeController extends Controller
                             jurnalhelper::resetsessionmutasi();
                             jurnalhelper::resetsessiondatabarang();
                             if($_SESSION['penghapusan_time'] == 'now'){
-                                $datanya = penghapusan_now::paginate(10);
+                                $datanya = penghapusan::paginate(10);
                             } else {
 
                                 if($_SESSION['penghapusan_area'] == 'all' && $_SESSION['penghapusan_bulan'] == 'all' && $_SESSION['penghapusan_tahun'] == 'all'){
-                                    $datanya = penghapusan_now::paginate(10);
+                                    $datanya = penghapusan::paginate(10);
                                 } else{
                                     if($_SESSION['penghapusan_bulan'] == 'all'){
                                         if($_SESSION['penghapusan_tahun'] == 'all'){
@@ -173,10 +170,10 @@ class HomeController extends Controller
                             jurnalhelper::resetedit();
                             jurnalhelper::resetsessionpenghapusan();
                             if($_SESSION['data_barang_time'] == 'now'){
-                                $datanya = data_barang_now::paginate(10);
+                                $datanya = data_barang::paginate(10);
                             } else {
                                 if($_SESSION['data_barang_area'] == 'all' && $_SESSION['data_barang_bulan'] == 'all' && $_SESSION['data_barang_tahun'] == 'all'){
-                                    $datanya = data_barang_now::paginate(10);
+                                    $datanya = data_barang::paginate(10);
                                 } else{
                                     if($_SESSION['data_barang_area'] == 'all'){
                                         if($_SESSION['data_barang_bulan'] == 'all'){
@@ -217,10 +214,10 @@ class HomeController extends Controller
                             jurnalhelper::resetedit();
                             jurnalhelper::resetsessionpenghapusan();
                             if($_SESSION['mutasi_time'] == 'now'){
-                                $datanya = mutasi_now::paginate(10);
+                                $datanya = mutasi::paginate(10);
                             } else {
                                 if($_SESSION['mutasi_area'] == 'all' && $_SESSION['mutasi_bulan'] == 'all' && $_SESSION['mutasi_tahun'] == 'all'){
-                                    $datanya = mutasi_now::paginate(10);
+                                    $datanya = mutasi::paginate(10);
                                 } else{
                                     if($_SESSION['mutasi_area'] == 'all'){
                                         if($_SESSION['mutasi_bulan'] == 'all'){
@@ -261,10 +258,10 @@ class HomeController extends Controller
                             jurnalhelper::resetedit();
                             jurnalhelper::resetsessiondatabarang();
                             if($_SESSION['penghapusan_time'] == 'now'){
-                                $datanya = penghapusan_now::paginate(10);
+                                $datanya = penghapusan::paginate(10);
                             } else {
                                 if($_SESSION['penghapusan_area'] == 'all' && $_SESSION['penghapusan_bulan'] == 'all' && $_SESSION['penghapusan_tahun'] == 'all'){
-                                    $datanya = penghapusan_now::paginate(10);
+                                    $datanya = penghapusan::paginate(10);
                                 } else{
                                     if($_SESSION['penghapusan_area'] == 'all'){
                                         if($_SESSION['penghapusan_bulan'] == 'all'){

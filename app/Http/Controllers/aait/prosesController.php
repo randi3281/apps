@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\aait;
 
 use App\Http\Controllers\Controller;
-use App\Exports\DataBarangNowExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -12,10 +11,8 @@ use App\Models\area_user_aplikasi;
 use App\Helper\jurnalhelper as jurnalhelper;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DataBarangExport;
-use App\Exports\MutasiExport;
-use App\Exports\MutasiNowExport;
+use App\Exports\MutasiExport;;
 use App\Exports\PenghapusanExport;
-use App\Exports\PenghapusanNowExport;
 use App\Models\data_barang_now;
 use App\Models\data_barang;
 use App\Models\penghapusan_now;
@@ -178,7 +175,7 @@ class prosesController extends Controller
     {
         session_start();
         if ($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all') {
-            return Excel::download(new DataBarangNowExport, 'Data Barang Sekarang.xlsx');
+            return Excel::download(new DataBarangExport($request->bulan, $request->tahun, $request->area), 'Data Barang Sekarang.xlsx');
         } else {
             if ($_COOKIE['posisi'] == 'pengguna') {
                 $areanya = $_COOKIE['area'];
@@ -199,7 +196,7 @@ class prosesController extends Controller
     {
         session_start();
         if($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all'){
-            return Excel::download(new MutasiNowExport, 'Mutasi Sekarang.xlsx');
+                return Excel::download(new MutasiExport($request->bulan, $request->tahun, $request->area), 'Mutasi Sekarang.xlsx');
         } else {
             if($_COOKIE['posisi'] == 'pengguna'){
                 $areanya = $_COOKIE['area'];
@@ -212,7 +209,7 @@ class prosesController extends Controller
     {
         session_start();
         if($request->area == 'all' && $request->bulan == 'all' && $request->tahun == 'all'){
-            return Excel::download(new PenghapusanNowExport, 'Penghapusan Sekarang.xlsx');
+            return Excel::download(new PenghapusanExport($request->bulan, $request->tahun, $request->area), 'Penghapusan Sekarang.xlsx');
         } else {
             if($_COOKIE['posisi'] == 'pengguna'){
                 $areanya = $_COOKIE['area'];
