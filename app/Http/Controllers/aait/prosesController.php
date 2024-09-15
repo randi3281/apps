@@ -242,22 +242,48 @@ class prosesController extends Controller
     }
     public function mutasi_pilihan(Request $request)
     {
-        session_start();
-        $_SESSION['mutasi_time'] = 'old';
-        $_SESSION['mutasi_area']= $request->area;
-        $_SESSION['mutasi_bulan']= $request->bulan;
-        $_SESSION['mutasi_tahun']= $request->tahun;
-        return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
+        if(isset($request->tombolsubmit)){
+            session_start();
+            $_SESSION['mutasi_time'] = 'new';
+            $_SESSION['mutasi_area']= $request->area;
+            $_SESSION['mutasi_bulan']= $request->bulan;
+            $_SESSION['mutasi_tahun']= $request->tahun;
+            return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
+        }
+
+        if(isset($request->tombolcari)){
+            // tampilkan sesuai kolom cari
+            session_start();
+            $_SESSION['mutasi_time'] = 'old';
+            $_SESSION['mutasi_area']= $request->area;
+            $_SESSION['mutasi_bulan']= $request->bulan;
+            $_SESSION['mutasi_tahun']= $request->tahun;
+            $_SESSION['mutasi_cari']= $request->cari;
+            return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
+        }
     }
 
     public function penghapusan_pilihan(Request $request)
     {
-        session_start();
-        $_SESSION['penghapusan_time'] = 'old';
-        $_SESSION['penghapusan_area']= $request->area;
-        $_SESSION['penghapusan_bulan']= $request->bulan;
-        $_SESSION['penghapusan_tahun']= $request->tahun;
-        return redirect()->route('aait.dashboard', ['menu' => 'penghapusan']);
+        if(isset($request->tombolsubmit)){
+            session_start();
+            $_SESSION['penghapusan_time'] = 'new';
+            $_SESSION['penghapusan_area']= $request->area;
+            $_SESSION['penghapusan_bulan']= $request->bulan;
+            $_SESSION['penghapusan_tahun']= $request->tahun;
+            return redirect()->route('aait.dashboard', ['menu' => 'penghapusan']);
+        }
+
+        if(isset($request->tombolcari)){
+            // tampilkan sesuai kolom cari
+            session_start();
+            $_SESSION['penghapusan_time'] = 'old';
+            $_SESSION['penghapusan_area']= $request->area;
+            $_SESSION['penghapusan_bulan']= $request->bulan;
+            $_SESSION['penghapusan_tahun']= $request->tahun;
+            $_SESSION['penghapusan_cari']= $request->cari;
+            return redirect()->route('aait.dashboard', ['menu' => 'penghapusan']);
+        }
     }
 
     // End Campur

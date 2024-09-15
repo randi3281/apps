@@ -127,10 +127,6 @@
                                         <td>{{ $data->book_val }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Outlet Pencatatan</th>
-                                        <td>{{ $data->outlet_pencatatan }}</td>
-                                    </tr>
-                                    <tr>
                                         <th>Outlet Actual</th>
                                         <td>{{ $data->outlet_actual }}</td>
                                     </tr>
