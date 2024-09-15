@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <form action="{{ route('aait.proses.pengguna.data_barang.store') }}" method="POST">
+        <form action="{{ route('aait.proses.pengguna.penghapusan.store') }}" method="POST">
             @csrf
 
             @if ($errors->any())

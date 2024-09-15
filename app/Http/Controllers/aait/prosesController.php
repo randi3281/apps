@@ -13,11 +13,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DataBarangExport;
 use App\Exports\MutasiExport;;
 use App\Exports\PenghapusanExport;
-use App\Models\data_barang_now;
 use App\Models\data_barang;
-use App\Models\penghapusan_now;
 use App\Models\penghapusan;
-use App\Models\mutasi_now;
 use App\Models\mutasi;
 use Carbon\Carbon;
 
@@ -257,51 +254,27 @@ class prosesController extends Controller
     // Start Data Barang Pengguna
     public function pengguna_databarang_store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'tanggal_perolehan' => 'required|date',
-            'nama_barang_asset' => 'required|string|max:255',
-            'kode_fa_fams' => 'required|string|max:255',
-            'nama_barang' => 'required|string|max:255',
-            'outlet_pencatatan' => 'required|string|max:255',
-            'outlet_actual' => 'required|string|max:255',
-            'type_barang' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
-            'nama_user' => 'required|string|max:255',
-            'nik' => 'required|numeric',
-            'nama_komputer' => 'required|string|max:255',
-            'ip_address' => 'required|string|max:255',
-            'kondisi' => 'required|string|max:255',
-            'keterangan' => 'required|string|max:255',
-            'serial_number' => 'required|string|max:255',
-            'shopos' => 'required|string|max:255',
-            'landesk' => 'required|string|max:255',
-        ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $data_barang_now = new data_barang_now;
-        $data_barang_now->tanggal_perolehan = $request->tanggal_perolehan;
-        $data_barang_now->asset = $request->nama_barang_asset;
-        $data_barang_now->kode_fa_fams = $request->kode_fa_fams;
-        $data_barang_now->nama_barang = $request->nama_barang;
-        $data_barang_now->outlet_pencatatan = $request->outlet_pencatatan;
-        $data_barang_now->outlet_actual = $request->outlet_actual;
-        $data_barang_now->type_barang = $request->type_barang;
-        $data_barang_now->location = $request->location;
-        $data_barang_now->jabatan = $request->jabatan;
-        $data_barang_now->nama_user = $request->nama_user;
-        $data_barang_now->nik = $request->nik;
-        $data_barang_now->komputer_nama = $request->nama_komputer;
-        $data_barang_now->ip_address = $request->ip_address;
-        $data_barang_now->kondisi = $request->kondisi;
-        $data_barang_now->keterangan = $request->keterangan;
-        $data_barang_now->serial_number = $request->serial_number;
-        $data_barang_now->sophos = $request->shopos;
-        $data_barang_now->landesk = $request->landesk;
-        $data_barang_now->save();
+        $data_barang = new data_barang;
+        $data_barang->tanggal_perolehan = $request->tanggal_perolehan;
+        $data_barang->asset = $request->nama_barang_asset;
+        $data_barang->kode_fa_fams = $request->kode_fa_fams;
+        $data_barang->nama_barang = $request->nama_barang;
+        $data_barang->outlet_pencatatan = $request->outlet_pencatatan;
+        $data_barang->outlet_actual = $request->outlet_actual;
+        $data_barang->type_barang = $request->type_barang;
+        $data_barang->location = $request->location;
+        $data_barang->jabatan = $request->jabatan;
+        $data_barang->nama_user = $request->nama_user;
+        $data_barang->nik = $request->nik;
+        $data_barang->komputer_nama = $request->nama_komputer;
+        $data_barang->ip_address = $request->ip_address;
+        $data_barang->kondisi = $request->kondisi;
+        $data_barang->keterangan = $request->keterangan;
+        $data_barang->serial_number = $request->serial_number;
+        $data_barang->sophos = $request->shopos;
+        $data_barang->landesk = $request->landesk;
+        $data_barang->save();
 
 
         jurnalhelper::resetedit();
@@ -311,7 +284,7 @@ class prosesController extends Controller
     public function pengguna_databarang_edit($id)
     {
         session_start();
-        $useredit = data_barang_now::findOrFail($id);
+        $useredit = data_barang::findOrFail($id);
         session(['edit' => 'iya']);
         session(['useredit' => $useredit]);
 
@@ -322,27 +295,26 @@ class prosesController extends Controller
     {
 
         if(isset($request->submittombol)){
-            $data_barang_now = data_barang_now::findOrFail($id);
-            $data_barang_now->tanggal_perolehan = $request->tanggal_perolehan;
-            $data_barang_now->asset = $request->nama_barang_asset;
-            $data_barang_now->kode_fa_fams = $request->kode_fa_fams;
-            $data_barang_now->nama_barang = $request->nama_barang;
-            $data_barang_now->outlet_pencatatan = $request->outlet_pencatatan;
-            $data_barang_now->outlet_actual = $request->outlet_actual;
-            $data_barang_now->type_barang = $request->type_barang;
-            $data_barang_now->location = $request->location;
-            $data_barang_now->jabatan = $request->jabatan;
-            $data_barang_now->nama_user = $request->nama_user;
-            $data_barang_now->nik = $request->nik;
-            $data_barang_now->komputer_nama = $request->nama_komputer;
-            $data_barang_now->ip_address = $request->ip_address;
-            $data_barang_now->kondisi = $request->kondisi;
-            $data_barang_now->keterangan = $request->keterangan;
-            $data_barang_now->serial_number = $request->serial_number;
-            $data_barang_now->sophos = $request->sophos;
-            $data_barang_now->landesk = $request->landesk;
+            $data_barang = data_barang::findOrFail($id);
+            $data_barang->tanggal_perolehan = $request->tanggal_perolehan;
+            $data_barang->asset = $request->asset;
+            $data_barang->kode_fa_fams = $request->kode_fa_fams;
+            $data_barang->nama_barang = $request->nama_barang;
+            $data_barang->outlet_actual = $request->outlet_actual;
+            $data_barang->type_barang = $request->type_barang;
+            $data_barang->location = $request->location;
+            $data_barang->jabatan = $request->jabatan;
+            $data_barang->nama_user = $request->nama_user;
+            $data_barang->nik = $request->nik;
+            $data_barang->komputer_nama = $request->nama_komputer;
+            $data_barang->ip_address = $request->ip_address;
+            $data_barang->kondisi = $request->kondisi;
+            $data_barang->keterangan = $request->keterangan;
+            $data_barang->serial_number = $request->serial_number;
+            $data_barang->sophos = $request->sophos;
+            $data_barang->landesk = $request->landesk;
 
-            $data_barang_now->save();
+            $data_barang->save();
 
             jurnalhelper::resetedit();
             return redirect()->route('aait.dashboard', ['menu' => 'data_barang']);
@@ -356,7 +328,7 @@ class prosesController extends Controller
     }
 
     public function pengguna_databarang_destroy($id){
-        $user = data_barang_now::findOrFail($id);
+        $user = data_barang::findOrFail($id);
 
         $user->delete();
 
@@ -367,27 +339,25 @@ class prosesController extends Controller
     // Start Mutasi Pengguna
     public function pengguna_mutasi_store(Request $request)
     {
-
-        $mutasi_now = new mutasi_now;
-        $mutasi_now->tanggal_perolehan = $request->tanggal_perolehan;
-        $mutasi_now->asset = $request->nama_barang_asset;
-        $mutasi_now->kode_fa_fams = $request->kode_fa_fams;
-        $mutasi_now->nama_barang = $request->nama_barang;
-        $mutasi_now->outlet_pencatatan = $request->outlet_pencatatan;
-        $mutasi_now->outlet_actual = $request->outlet_actual;
-        $mutasi_now->type_barang = $request->type_barang;
-        $mutasi_now->location = $request->location;
-        $mutasi_now->jabatan = $request->jabatan;
-        $mutasi_now->nama_user = $request->nama_user;
-        $mutasi_now->nik = $request->nik;
-        $mutasi_now->komputer_nama = $request->nama_komputer;
-        $mutasi_now->ip_address = $request->ip_address;
-        $mutasi_now->kondisi = $request->kondisi;
-        $mutasi_now->keterangan = $request->keterangan;
-        $mutasi_now->serial_number = $request->serial_number;
-        $mutasi_now->sophos = $request->shopos;
-        $mutasi_now->landesk = $request->landesk;
-        $mutasi_now->save();
+        $mutasi = new mutasi;
+        $mutasi->tanggal_perolehan = $request->tanggal_perolehan;
+        $mutasi->asset = $request->nama_barang_asset;
+        $mutasi->kode_fa = $request->kode_fa_fams;
+        $mutasi->nama_barang = $request->nama_barang;
+        $mutasi->outlet_actual = $request->outlet_actual;
+        $mutasi->type_barang = $request->type_barang;
+        $mutasi->location = $request->location;
+        $mutasi->jabatan = $request->jabatan;
+        $mutasi->user_domain = $request->nama_user;
+        $mutasi->nik = $request->nik;
+        $mutasi->komputer_nama = $request->nama_komputer;
+        $mutasi->ip_address = $request->ip_address;
+        $mutasi->kondisi = $request->kondisi;
+        $mutasi->keterangan = $request->keterangan;
+        $mutasi->serial_number = $request->serial_number;
+        $mutasi->sophos = $request->shopos;
+        $mutasi->landesk = $request->landesk;
+        $mutasi->save();
 
 
         jurnalhelper::resetedit();
@@ -397,7 +367,7 @@ class prosesController extends Controller
     public function pengguna_mutasi_edit($id)
     {
         session_start();
-        $useredit = mutasi_now::findOrFail($id);
+        $useredit = mutasi::findOrFail($id);
         session(['edit' => 'iya']);
         session(['useredit' => $useredit]);
 
@@ -406,36 +376,39 @@ class prosesController extends Controller
 
     public function pengguna_mutasi_update(Request $request, $id)
     {
-if(isset($request->submittombol)){
-        $mutasi_now = mutasi_now::findOrFail($id);
-        $mutasi_now->tanggal_perolehan = $request->tanggal_perolehan;
-        $mutasi_now->asset = $request->nama_barang_asset;
-        $mutasi_now->kode_fa_fams = $request->kode_fa_fams;
-        $mutasi_now->nama_barang = $request->nama_barang;
-        $mutasi_now->outlet_pencatatan = $request->outlet_pencatatan;
-        $mutasi_now->outlet_actual = $request->outlet_actual;
-        $mutasi_now->type_barang = $request->type_barang;
-        $mutasi_now->location = $request->location;
-        $mutasi_now->jabatan = $request->jabatan;
-        $mutasi_now->nama_user = $request->nama_user;
-        $mutasi_now->nik = $request->nik;
-        $mutasi_now->komputer_nama = $request->nama_komputer;
-        $mutasi_now->ip_address = $request->ip_address;
-        $mutasi_now->kondisi = $request->kondisi;
-        $mutasi_now->keterangan = $request->keterangan;
-        $mutasi_now->serial_number = $request->serial_number;
-        $mutasi_now->sophos = $request->sophos;
-        $mutasi_now->landesk = $request->landesk;
-
-        $mutasi_now->save();
+    if(isset($request->submittombol)){
+            $mutasi = mutasi::findOrFail($id);
+            $mutasi->tanggal_perolehan = $request->tanggal_perolehan;
+            $mutasi->asset = $request->asset;
+            $mutasi->kode_fa = $request->kode_fa_fams;
+            $mutasi->nama_barang = $request->nama_barang;
+            $mutasi->outlet_actual = $request->outlet_actual;
+            $mutasi->type_barang = $request->type_barang;
+            $mutasi->location = $request->location;
+            $mutasi->jabatan = $request->jabatan;
+            $mutasi->user_domain = $request->nama_user;
+            $mutasi->nik = $request->nik;
+            $mutasi->komputer_nama = $request->nama_komputer;
+            $mutasi->ip_address = $request->ip_address;
+            $mutasi->kondisi = $request->kondisi;
+            $mutasi->keterangan = $request->keterangan;
+            $mutasi->serial_number = $request->serial_number;
+            $mutasi->sophos = $request->shopos;
+            $mutasi->landesk = $request->landesk;
+            $mutasi->save();
+            jurnalhelper::resetedit();
+            return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
 
     }
+
+    if(isset($request->bataltombol)){
         jurnalhelper::resetedit();
         return redirect()->route('aait.dashboard', ['menu' => 'mutasi']);
     }
+    }
 
     public function pengguna_mutasi_destroy($id){
-        $user = mutasi_now::findOrFail($id);
+        $user = mutasi::findOrFail($id);
 
         $user->delete();
 
@@ -448,26 +421,26 @@ if(isset($request->submittombol)){
 
     public function pengguna_penghapusan_store(Request $request)
     {
-        $penghapusan_now = new penghapusan_now;
-        $penghapusan_now->tanggal_perolehan = $request->tanggal_perolehan;
-        $penghapusan_now->asset = $request->nama_barang_asset;
-        $penghapusan_now->kode_fa_fams = $request->kode_fa_fams;
-        $penghapusan_now->nama_barang = $request->nama_barang;
-        $penghapusan_now->outlet_pencatatan = $request->outlet_pencatatan;
-        $penghapusan_now->outlet_actual = $request->outlet_actual;
-        $penghapusan_now->type_barang = $request->type_barang;
-        $penghapusan_now->location = $request->location;
-        $penghapusan_now->jabatan = $request->jabatan;
-        $penghapusan_now->nama_user = $request->nama_user;
-        $penghapusan_now->nik = $request->nik;
-        $penghapusan_now->komputer_nama = $request->nama_komputer;
-        $penghapusan_now->ip_address = $request->ip_address;
-        $penghapusan_now->kondisi = $request->kondisi;
-        $penghapusan_now->keterangan = $request->keterangan;
-        $penghapusan_now->serial_number = $request->serial_number;
-        $penghapusan_now->sophos = $request->shopos;
-        $penghapusan_now->landesk = $request->landesk;
-        $penghapusan_now->save();
+        $penghapusan = new penghapusan;
+        $penghapusan->tanggal_perolehan = $request->tanggal_perolehan;
+        $penghapusan->asset = $request->nama_barang_asset;
+        $penghapusan->kode_fa_fams = $request->kode_fa_fams;
+        $penghapusan->nama_barang = $request->nama_barang;
+        $penghapusan->outlet_pencatatan = $request->outlet_pencatatan;
+        $penghapusan->outlet_actual = $request->outlet_actual;
+        $penghapusan->type_barang = $request->type_barang;
+        $penghapusan->location = $request->location;
+        $penghapusan->jabatan = $request->jabatan;
+        $penghapusan->nama_user = $request->nama_user;
+        $penghapusan->nik = $request->nik;
+        $penghapusan->komputer_nama = $request->nama_komputer;
+        $penghapusan->ip_address = $request->ip_address;
+        $penghapusan->kondisi = $request->kondisi;
+        $penghapusan->keterangan = $request->keterangan;
+        $penghapusan->serial_number = $request->serial_number;
+        $penghapusan->sophos = $request->shopos;
+        $penghapusan->landesk = $request->landesk;
+        $penghapusan->save();
 
 
         return redirect()->route('aait.dashboard', ['menu' => 'penghapusan']);
@@ -476,7 +449,7 @@ if(isset($request->submittombol)){
     public function pengguna_penghapusan_edit($id)
     {
         session_start();
-        $useredit = penghapusan_now::findOrFail($id);
+        $useredit = penghapusan::findOrFail($id);
         session(['edit' => 'iya']);
         session(['useredit' => $useredit]);
 
@@ -486,27 +459,27 @@ if(isset($request->submittombol)){
     public function pengguna_penghapusan_update(Request $request, $id)
     {
 
-        $penghapusan_now = penghapusan_now::findOrFail($id);
-        $penghapusan_now->tanggal_perolehan = $request->tanggal_perolehan;
-        $penghapusan_now->asset = $request->nama_barang_asset;
-        $penghapusan_now->kode_fa_fams = $request->kode_fa_fams;
-        $penghapusan_now->nama_barang = $request->nama_barang;
-        $penghapusan_now->outlet_pencatatan = $request->outlet_pencatatan;
-        $penghapusan_now->outlet_actual = $request->outlet_actual;
-        $penghapusan_now->type_barang = $request->type_barang;
-        $penghapusan_now->location = $request->location;
-        $penghapusan_now->jabatan = $request->jabatan;
-        $penghapusan_now->nama_user = $request->nama_user;
-        $penghapusan_now->nik = $request->nik;
-        $penghapusan_now->komputer_nama = $request->nama_komputer;
-        $penghapusan_now->ip_address = $request->ip_address;
-        $penghapusan_now->kondisi = $request->kondisi;
-        $penghapusan_now->keterangan = $request->keterangan;
-        $penghapusan_now->serial_number = $request->serial_number;
-        $penghapusan_now->sophos = $request->sophos;
-        $penghapusan_now->landesk = $request->landesk;
+        $penghapusan = penghapusan::findOrFail($id);
+        $penghapusan->tanggal_perolehan = $request->tanggal_perolehan;
+        $penghapusan->asset = $request->nama_barang_asset;
+        $penghapusan->kode_fa_fams = $request->kode_fa_fams;
+        $penghapusan->nama_barang = $request->nama_barang;
+        $penghapusan->outlet_pencatatan = $request->outlet_pencatatan;
+        $penghapusan->outlet_actual = $request->outlet_actual;
+        $penghapusan->type_barang = $request->type_barang;
+        $penghapusan->location = $request->location;
+        $penghapusan->jabatan = $request->jabatan;
+        $penghapusan->nama_user = $request->nama_user;
+        $penghapusan->nik = $request->nik;
+        $penghapusan->komputer_nama = $request->nama_komputer;
+        $penghapusan->ip_address = $request->ip_address;
+        $penghapusan->kondisi = $request->kondisi;
+        $penghapusan->keterangan = $request->keterangan;
+        $penghapusan->serial_number = $request->serial_number;
+        $penghapusan->sophos = $request->sophos;
+        $penghapusan->landesk = $request->landesk;
 
-        $penghapusan_now->save();
+        $penghapusan->save();
 
         jurnalhelper::resetedit();
 
@@ -514,7 +487,7 @@ if(isset($request->submittombol)){
     }
 
     public function pengguna_penghapusan_destroy($id){
-        $user = penghapusan_now::findOrFail($id);
+        $user = penghapusan::findOrFail($id);
 
         $user->delete();
 

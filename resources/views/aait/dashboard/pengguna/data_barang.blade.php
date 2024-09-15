@@ -64,7 +64,7 @@
         </form>
 
         <div class="table-responsive">
-            <table class="table" id="table-1"  style="min-width: 900px">
+            <table class="table" id="table-1"  style="min-width: 1200px">
                 <thead class="custom-thead">
                     <tr class="text-center">
                         <th class="text-center text-wrapped">No</th>
@@ -173,5 +173,10 @@
                 });
             });
         </script>
+
+        {{-- paginate--}}
+        <div class="d-flex justify-content-center">
+            {!! $datanya->links() !!}
+
     </div>
 </div>
