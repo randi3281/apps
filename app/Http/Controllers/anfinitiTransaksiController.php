@@ -57,7 +57,7 @@ class anfinitiTransaksiController extends Controller
                     \Midtrans\Config::$is3ds = config('midtrans.is3ds');
 
                     $orderid = rand();
-                    $price = 10000;
+                    $price = 100000;
                     $params = array(
                         'transaction_details' => array(
                             'order_id' => $orderid,
