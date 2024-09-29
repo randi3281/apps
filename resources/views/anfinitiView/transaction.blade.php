@@ -1,6 +1,8 @@
 <div class="row justify-content-center">
     <img src="/anfinitiPublic/logodark.png" class="mt-4 mb-3" style="width: 250px;" alt="">
     <div class="d-flex justify-content-center align-items-center" style="height:350px">
+        <form style="width: 350px;" method="POST" action="/anfiniti/transactionprocess" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <h5 class="text-center">Transaksi</h5>
             <div class="row justify-content-center mt-5">
                 <div class="col-12">
@@ -12,11 +14,12 @@
                     <div class="tombol text-center mt-5">
                         <button type="button" class="btn text-light btn-primary btn-block w-75"
                             style="font-size: 9pt" value="Bayar" id="pay-button">Bayar</button>
-                        <a href="{{Route('anfiniti')}}" type="submit" class="btn btn-outline-dark btn-block"
+                        <a class="btn btn-outline-dark btn-block" href="{{Route('anfiniti')}}"
                             style="font-size: 9pt" value="Batal" name="tombolBatal">Batal</a>
                     </div>
                 </div>
             </div>
+        </form>
     </div>
     </div>
 </div>
