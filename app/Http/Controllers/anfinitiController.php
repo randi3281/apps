@@ -282,6 +282,9 @@ class anfinitiController extends Controller
                         if($posisi->posisi !== "common"){
                             return redirect()->route('anfiniti');
                         }else{
+                            if($transaction->status == "success"){
+                                return redirect()->route('anfiniti');
+                            }
                             $mode = 4;
                             return view("anfinitiView.menu", ["mode" => $mode], ['transaction' => $transaction]);
                         }
