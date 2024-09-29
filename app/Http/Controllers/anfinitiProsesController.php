@@ -22,7 +22,7 @@ class anfinitiProsesController extends Controller
                 'username' => 'required|string|max:255',
                 'password' => 'required|string',
                 'password2' => 'required|string',
-                'captcha' => 'required|string',
+                'captcha' => 'required|string'
             ]);
 
             if($validatedData['password'] == $validatedData['password2']){
@@ -35,6 +35,7 @@ class anfinitiProsesController extends Controller
                         $anfinitiLogin = new anfiniti_login;
                         $anfinitiLogin->username = $validatedData['username'];
                         $anfinitiLogin->password = bcrypt($validatedData['password']);
+                        $anfinitiLogin->posisi = "common";
                         $anfinitiLogin->save();
                         return redirect()->route("loginAnfiniti");
                     }
@@ -63,7 +64,13 @@ class anfinitiProsesController extends Controller
             ]);
 
             $anfinitiLogin = anfiniti_login::where("username", $validatedData['username'])->first();
-            $idnya = $anfinitiLogin->id;
+            // cek apakah ada id
+
+            if (isset($anfinitiLogin->id)) {
+                $idnya = $anfinitiLogin->id;
+            } else {
+                route("loginAnfiniti");
+            }
             if($anfinitiLogin){
                 if($validatedData['captcha'] == $_SESSION['Captcha']){
                     if(password_verify($validatedData['password'], $anfinitiLogin->password)){

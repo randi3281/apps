@@ -19,7 +19,7 @@
                             placeholder="Hayo passwordnya ingat enggak?" name="password">
                     </div>
                     <p class=" mb-4" style="font-size: 7pt">Kalau lupa passwordnya, <a
-                            href="https://wa.me/6285314410358?text=Halo%2C%20saya%20lupa%20sandi%20aplikasi%20anfiniti">Klik
+                            href="https://wa.me/6285930434857?text=Halo%2C%20saya%20lupa%20sandi%20aplikasi%20anfiniti">Klik
                             disini ya</a></p>
                     <div class="form-group mt-3">
                         <label style="margin-right: 12px">Captcha</label>

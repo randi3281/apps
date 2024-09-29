@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class anfiniti_login extends Model
 {
     protected $table = 'anfiniti_login';
-    protected $fillable = ['username', 'password'];
+    protected $fillable = ['username', 'password', 'posisi'];
 
     public function session()
     {
