@@ -38,7 +38,7 @@ class anfinitiTransaksiController extends Controller
                         if($posisi->posisi !== "common"){
                             return redirect()->route('anfiniti');
                         }else{
-                        return redirect()->route('tampilTransaksiAnfiniti');
+                            $transaction->delete();
                         }
                     }
 
