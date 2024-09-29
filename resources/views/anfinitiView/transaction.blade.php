@@ -13,7 +13,7 @@
                         <button type="button" class="btn text-light btn-primary btn-block w-75"
                             style="font-size: 9pt" value="Bayar" id="pay-button">Bayar</button>
                         <a href="{{Route('anfiniti')}}" type="submit" class="btn btn-outline-dark btn-block"
-                            style="font-size: 9pt" value="Batal" name="tombolBatal">
+                            style="font-size: 9pt" value="Batal" name="tombolBatal">Batal</a>
                     </div>
                 </div>
             </div>
