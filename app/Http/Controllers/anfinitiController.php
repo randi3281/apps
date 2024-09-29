@@ -130,6 +130,34 @@ class anfinitiController extends Controller
         return view("anfinitiView.start", ["mode" => $mode]);
     }
 
+    public function daftardenganemail(){
+        // Mendapatkan data dari cookie
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    return redirect()->route("anfiniti");
+                }else{
+                    $mode = 5;
+                };
+            }else{
+                $mode = 5;
+            };
+        } else {
+            $mode = 5;
+        };
+
+        return view("anfinitiView.start", ["mode" => $mode]);
+    }
+
 
     public function input(){
 

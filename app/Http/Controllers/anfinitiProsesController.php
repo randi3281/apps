@@ -311,6 +311,53 @@ class anfinitiProsesController extends Controller
     }
 
     public function redirectgoogle(){
+
+        // Mendapatkan data dari cookie
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+            $id = $data['login_id'];
+
+            // ambil dataweb berdasarkan id
+            $anfinitiDataweb = anfiniti_dataweb::where("login_id", $id)->get();
+
+            // ambil value dari kolom posisi berdasarkan id
+            $posisi = anfiniti_login::where("id", $id)->first();
+            $transaction = anfiniti_transaction::where("login_id", $id)->first();
+
+            // jika posisi common dan dataweb sama dengan lima, maka kembalikan ke login
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    return redirect()->route('anfiniti');
+                }else{
+                    $client = new GoogleClient();
+                    $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+                    $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+                    $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+                    $client->addScope('email');
+                    $client->addScope('profile');
+
+                    $authUrl = $client->createAuthUrl();
+                    return redirect($authUrl);
+                };
+            }else{
+                $client = new GoogleClient();
+                $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+                $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+                $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+                $client->addScope('email');
+                $client->addScope('profile');
+
+                $authUrl = $client->createAuthUrl();
+                return redirect($authUrl);
+            };
+        }
         $client = new GoogleClient();
         $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
         $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
@@ -322,7 +369,67 @@ class anfinitiProsesController extends Controller
         return redirect($authUrl);
     }
 
+
     public function setelahlogingoogle(){
+
+        // Mendapatkan data dari cookie
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+            $id = $data['login_id'];
+
+            // ambil dataweb berdasarkan id
+            $anfinitiDataweb = anfiniti_dataweb::where("login_id", $id)->get();
+
+            // ambil value dari kolom posisi berdasarkan id
+            $posisi = anfiniti_login::where("id", $id)->first();
+            $transaction = anfiniti_transaction::where("login_id", $id)->first();
+
+            // jika posisi common dan dataweb sama dengan lima, maka kembalikan ke login
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    return redirect()->route('anfiniti');
+                }else{
+                    $client = new GoogleClient();
+                    $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+                    $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+                    $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+
+                    if (request()->get('code')) {
+                        $token = $client->fetchAccessTokenWithAuthCode(request()->get('code'));
+                        $client->setAccessToken($token);
+
+                        $oauth = new \Google\Service\Oauth2($client);
+                        $googleUser = $oauth->userinfo->get();
+
+                        // Proses data pengguna Google sesuai kebutuhan
+                    }
+                    return redirect()->route("anfiniti");
+                };
+            }else{
+                $client = new GoogleClient();
+                $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+                $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+                $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+
+                if (request()->get('code')) {
+                    $token = $client->fetchAccessTokenWithAuthCode(request()->get('code'));
+                    $client->setAccessToken($token);
+
+                    $oauth = new \Google\Service\Oauth2($client);
+                    $googleUser = $oauth->userinfo->get();
+
+                    // Proses data pengguna Google sesuai kebutuhan
+                }
+                return redirect()->route("anfiniti");
+            };
+        }
         $client = new GoogleClient();
         $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
         $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));

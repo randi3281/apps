@@ -20,6 +20,7 @@ Route::get('/', 'anfinitiController@index')->name('index');
 Route::get('anfiniti', 'anfinitiController@anfiniti')->name('anfiniti');
 Route::get('anfiniti/login', 'anfinitiController@login')->name('loginAnfiniti');
 Route::get('anfiniti/daftar', 'anfinitiController@daftar')->name('daftarAnfiniti');
+Route::get('anfiniti/daftardenganemail', 'anfinitiController@daftardenganemail')->name('daftardenganemal');
 Route::get('anfiniti/input', 'anfinitiController@input')->name('inputAnfiniti');
 Route::get('anfiniti/edit/{id}', 'anfinitiController@edit')->name('editAnfiniti');
 Route::get('anfiniti/trash', 'anfinitiController@trash')->name('trashAnfiniti');

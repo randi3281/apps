@@ -29,11 +29,15 @@
                             @break
 
                             @case(3)
-                                @include('anfinitiView.lupasandicek')
+                            @include('anfinitiView.lupasandicek')
                             @break
 
                             @case(4)
-                                @include('anfinitiView.lupasandi')
+                            @include('anfinitiView.lupasandi')
+                            @break
+
+                            @case(5)
+                                @include('anfinitiView.daftardenganemail')
                             @break
 
                             @default
