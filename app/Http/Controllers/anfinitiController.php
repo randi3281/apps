@@ -141,18 +141,30 @@ class anfinitiController extends Controller
 
             $tokennya = $data['tokennya'];
             $username = $data['username'];
+            $id = $data['login_id'];
 
-            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
-            if($anfinitiSession){
-                if(password_verify($username, $anfinitiSession->username)){
-                    $mode = 1;
-                    return view("anfinitiView.menu", ["mode" => $mode]);
+            // ambil dataweb berdasarkan id
+            $anfinitiDataweb = anfiniti_dataweb::where("login_id", $id)->get();
+
+            // ambil value dari kolom posisi berdasarkan id
+            $posisi = anfiniti_login::where("id", $id)->first();
+
+            // jika posisi common dan dataweb sama dengan lima, maka kembalikan ke login
+            if($posisi->posisi == "common" && $anfinitiDataweb->count() == 5){
+                return redirect()->route("anfiniti");
+            }else{
+                $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+                if($anfinitiSession){
+                    if(password_verify($username, $anfinitiSession->username)){
+                        $mode = 1;
+                        return view("anfinitiView.menu", ["mode" => $mode]);
+                    }else{
+                        return redirect()->route("index");
+                    };
                 }else{
                     return redirect()->route("index");
                 };
-            }else{
-                return redirect()->route("index");
-            };
+            }
         } else {
             return redirect()->route("index");
         };

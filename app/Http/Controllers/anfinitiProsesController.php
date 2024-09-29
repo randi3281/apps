@@ -120,34 +120,47 @@ class anfinitiProsesController extends Controller
 
     public function inputProses(Request $request){
         if(isset($request->tombolInput)){
-            $validatedData = $request->validate([
-                'namaWeb' => 'required|string|max:255',
-                'link' => 'required|string|max:255',
-                'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:64'
-            ]);
-
-            $logo = $validatedData['gambar'];
-            $namaGambar = time().'.'.$logo->extension();
-            $logo->move(public_path('../../cdn/anfiniti/images/'), $namaGambar);
-            // $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
-
+            // cek juga apakah user comoon data dataweb sama dengan 5
             $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
             $data = decrypt($dataEncryptednya);
+            $login_id = $data['login_id'];
 
-            $dataUsername = $data['username'];
-            $anfinitiLogin = anfiniti_login::where("username", $dataUsername)->first();
+            $anfinitiDataweb = anfiniti_dataweb::where("login_id", $login_id)->get();
 
-            // jika ada kata https:// di depan link maka hapus
-            $validatedData['link'] = str_replace("https://", "", $validatedData['link']);
+            $posisi = anfiniti_login::where("id", $login_id)->first();
 
-            $anfinitiDataweb = new anfiniti_dataweb;
-            $anfinitiDataweb->login_id = $anfinitiLogin->id;
-            $anfinitiDataweb->nama_web = $validatedData['namaWeb'];
-            $anfinitiDataweb->link = $validatedData['link'];
-            $anfinitiDataweb->gambar = $namaGambar;
-            $anfinitiDataweb->save();
+            if($posisi->posisi == "common" && $anfinitiDataweb->count() == 5){
+                return redirect()->route("anfiniti");
+            }else{
+                $validatedData = $request->validate([
+                    'namaWeb' => 'required|string|max:255',
+                    'link' => 'required|string|max:255',
+                    'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:64'
+                ]);
 
-            return redirect()->route("anfiniti");
+                $logo = $validatedData['gambar'];
+                $namaGambar = time().'.'.$logo->extension();
+                $logo->move(public_path('../../cdn/anfiniti/images/'), $namaGambar);
+                // $logo->move(public_path('anfinitiPublic/images'), $namaGambar);
+
+                $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+                $data = decrypt($dataEncryptednya);
+
+                $dataUsername = $data['username'];
+                $anfinitiLogin = anfiniti_login::where("username", $dataUsername)->first();
+
+                // jika ada kata https:// di depan link maka hapus
+                $validatedData['link'] = str_replace("https://", "", $validatedData['link']);
+
+                $anfinitiDataweb = new anfiniti_dataweb;
+                $anfinitiDataweb->login_id = $anfinitiLogin->id;
+                $anfinitiDataweb->nama_web = $validatedData['namaWeb'];
+                $anfinitiDataweb->link = $validatedData['link'];
+                $anfinitiDataweb->gambar = $namaGambar;
+                $anfinitiDataweb->save();
+
+                return redirect()->route("anfiniti");
+            }
         };
 
         if(isset($request->tombolBatal)){

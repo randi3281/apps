@@ -140,29 +140,6 @@
                         </a>
                     </div>
             @endif
-{{--
-
-            <div class="card custom-card mx-2 mb-3" style="width: 147px; height: 147px">
-                <a href="/anfiniti/input" class=" text-decoration-none" style="line-height: 16px">
-                    <div class="card-body text-center">
-                        <div class="row justify-content-center" style="margin-top:15px">
-                            <div class="col-md-1 d-flex justify-content-center align-items-center mb-4 mx-3">
-                                <div class="col justify-content-center d-flex">
-                                    <img src="/anfinitiPublic/tambahan.png" class="card-img-top" style="width: 40px;"
-                                        alt="Image">
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top: -16px">
-                            <div class="col">
-                                <p class="card-title fw-bold text-dark" style="font-size: 13px; color: #212529">Klik
-                                    untuk Tambah</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endif --}}
 
             {{-- Input --}}
 
