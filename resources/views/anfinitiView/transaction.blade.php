@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <img src="/anfinitiPublic/logodark.png" class="mt-4 mb-3" style="width: 250px;" alt="">
     <div class="d-flex justify-content-center align-items-center" style="height:350px">
-        <form style="width: 350px;" method="POST" action="/anfiniti/inputproses" enctype="multipart/form-data">
+        <form style="width: 350px;" method="POST" action="/anfiniti/transactionprocess" enctype="multipart/form-data">
             {{ csrf_field() }}
             <h5 class="text-center">Transaksi</h5>
             <div class="row justify-content-center mt-5">
@@ -12,8 +12,8 @@
                     <label for="status">Status: {{$transaction->status}}</label><br>
                     <label for="price">Price: {{$transaction->price}}</label><br>
                     <div class="tombol text-center mt-5">
-                        <input type="submit" class="btn text-light btn-primary btn-block w-75"
-                            style="font-size: 9pt" value="Bayar" name="tombolInput">
+                        <button type="button" class="btn text-light btn-primary btn-block w-75"
+                            style="font-size: 9pt" value="Bayar" id="pay-button">Bayar</button>
                         <input type="submit" class="btn btn-outline-dark btn-block"
                             style="font-size: 9pt" value="Batal" name="tombolBatal">
                     </div>
@@ -23,3 +23,24 @@
     </div>
     </div>
 </div>
+
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+<script type="text/javascript">
+    document.getElementById('pay-button').onclick = function(){
+      // SnapToken acquired from previous step
+      snap.pay('{{ $transaction->snap_token }}', {
+        // Optional
+        onSuccess: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        },
+        // Optional
+        onPending: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        },
+        // Optional
+        onError: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        }
+      });
+    };
+  </script>
