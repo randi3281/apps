@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
+use Laravel\Socialite\Facades\Socialite;
+use Google\Client as GoogleClient;
 // DB::beginTransaction();
 
 use App\Models\anfiniti_login;
@@ -306,5 +308,35 @@ class anfinitiProsesController extends Controller
         }else{
             return redirect()->route("anfiniti");
         }
+    }
+
+    public function redirectgoogle(){
+        $client = new GoogleClient();
+        $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+        $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+        $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+        $client->addScope('email');
+        $client->addScope('profile');
+
+        $authUrl = $client->createAuthUrl();
+        return redirect($authUrl);
+    }
+
+    public function setelahlogingoogle(){
+        $client = new GoogleClient();
+        $client->setClientId(env('GOOGLE_CLIENT_ID_ANFINITI'));
+        $client->setClientSecret(env('GOOGLE_CLIENT_SECRET_ANFINITI'));
+        $client->setRedirectUri(env('GOOGLE_REDIRECT_URI_ANFINITI'));
+
+        if (request()->get('code')) {
+            $token = $client->fetchAccessTokenWithAuthCode(request()->get('code'));
+            $client->setAccessToken($token);
+
+            $oauth = new \Google\Service\Oauth2($client);
+            $googleUser = $oauth->userinfo->get();
+
+            // Proses data pengguna Google sesuai kebutuhan
+        }
+        return redirect()->route("anfiniti");
     }
 }

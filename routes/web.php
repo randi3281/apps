@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\anfinitiProsesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,11 @@ Route::get('anfiniti/hapus/{id}', 'anfinitiController@hapus')->name('hapusAnfini
 Route::get('anfiniti/transaksi' , 'anfinitiTransaksiController@index')->name('transaksiAnfiniti');
 Route::get('anfiniti/tampiltransaksi' , 'anfinitiController@transaction')->name('tampilTransaksiAnfiniti');
 Route::get('anfiniti/transactionsuccess' , 'anfinitiTransaksiController@transactionSuccess')->name('transactionSuccess');
+// login ke google
+Route::get('anfiniti/redirectgoogle', [anfinitiProsesController::class, 'redirectgoogle'])->name('redirectgoogle');
+
+// setelah login ke google, maka masuk ke sini
+Route::get('anfiniti/setelahlogingoogle', [anfinitiProsesController::class, 'setelahlogingoogle'])->name('setelahlogingoogle');
 
 
 Route::get('anfiniti/keluar', 'anfinitiProsesController@keluar')->name('keluarAnfiniti');

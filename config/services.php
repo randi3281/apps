@@ -37,4 +37,10 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
       ],
 
+    'googleAnfiniti' => [
+        'client_id' => env('GOOGLE_CLIENT_ID_ANFINITI'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET_ANFINITI'),
+        'redirect' => env('GOOGLE_REDIRECT_URI_ANFINITI'),
+      ],
+
 ];
