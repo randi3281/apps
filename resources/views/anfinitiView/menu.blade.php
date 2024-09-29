@@ -31,6 +31,10 @@
                                 @include('anfinitiView.trash')
                             @break
 
+                            @case(4)
+                                @include('anfinitiView.transaction')
+                            @break
+
                             @default
                         @endswitch
                     </div>

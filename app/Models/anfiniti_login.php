@@ -12,11 +12,16 @@ class anfiniti_login extends Model
 
     public function session()
     {
-        return $this->hasMany(AnfinitiSession::class, 'login_id');
+        return $this->hasMany(anfiniti_session::class, 'login_id');
     }
 
     public function dataweb()
     {
-        return $this->hasMany(AnfinitiDataweb::class, 'login_id');
+        return $this->hasMany(anfiniti_dataweb::class, 'login_id');
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(anfiniti_transaction::class, 'login_id');
     }
 }

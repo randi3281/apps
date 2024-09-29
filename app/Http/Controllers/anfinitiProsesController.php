@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 use App\Models\anfiniti_login;
 use App\Models\anfiniti_session;
 use App\Models\anfiniti_dataweb;
+use App\Models\anfiniti_transaction;
 
 class anfinitiProsesController extends Controller
 {

@@ -16,6 +16,6 @@ class anfiniti_dataweb extends Model
 
     public function login()
     {
-        return $this->belongsTo(AnfinitiLogin::class, 'login_id');
+        return $this->belongsTo(anfiniti_login::class, 'login_id');
     }
 }

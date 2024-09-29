@@ -23,6 +23,8 @@ Route::get('anfiniti/edit/{id}', 'anfinitiController@edit')->name('editAnfiniti'
 Route::get('anfiniti/trash', 'anfinitiController@trash')->name('trashAnfiniti');
 Route::get('anfiniti/lupasandi', 'anfinitiController@lupasandi')->name('lupaSandiAnfiniti');
 Route::get('anfiniti/hapus/{id}', 'anfinitiController@hapus')->name('hapusAnfiniti');
+Route::get('anfiniti/transaksi' , 'anfinitiTransaksiController@index')->name('transaksiAnfiniti');
+Route::get('anfiniti/tampiltransaksi' , 'anfinitiController@transaction')->name('tampilTransaksiAnfiniti');
 
 Route::get('anfiniti/keluar', 'anfinitiProsesController@keluar')->name('keluarAnfiniti');
 Route::post('anfiniti/daftarproses', 'anfinitiProsesController@daftarproses');
@@ -36,6 +38,7 @@ Route::post('anfiniti/trashproses', 'anfinitiProsesController@trashproses');
 Route::get('anfiniti/daftar/{ket}', 'anfinitiLemparController@daftarKet');
 Route::get('anfiniti/login/{ket}', 'anfinitiLemparController@loginKet');
 Route::get('anfiniti/lupasandi/{ket}', 'anfinitiLemparController@lupaSandiKet');
+
 // End Anfiniti
 
 // Belajar

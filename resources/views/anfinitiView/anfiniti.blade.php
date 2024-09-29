@@ -27,7 +27,7 @@
                         Maximal 5 web, Ayo Upgrade ke Premium agar bisa menyimpan web unlimited!
                         <i class="fas fa-star" style="color: gold"></i>
                         Hanya 100 ribu per tahun
-                        <a href="">Klik Disini</a>
+                        <a href="/anfiniti/transaksi">Klik Disini</a>
                     </h5>
                 </div>
             </div>

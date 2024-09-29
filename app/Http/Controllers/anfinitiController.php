@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\anfiniti_login;
 use App\Models\anfiniti_session;
 use App\Models\anfiniti_dataweb;
+use App\Models\anfiniti_transaction;
 
 class anfinitiController extends Controller
 {
@@ -251,6 +252,41 @@ class anfinitiController extends Controller
             };
         }
         return redirect()->route("anfiniti");
+    }
+
+    public function transaction(){
+
+        // Mendapatkan data dari cookie
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+
+        if ($dataEncryptednya) {
+            // Mendekripsi data
+            $data = decrypt($dataEncryptednya);
+
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+            $id = $data['login_id'];
+
+            // ambil dataweb berdasarkan id
+            $anfinitiDataweb = anfiniti_dataweb::where("login_id", $id)->get();
+
+            // ambil value dari kolom posisi berdasarkan id
+            $posisi = anfiniti_login::where("id", $id)->first();
+            $transaction = anfiniti_transaction::where("login_id", $id)->first();
+
+            // jika posisi common dan dataweb sama dengan lima, maka kembalikan ke login
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+                    $mode = 4;
+                    return view("anfinitiView.menu", ["mode" => $mode], ['transaction' => $transaction]);
+                }else{
+                    return redirect()->route("index");
+                };
+            }else{
+                return redirect()->route("index");
+            };
+        }
     }
 }
 
