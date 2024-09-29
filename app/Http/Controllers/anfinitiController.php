@@ -278,8 +278,15 @@ class anfinitiController extends Controller
             $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
             if($anfinitiSession){
                 if(password_verify($username, $anfinitiSession->username)){
-                    $mode = 4;
-                    return view("anfinitiView.menu", ["mode" => $mode], ['transaction' => $transaction]);
+                    if(isset($transaction)){
+                        if($posisi->posisi !== "common"){
+                            return redirect()->route('anfiniti');
+                        }else{
+                            $mode = 4;
+                            return view("anfinitiView.menu", ["mode" => $mode], ['transaction' => $transaction]);
+                        }
+                    }
+                    return redirect()->route('anfiniti');
                 }else{
                     return redirect()->route("index");
                 };

@@ -25,6 +25,8 @@ Route::get('anfiniti/lupasandi', 'anfinitiController@lupasandi')->name('lupaSand
 Route::get('anfiniti/hapus/{id}', 'anfinitiController@hapus')->name('hapusAnfiniti');
 Route::get('anfiniti/transaksi' , 'anfinitiTransaksiController@index')->name('transaksiAnfiniti');
 Route::get('anfiniti/tampiltransaksi' , 'anfinitiController@transaction')->name('tampilTransaksiAnfiniti');
+Route::get('anfiniti/transactionsuccess' , 'anfinitiTransaksiController@transactionSuccess')->name('transactionSuccess');
+
 
 Route::get('anfiniti/keluar', 'anfinitiProsesController@keluar')->name('keluarAnfiniti');
 Route::post('anfiniti/daftarproses', 'anfinitiProsesController@daftarproses');

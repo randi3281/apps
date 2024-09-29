@@ -90,4 +90,58 @@ class anfinitiTransaksiController extends Controller
         }
 
     }
+
+    public function transactionSuccess()
+    {
+        $dataEncryptednya = request()->cookie('anfiniti_sessionnya');
+
+        if ($dataEncryptednya) {
+            $data = decrypt($dataEncryptednya);
+
+            $tokennya = $data['tokennya'];
+            $username = $data['username'];
+            $login_id = $data['login_id'];
+
+            $anfinitiSession = anfiniti_session::where("sesi", $tokennya)->first();
+            if($anfinitiSession){
+                if(password_verify($username, $anfinitiSession->username)){
+
+                    // Isinya
+                    // ngecek statusnya apakah bukan common atau tidak
+                    $transaction = anfiniti_transaction::where("login_id", $login_id)->first();
+                    $posisi = anfiniti_login::where("id", $login_id)->first();
+
+                    if(isset($transaction)){
+                        if($posisi->posisi !== "common"){
+                            return redirect()->route('anfiniti');
+                        }else{
+
+                        // ubah status menjadi premium
+                        $posisi->posisi = "premium";
+                        $posisi->save();
+
+                        // ubah status transaksi jadi sukses dan update tanggalnya
+                        $transaction->status = "success";
+                        $transaction->updated_at = now();
+                        $transaction->save();
+
+                        return redirect()->route('anfiniti');
+                        }
+                    }else{
+
+                        return redirect()->route('anfiniti');
+                    }
+                    // End Isinya
+
+                }else{
+                    return redirect()->route('anfiniti');
+                };
+            }else{
+                return redirect()->route('anfiniti');
+            }
+        } else {
+            return redirect()->route('anfiniti');
+        }
+
+    }
 }
