@@ -36,8 +36,8 @@
                         <input type="submit" class="btn btn-dark text-light btn-block w-75" name="tombolDaftar"
                             value="Daftar">
                         <input type="submit" class="btn btn-outline-dark btn-block" name="tombolMasuk" value="Login">
-                        <p class=" mb-4" style="font-size: 7pt">Atau <a
-                                href="{{route('redirectgoogle')}}">Login dengan Google</a></p>
+                        {{-- <p class=" mb-4" style="font-size: 7pt">Atau <a
+                                href="{{route('redirectgoogle')}}">Login dengan Google</a></p> --}}
                     </div>
                 </div>
             </div>
