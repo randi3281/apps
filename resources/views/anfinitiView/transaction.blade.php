@@ -12,8 +12,8 @@
                     <label for="status">Status: {{$transaction->status}}</label><br>
                     <label for="price">Price: {{$transaction->price}}</label><br>
                     <div class="tombol text-center mt-5">
-                        <button type="button" class="btn text-light btn-primary btn-block w-75"
-                            style="font-size: 9pt" value="Bayar" id="pay-button">Bayar</button>
+                        <a class="btn text-light btn-primary btn-block w-75" href="https://wa.me/6285930434857?text=Halo,%20saya%20berminat%20dengan%20promo%20Rp.%20100.000%20per%20tahun%20Anfiniti"
+                            style="font-size: 9pt" value="Batal" name="tombolBatal">Pesan</a>
                         <a class="btn btn-outline-dark btn-block" href="{{Route('anfiniti')}}"
                             style="font-size: 9pt" value="Batal" name="tombolBatal">Batal</a>
                     </div>
